@@ -12,6 +12,9 @@ npm run start
 Containers
 Components
 
+## React Router Dom 
+npm i react-router-dom
+
 ## AWS
 En aws entramos a AWS Amplify y creamos una aplicación: Alojar aplicación web
 
