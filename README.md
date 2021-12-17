@@ -1,3 +1,6 @@
+### Ver front en Aws
+https://main.d35ajv2vvr3l3w.amplifyapp.com/
+
 
 ## Crear proyecto React
 npx create-react-app front-react-redux-arquitectos
