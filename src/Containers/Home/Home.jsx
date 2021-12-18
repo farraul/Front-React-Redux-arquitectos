@@ -282,7 +282,7 @@ const Home = () => {
 
                         </div>
                         {user.rol == "usuario" ?
-                            <div>
+                            <div className='width-100'>
                                 <p className='home-form-budget-p'>Titulo</p>
                                 <div className='home-form-full-w'><input onChange={e => { validate_inputs(e); userHandler(e) }} className="home-form-fields" type='text' name='u_title_order_client' title='u_title_order_client' lenght='30' placeholder='Reforma cocina, planos edificio, construcción de...' /></div>
                                 <p className='home-form-budget-p'>Descripción</p>
@@ -301,7 +301,7 @@ const Home = () => {
                             : null}
 
                         {user.rol == "arquitecto" ?
-                            <div>
+                            <div className='width-100'>
                                 <div className='home-form-full-w'><input onChange={e => { validate_inputs(e); userHandler(e) }} className="home-form-fields" type='text' name='a_web_site' title='a_web_site' lenght='30' placeholder='Página web' /></div>
                                 <div className='home-form-full-w'><textarea onChange={e => { validate_inputs(e); userHandler(e) }} className=" no-height home-form-fields no-height" type='text-area' name='a_description_experience_arquitect' title='a_description_experience_arquitect' lenght='30' placeholder='Pequeña descripcion de tu experiencia laboral' rows="6" cols="50" /></div>
                             </div>
@@ -319,6 +319,9 @@ const Home = () => {
                         <div className='home-form-fields-ok'>{inputs_data_form.email}</div>
                         <div className='home-form-full-w'><input onChange={e => { validate_inputs(e); userHandler(e) }} className="home-form-fields" type='password' name='password' title='password' lenght='30' placeholder='Password' /></div>
                         <div className='home-form-fields-ok'>{inputs_data_form.password}</div>
+                        
+
+
                         {button_send_data}
                     </div>
                 </div>

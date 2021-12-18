@@ -62,10 +62,10 @@ line-height: 1em;
 background-color: rgb(240, 240, 240);
 width: 100%;
 height: fit-content;
+min-height: 48em;
 padding: 3em 0em;
 display: flex;
 justify-content: center;
-
 }
 
 .home-ask-3-architects{
@@ -104,7 +104,6 @@ cursor: pointer;
 border-radius: 30px;
 margin-bottom: 8em;
 }
-
 .sendButton-no-ready {
 height: 3em;
 width: 100%;
@@ -119,7 +118,6 @@ font-size: 1.2em;
 cursor: pointer;
 border-radius: 30px;
 cursor: no-drop;
-
 }
 .home-input.arquitect {
 margin: 1em 0em;
@@ -173,4 +171,7 @@ width: 1.2em;
 }
 .home-section3-radio-text {
     display: flex;
+}
+.width-100{
+width: 100%;
 }
