@@ -1,5 +1,5 @@
 .home-section-1 {
-width: 100vw;
+width: 100%;
 background: lightgrey;
 height: 30em;
 display: flex;
@@ -37,10 +37,11 @@ border-radius: 2em;
 border: unset;
 font-size: 1em;
 font-weight: 900;
+cursor: pointer;
 }
 
 .home-section-2{
-width: 100vw;
+width: 100%;
 height: 10em;
 }
 .home-s-2-brands {
@@ -61,12 +62,12 @@ line-height: 1em;
 }
 .home-section-3 {
 background-color: rgb(240, 240, 240);
-width: 100vw;
-height: 20em;
+width: 100%;
+height: fit-content;
 padding: 3em 0em;
 display: flex;
 justify-content: center;
-align-items: center;
+
 }
 
 .home-ask-3-architects{
@@ -77,15 +78,72 @@ color: #00718a;
 line-height: 1em;    
 }
 .home-form-fields-div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
 }
 .home-form-fields {
-    margin: 0.7em 0em;
-    width: 18em;
-    height: 3em;
-    border-radius: 0.2em;
-    text-align: center;
-    border: 1px solid grey;
+margin: 0.4em 0em;
+width: 26em;
+height: 2.5em;
+border-radius: 0.2em;
+//text-align: center;
+padding: 0em 0em 0em 0.5em;
+border: 1px solid grey;
+}
+.sendButton {
+height: 3em;
+width: 100%;
+background-color: green;
+color: white;
+border-radius: 0.2em;
+display: flex;
+margin-top: 2em;
+justify-content: center;
+align-items: center;
+font-size: 1.2em;
+cursor: pointer;
+border-radius: 30px;
+margin-bottom: 8em;
+}
+
+.sendButton-no-ready {
+height: 3em;
+width: 100%;
+background-color: rgb(58, 58, 58);
+color: white;
+border-radius: 0.2em;
+display: flex;
+margin-top: 2em;
+justify-content: center;
+align-items: center;
+font-size: 1.2em;
+cursor: pointer;
+border-radius: 30px;
+cursor: no-drop;
+
+}
+.home-input.arquitect {
+margin: 1em 0em;
+}
+#input-rol-arquitect{
+margin-left: 1em;
+
+}
+.home-form-fields {
+width: 100%;
+}
+.home-form-full-w {
+width: 100%;
+}
+.home-form-fields-ok {
+    color: #4c4c4c;
+    line-height: 2.6em;
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+}
+p.home-form-budget-p {
+    line-height: 0;
+    font-size: 0.9em;
 }

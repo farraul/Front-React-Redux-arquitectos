@@ -1,5 +1,5 @@
 .header{
-width: 100vw;
+width: 100%;
 }
 .header-padding{
 background-color: #00718a;
@@ -14,3 +14,13 @@ align-items: center;
 .logo{
 height: 1.5em;
 }
+.div-print-info-correct {
+    color: rgb(63, 63, 63);
+     padding-bottom: 1em;    
+     margin-top: 0.5em;
+     height: 1em;
+     font-size: 14px;
+ }
+ .no-height{
+    height: unset!important;
+ }
