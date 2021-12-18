@@ -1,0 +1,21 @@
+.login-section-1{
+height: calc(100vh - 6.9em);
+justify-content: center;
+align-items: center;
+background: url('../../images/background-2.png');
+display: flex;
+}
+#login-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 22em;
+}
+.login-form-input {
+    margin-top: 1em;
+    height: 1.5em;
+    color: black;
+    font-size: 1.4em;
+    padding: 0.2em;
+    border-radius: 0.2em;
+    border: 1px solid;
+}

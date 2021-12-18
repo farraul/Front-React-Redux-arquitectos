@@ -1,11 +1,5 @@
 import React, { useState, useEffect } from 'react';
 
-//import { connect } from 'react-redux';
-
-//import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
-//import bran from '../../images/brand-1.png';
-//import { connect } from 'react-redux';
 
 
 const Login = () => {
@@ -25,7 +19,7 @@ const Login = () => {
     const go_to_login = async () => {
 
         let body = {
-            email: credentials.correo,
+            email: credentials.email,
             password: credentials.password
         };
 
@@ -53,12 +47,12 @@ const Login = () => {
 
     return (
 
-        <div className="section-1">
-            <div id="style-div-form-login">
+        <div className="login-section-1">
+            <div id="login-form">
                 {/*<pre>{JSON.stringify(credentials, null,2)}</pre>*/}
                 <h1>Acceder</h1>
-                <input className="style-form-login" type='email' name='correo' title='email' onChange={manejadorInputs} lenght='30' placeholder="Email" />
-                <input className="style-form-login" type='password' name='clave' title='password' onChange={manejadorInputs} lenght='30' placeholder="Contraseña" />
+                <input className="login-form-input" type='email' name='email' title='email' onChange={manejadorInputs} lenght='30' placeholder="Email" />
+                <input className="login-form-input" type='password' name='clave' title='password' onChange={manejadorInputs} lenght='30' placeholder="Contraseña" />
                 <div className="sendButton" onClick={() => go_to_login()}>Login</div>
                 <div className="error">{msgError}</div>
             </div>

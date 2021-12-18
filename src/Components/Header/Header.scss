@@ -1,4 +1,4 @@
-.header{
+header{
 width: 100%;
 }
 .header-padding{
@@ -13,6 +13,7 @@ align-items: center;
 
 .logo{
 height: 1.5em;
+cursor: pointer;
 }
 .div-print-info-correct {
     color: rgb(63, 63, 63);
@@ -23,4 +24,7 @@ height: 1.5em;
  }
  .no-height{
     height: unset!important;
+ }
+ .header-menu-links{
+cursor: pointer;
  }
