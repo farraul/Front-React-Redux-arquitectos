@@ -6,13 +6,19 @@ import logo from '../../images/logo.png';
 
 
 
+
 const Header = () => {
+    const history = useNavigate();
+    const go_to_the_link = () => {
+        history("/");
+    }
+
 
     return (
         <div className="header">
             <div className='header-padding'>
                 <div>
-                    <img className="logo" src={logo} alt="logo" />
+                    <img className="logo" src={logo} alt="logo"  onClick={()=>go_to_the_link()} />
                 </div>
                 <div className="">
                     Home
