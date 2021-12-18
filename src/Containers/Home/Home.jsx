@@ -41,11 +41,23 @@ const Home = () => {
                     <div>
                         <img className="home-brands" src={brand5} alt="logo" />
                     </div>
-
-
-
                 </div>
             </div>
+
+            <div className='home-section-3'>
+                <div>
+                    <p className='home-ask-3-architects'>Pide tu presupuesto a 3 arquitectos</p>
+                    <div className="home-form-fields-div">
+                        <div><input className="home-form-fields" type='text' name='name' title='name' lenght='30' placeholder='Nombre' /></div>
+                        <div><input className="home-form-fields" type='email' name='email' title='email' lenght='30' placeholder='Email' /></div>
+                        <div><input className="home-form-fields" type='text' name='telf' title='telf' lenght='30' placeholder='Teléfono' /></div>
+                        <div><input className="home-form-fields" type='text' name='password' title='password' lenght='30' placeholder='Password' /></div>
+                    </div>
+
+                </div>
+
+            </div>
+
 
 
 

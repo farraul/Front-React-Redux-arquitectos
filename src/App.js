@@ -1,14 +1,13 @@
 import logo from './logo.svg';
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Header from './Components/Header/Header';
-
-
-
-
 import './App.scss';
-
+import Header from './Components/Header/Header';
 import Home from './Containers/Home/Home';
+
+
+
+
 
 function App() {
   return (

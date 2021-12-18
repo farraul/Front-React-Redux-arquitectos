@@ -7,15 +7,17 @@ import logo from '../../images/logo.png';
 
 
 const Header = () => {
-   
-    return(
+
+    return (
         <div className="header">
-            <div>
-                <img className="logo" src={logo} alt="logo" />
-            </div>
-            <div className="">
-               Home
-                
+            <div className='header-padding'>
+                <div>
+                    <img className="logo" src={logo} alt="logo" />
+                </div>
+                <div className="">
+                    Home
+
+                </div>
             </div>
         </div>
     )

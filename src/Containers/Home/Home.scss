@@ -41,21 +41,51 @@ font-weight: 900;
 
 .home-section-2{
 width: 100vw;
-height: 7em;
+height: 10em;
 }
 .home-s-2-brands {
 display: flex;
 flex-direction: row;
 justify-content: center;
-padding: 1em;
+padding: 1.5em;
 }
 img.home-brands {
 width: 15em;
 }
 .home-brand-trust-us {
+text-align: center;
+font-size: 1.5em;
+font-weight: 700;
+color: #00718a;
+line-height: 1em;
+}
+.home-section-3 {
+background-color: rgb(240, 240, 240);
+width: 100vw;
+height: 20em;
+padding: 3em 0em;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.home-ask-3-architects{
+text-align: center;
+font-size: 1.5em;
+font-weight: 700;
+color: #00718a;
+line-height: 1em;    
+}
+.home-form-fields-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.home-form-fields {
+    margin: 0.7em 0em;
+    width: 18em;
+    height: 3em;
+    border-radius: 0.2em;
     text-align: center;
-    font-size: 1.5em;
-    font-weight: 700;
-    margin-bottom: 1.5em;
-    color: #00718a;
+    border: 1px solid grey;
 }
