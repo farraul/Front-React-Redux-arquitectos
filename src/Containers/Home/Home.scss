@@ -12,28 +12,50 @@ background-size: cover;
 
 
 .home-title {
-font-size: 1.7em;
+font-size: 2em;
 color: white;
 margin: 0;
 }
 .home-section-1-buttons {
-    display: flex;
-    width: 25em;
-    justify-content: space-between;
-    margin-top: 4em;
-    
+display: flex;
+width: 25em;
+justify-content: space-between;
+margin-top: 4em;
+
 }
 .home-section-1-n-1{
-    text-align: center;
-    color: white;
-    font-size: 1.3em;
-    font-weight: 300;
+text-align: center;
+color: white;
+font-size: 1.3em;
+font-weight: 300;
 }
 
 .home-section-1-button{
-    width: 11em;
-    height: 3em;
-    border-radius: 2em;
-    border: unset;
-    font-size: 1em;
+width: 11em;
+height: 3em;
+border-radius: 2em;
+border: unset;
+font-size: 1em;
+font-weight: 900;
+}
+
+.home-section-2{
+width: 100vw;
+height: 7em;
+}
+.home-s-2-brands {
+display: flex;
+flex-direction: row;
+justify-content: center;
+padding: 1em;
+}
+img.home-brands {
+width: 15em;
+}
+.home-brand-trust-us {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-bottom: 1.5em;
+    color: #00718a;
 }
