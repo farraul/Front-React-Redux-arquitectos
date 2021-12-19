@@ -24,8 +24,9 @@ const Header = () => {
                 <div>
                     <img className="logo" src={logo} alt="logo"  onClick={()=>go_to_the_link("/")} /> 
                 </div>
-                <div className="">
-                    
+                <div className="header-menu">
+
+                    <div className="header-menu-links" onClick={()=>go_to_the_link("registration")}>Registration</div>
                     <div className="header-menu-links" onClick={()=>go_to_the_link("login")}>Login</div>
 
                     {/*<Boton destino="Registro" url="/register"/>*/}

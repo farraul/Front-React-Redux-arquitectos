@@ -7,6 +7,7 @@ import Footer from './Components/Footer/Footer';
 
 import Home from './Containers/Home/Home';
 import Login from './Containers/Login/Login';
+import Registration from './Containers/Registration/Registration';
 
 
 
@@ -19,8 +20,10 @@ function App() {
         <Header />
         <Routes>
 
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/" element={<Home/>} />
+          <Route path="/login" element={<Login/>} />
+          <Route path="/registration" element={<Registration/>} />
+
 
 
         </Routes>
