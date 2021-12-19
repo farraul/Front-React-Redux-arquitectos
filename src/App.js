@@ -8,6 +8,7 @@ import Footer from './Components/Footer/Footer';
 import Home from './Containers/Home/Home';
 import Login from './Containers/Login/Login';
 import Registration from './Containers/Registration/Registration';
+import Architects from './Containers/Architects/Architects';
 
 
 
@@ -22,7 +23,8 @@ function App() {
 
           <Route path="/" element={<Home/>} />
           <Route path="/login" element={<Login/>} />
-          <Route path="/registration" element={<Registration/>} />
+          <Route path="/registro" element={<Registration/>} />
+          <Route path="/arquitectos" element={<Architects/>} />
 
 
 
