@@ -57,6 +57,10 @@ const Architects = () => {
             <div className='archi-show-archi-all'>
 
 
+                <h2 className="architects-section-1-title">
+                Encuentra tu arquitecto
+                </h2>
+
                 <div className='archi-template'>
                     <div className='archi-template-photo-info'>
                         <div className='archi-template-photo'>

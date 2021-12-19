@@ -4,6 +4,7 @@ background: url('../../assets/images/background-3.png');
 display: flex;
 flex-direction: column;
 background-size: cover;
+padding: 8em 0em;
 }
 .archi-menu {
 height: 7em;
@@ -75,4 +76,8 @@ margin-left: 1em;
 div.archi-template-info-contact-field-inside-i > p > a{
 color: white;
 filter: blur(2.8px);
+}
+h2.architects-section-1-title {
+    font-size: 2.5em;
+    margin: 0em 0em 1.5em 0em;
 }
