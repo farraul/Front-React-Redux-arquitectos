@@ -4,6 +4,7 @@ import { render } from 'react-dom';
 
 
 
+
 import { useNavigate } from 'react-router-dom';
 //import { connect } from 'react-redux';
 import logo from '../../assets/images/logo.png';
@@ -15,20 +16,36 @@ import face_icon from '../../assets/images/face-icon.jpg';
 const Admin_menu_comp = () => {
 
 
-    const [time, settime] = useState();
+    const [timenow, settimenow] = useState([""]);
     let today;
+    let Time;
+
 
 
 
     useEffect(() => {
         today = new Date();
-        get_time();
+        componentDidMount();
     });
 
-    const get_time = () => {
-        //settime(today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate());
-        settime(Date().toLocaleString());
+//crear hora para admin
+    const componentDidMount = () => {
+        Time = setInterval(() => {
+            clearInterval(Time)
+            // let lettimes = new Date().toDateString();
+            let lettimes = new Date().toUTCString();
+            console.log("hola");
+            settimenow(lettimes);
+        }, 1000
+
+        )
+
+
+
+
     };
+
+
 
 
 
@@ -37,11 +54,12 @@ const Admin_menu_comp = () => {
             <div className='admin-m-comp-section1'>
                 <div className='admin-m-comp-iframe-info'>
                     <div className='admin-m-comp-data'>
-                        {time}
+                        {timenow}
+
                     </div>
                 </div>
                 <div className='admin-m-comp-data-see-offert'>
-                Ver ofertas
+                    Ver ofertas
                 </div>
                 <div className='admin-m-icon-profile'>
                     <img className="admin-m-face_icon" src={face_icon} alt="icon face" />
