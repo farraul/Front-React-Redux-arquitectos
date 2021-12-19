@@ -1,0 +1,35 @@
+header{
+width: 100%;
+}
+.header-padding{
+background-color: #00718a;
+color: white;
+padding: 1em 4em;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.logo{
+height: 1.5em;
+cursor: pointer;
+margin-top: 0.5em;
+}
+.div-print-info-correct {
+color: rgb(63, 63, 63);
+padding-bottom: 1em;    
+margin-top: 0.5em;
+height: 1em;
+font-size: 14px;
+}
+.no-height{
+height: unset!important;
+}
+.header-menu-links{
+cursor: pointer;
+}
+.header-menu {
+display: flex;
+width: 9em;
+justify-content: space-between;
+}

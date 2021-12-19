@@ -1,0 +1,14 @@
+@import 'Scss/main.scss';
+
+@import 'Components/Header/Header.scss';
+@import 'Components/Footer/Footer.scss';
+
+
+@import 'Containers/Home/Home.scss';
+@import 'Containers/Login/Login.scss';
+@import 'Containers/Registration/Registration.scss';
+
+*{
+font-family: 'Nunito';
+}
+html,body,#root,header {padding:0; margin: 0; }

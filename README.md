@@ -1,3 +1,6 @@
+### Ver front en Aws
+https://main.d35ajv2vvr3l3w.amplifyapp.com/
+
 
 ## Crear proyecto React
 npx create-react-app front-react-redux-arquitectos
@@ -8,6 +11,9 @@ npm run start
 ### Dentro de src creamos 2 carpeta:
 Containers
 Components
+
+## React Router Dom 
+npm i react-router-dom
 
 ## AWS
 En aws entramos a AWS Amplify y creamos una aplicación: Alojar aplicación web
