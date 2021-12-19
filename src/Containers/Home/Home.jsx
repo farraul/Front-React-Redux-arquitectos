@@ -19,7 +19,7 @@ const Home = () => {
     }
 
     return (
-        <div>
+        <div className='home-container'>
 
             <div className='home-section-1'>
                 <div>
@@ -53,11 +53,13 @@ const Home = () => {
                 </div>
             </div>
 
+            <div></div>
+
             <div className='home-section-3'>
                 <div className='home-section-3-iframe-images'>
-                    { /*<div className='home-section-3-div-title'>
+                    <div className='home-section-3-div-title'>
                         <h3 className='home-section-3-title'>Últimos proyectos</h3>
-                      </div>*/}
+                      </div>
                     <div className='home-section-3-images'>
                         <div id='home-section3-images-2'></div>
                         <div id='home-section3-images-1'></div>
@@ -70,11 +72,12 @@ const Home = () => {
             </div>
 
             <div className='home-section-4'>
-                <p className='home-section-4-our-workers'>Una plataforma con profesionales</p>
+                <div className='home-section-4-iframe-images'>
+                <p className='home-section-4-our-workers'>Una plataforma con los mejores profesionales</p>
+                </div>
 
                 <div className='home-section4-images'>
                     <div id='home-section4-images-1'></div>
-                    <div id='home-section4-images-2'></div>
                     <div id='home-section4-images-3'></div>
                     <div id='home-section4-images-4'></div>
                     <div id='home-section4-images-5'></div>
