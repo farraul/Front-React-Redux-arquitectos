@@ -11,6 +11,12 @@ import face_icon from '../../images/face-icon.jpg';
 
 
 const Home = () => {
+    const history = useNavigate();
+
+
+    const go_to_the_link = (url) => {
+        history(url);
+    }
 
     return (
         <div>
@@ -22,7 +28,7 @@ const Home = () => {
                 </div>
                 <div>
                     <div className='home-section-1-buttons'>
-                        <div><button className='home-section-1-button' type="button">Pedir Presupuesto</button></div>
+                        <div><button onClick={() => go_to_the_link("registration")} className='home-section-1-button' type="button">Pedir Presupuesto</button></div>
                         <div><button className='home-section-1-button' type="button">Buscar Arquitecto</button></div>
                     </div>
                 </div>
@@ -47,8 +53,36 @@ const Home = () => {
                 </div>
             </div>
 
-           
+            <div className='home-section-3'>
+                <div className='home-section-3-iframe-images'>
+                    { /*<div className='home-section-3-div-title'>
+                        <h3 className='home-section-3-title'>Últimos proyectos</h3>
+                      </div>*/}
+                    <div className='home-section-3-images'>
+                        <div id='home-section3-images-2'></div>
+                        <div id='home-section3-images-1'></div>
+                        <div id='home-section3-images-3'></div>
+                        <div id='home-section3-images-4'></div>
+                        <div id='home-section3-images-5'></div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div className='home-section-4'>
+                <p className='home-section-4-our-workers'>Una plataforma con profesionales</p>
+
+                <div className='home-section4-images'>
+                    <div id='home-section4-images-1'></div>
+                    <div id='home-section4-images-2'></div>
+                    <div id='home-section4-images-3'></div>
+                    <div id='home-section4-images-4'></div>
+                    <div id='home-section4-images-5'></div>
+                </div>
+            </div>
         </div>
+
+
     )
 };
 

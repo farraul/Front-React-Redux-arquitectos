@@ -50,7 +50,7 @@ const Login = () => {
         <div className="login-section-1">
             <div id="login-form">
                 {/*<pre>{JSON.stringify(credentials, null,2)}</pre>*/}
-                <h1>Acceder</h1>
+                <h2>Acceder</h2>
                 <input className="login-form-input" type='email' name='email' title='email' onChange={manejadorInputs} lenght='30' placeholder="Email" />
                 <input className="login-form-input" type='password' name='clave' title='password' onChange={manejadorInputs} lenght='30' placeholder="Contraseña" />
                 <div className="sendButton" onClick={() => go_to_login()}>Login</div>

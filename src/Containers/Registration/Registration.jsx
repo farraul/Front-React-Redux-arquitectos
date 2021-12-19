@@ -205,15 +205,15 @@ const Registration = () => {
 
         <div className="registration-section-1">
             <div>
-                <div className='home-section-3'>
-                    <div className='home-section3-form-width'>
-                        <p className='home-ask-3-architects'>Registrate y disfruta</p>
-                        <div className="home-form-fields-div">
+                <div className='registration-section-3'>
+                    <div className='registration-section3-form-width'>
+                        <p className='registration-ask-3-architects'>Registrate y disfruta</p>
+                        <div className="registration-form-fields-div">
 
 
-                            <div className='home-form-full-w'>
-                                <h4 className='home-section3-h4'>Selecciona una opción:</h4>
-                                <div className='home-input arquitect'>
+                            <div className='registration-form-full-w'>
+                                <h4 className='registration-section3-h4'>Selecciona una opción:</h4>
+                                <div className='registration-input arquitect'>
 
 
                                     <div>
@@ -222,7 +222,7 @@ const Registration = () => {
                                                 <img className="face_icon" src={face_icon} alt="icon face" />
                                             </p>
                                         </div>
-                                        <div className='home-section3-radio-text'>
+                                        <div className='registration-section3-radio-text'>
                                             <input onChange={e => { validate_inputs(e); userHandler(e) }} type="radio" id="rol" name="rol" value="usuario"></input>
                                             <label htmlFor="usuario">Busco un Arquitecto</label>
                                         </div>
@@ -234,7 +234,7 @@ const Registration = () => {
                                                 <img className="face_icon" src={face_icon} alt="icon face" />
                                             </p>
                                         </div>
-                                        <div className='home-section3-radio-text'>
+                                        <div className='registration-section3-radio-text'>
                                             <input onChange={e => { validate_inputs(e); userHandler(e) }} type="radio" id="rol" name="rol" value="arquitecto"></input>
                                             <label htmlFor="arquitecto">Soy Arquitecto</label>
                                         </div>
@@ -245,18 +245,18 @@ const Registration = () => {
                             </div>
                             {user.rol == "usuario" ?
                                 <div className='width-100'>
-                                    <p className='home-form-budget-p'>Titulo</p>
-                                    <div className='home-form-full-w'><input onChange={e => { validate_inputs(e); userHandler(e) }} className="home-form-fields" type='text' name='u_title_order_client' title='u_title_order_client' lenght='30' placeholder='Reforma cocina, planos edificio, construcción de...' /></div>
-                                    <p className='home-form-budget-p'>Descripción</p>
-                                    <div className='home-form-full-w'><textarea onChange={e => { validate_inputs(e); userHandler(e) }} className=" no-height home-form-fields no-height" type='text-area' name='u_description_order_client' title='u_description_order_client' lenght='30' placeholder='Tenemos unas casa de 140 m2 y queremos cambiar...' rows="6" cols="50" /></div>
-                                    <div className='home-form-city-date'>
+                                    <p className='registration-form-budget-p'>Titulo</p>
+                                    <div className='registration-form-full-w'><input onChange={e => { validate_inputs(e); userHandler(e) }} className="registration-form-fields" type='text' name='u_title_order_client' title='u_title_order_client' lenght='30' placeholder='Reforma cocina, planos edificio, construcción de...' /></div>
+                                    <p className='registration-form-budget-p'>Descripción</p>
+                                    <div className='registration-form-full-w'><textarea onChange={e => { validate_inputs(e); userHandler(e) }} className=" no-height registration-form-fields no-height" type='text-area' name='u_description_order_client' title='u_description_order_client' lenght='30' placeholder='Tenemos unas casa de 140 m2 y queremos cambiar...' rows="6" cols="50" /></div>
+                                    <div className='registration-form-city-date'>
                                         <div>
-                                            <p className='home-form-budget-p'>Localidad</p>
-                                            <div className='home-form-full-w'><input onChange={e => { validate_inputs(e); userHandler(e) }} className="home-form-fields" type='text' name='u_city' title='u_city' lenght='30' placeholder='Valencia, Madrid, Gandia..' /></div>
+                                            <p className='registration-form-budget-p'>Localidad</p>
+                                            <div className='registration-form-full-w'><input onChange={e => { validate_inputs(e); userHandler(e) }} className="registration-form-fields" type='text' name='u_city' title='u_city' lenght='30' placeholder='Valencia, Madrid, Gandia..' /></div>
                                         </div>
                                         <div>
-                                            <p className='home-form-budget-p'>¿Sabes la fecha aproximada?</p>
-                                            <div className='home-form-full-w'><input onChange={e => { validate_inputs(e); userHandler(e) }} className="home-form-fields" type="date" name="u_data_to_work" step="1"></input></div>
+                                            <p className='registration-form-budget-p'>¿Sabes la fecha aproximada?</p>
+                                            <div className='registration-form-full-w'><input onChange={e => { validate_inputs(e); userHandler(e) }} className="registration-form-fields" type="date" name="u_data_to_work" step="1"></input></div>
                                         </div>
                                     </div>
                                 </div>
@@ -264,23 +264,23 @@ const Registration = () => {
 
                             {user.rol == "arquitecto" ?
                                 <div className='width-100'>
-                                    <div className='home-form-full-w'><input onChange={e => { validate_inputs(e); userHandler(e) }} className="home-form-fields" type='text' name='a_web_site' title='a_web_site' lenght='30' placeholder='Página web' /></div>
-                                    <div className='home-form-full-w'><textarea onChange={e => { validate_inputs(e); userHandler(e) }} className=" no-height home-form-fields no-height" type='text-area' name='a_description_experience_arquitect' title='a_description_experience_arquitect' lenght='30' placeholder='Pequeña descripcion de tu experiencia laboral' rows="6" cols="50" /></div>
+                                    <div className='registration-form-full-w'><input onChange={e => { validate_inputs(e); userHandler(e) }} className="registration-form-fields" type='text' name='a_web_site' title='a_web_site' lenght='30' placeholder='Página web' /></div>
+                                    <div className='registration-form-full-w'><textarea onChange={e => { validate_inputs(e); userHandler(e) }} className=" no-height registration-form-fields no-height" type='text-area' name='a_description_experience_arquitect' title='a_description_experience_arquitect' lenght='30' placeholder='Pequeña descripcion de tu experiencia laboral' rows="6" cols="50" /></div>
                                 </div>
                                 : null}
                             <h4>Datos personales</h4>
-                            <div className='home-form-full-w'><input onChange={e => { validate_inputs(e); userHandler(e) }} className="home-form-fields" type='text' name='name' title='name' lenght='30' placeholder='Nombre' /></div>
-                            <div className='home-form-fields-ok'>{inputs_data_form.name}</div>
-                            <div className='home-form-full-w'><input onChange={e => { validate_inputs(e); userHandler(e) }} className="home-form-fields" type='text' name='username' title='username' lenght='30' placeholder='Apellidos' /></div>
+                            <div className='registration-form-full-w'><input onChange={e => { validate_inputs(e); userHandler(e) }} className="registration-form-fields" type='text' name='name' title='name' lenght='30' placeholder='Nombre' /></div>
+                            <div className='registration-form-fields-ok'>{inputs_data_form.name}</div>
+                            <div className='registration-form-full-w'><input onChange={e => { validate_inputs(e); userHandler(e) }} className="registration-form-fields" type='text' name='username' title='username' lenght='30' placeholder='Apellidos' /></div>
 
-                            <div className='home-form-full-w'><input onChange={e => { validate_inputs(e); userHandler(e) }} className="home-form-fields" type='text' name='telf' title='telf' lenght='30' placeholder='Teléfono' /></div>
-                            <div className='home-form-fields-ok'>{inputs_data_form.telf}</div>
+                            <div className='registration-form-full-w'><input onChange={e => { validate_inputs(e); userHandler(e) }} className="registration-form-fields" type='text' name='telf' title='telf' lenght='30' placeholder='Teléfono' /></div>
+                            <div className='registration-form-fields-ok'>{inputs_data_form.telf}</div>
 
                             <h4>Crear cuenta</h4>
-                            <div className='home-form-full-w'><input onChange={e => { validate_inputs(e); userHandler(e) }} className="home-form-fields" type='email' name='email' title='email' lenght='30' placeholder='Email' /></div>
-                            <div className='home-form-fields-ok'>{inputs_data_form.email}</div>
-                            <div className='home-form-full-w'><input onChange={e => { validate_inputs(e); userHandler(e) }} className="home-form-fields" type='password' name='password' title='password' lenght='30' placeholder='Password' /></div>
-                            <div className='home-form-fields-ok'>{inputs_data_form.password}</div>
+                            <div className='registration-form-full-w'><input onChange={e => { validate_inputs(e); userHandler(e) }} className="registration-form-fields" type='email' name='email' title='email' lenght='30' placeholder='Email' /></div>
+                            <div className='registration-form-fields-ok'>{inputs_data_form.email}</div>
+                            <div className='registration-form-full-w'><input onChange={e => { validate_inputs(e); userHandler(e) }} className="registration-form-fields" type='password' name='password' title='password' lenght='30' placeholder='Password' /></div>
+                            <div className='registration-form-fields-ok'>{inputs_data_form.password}</div>
                             
                             {button_send_data}
                         </div>
