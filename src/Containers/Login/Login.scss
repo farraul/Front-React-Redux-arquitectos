@@ -2,8 +2,9 @@
 height: calc(100vh - 6.9em);
 justify-content: center;
 align-items: center;
-background: url('../../images/background-3.png');
+background: url('../../assets/images/background-3.png');
 display: flex;
+background-size: cover;
 }
 #login-form {
     display: flex;

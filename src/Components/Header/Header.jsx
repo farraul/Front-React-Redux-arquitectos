@@ -3,7 +3,7 @@ import axios from 'axios';
 
 import { useNavigate } from 'react-router-dom';
 //import { connect } from 'react-redux';
-import logo from '../../images/logo.png';
+import logo from '../../assets/images/logo.png';
 
 
 
@@ -26,7 +26,10 @@ const Header = () => {
                 </div>
                 <div className="header-menu">
 
-                    <div className="header-menu-links" onClick={()=>go_to_the_link("registration")}>Registrarme</div>
+                    <div className="header-menu-links" onClick={()=>go_to_the_link("arquitectos")}>Buscar Arquitectos</div>
+                    <div className="header-menu-links" onClick={()=>go_to_the_link("admin-home")}>Admin</div>
+
+                    <div className="header-menu-links" onClick={()=>go_to_the_link("registro")}>Registrarme</div>
                     <div className="header-menu-links" onClick={()=>go_to_the_link("login")}>Login</div>
 
                     {/*<Boton destino="Registro" url="/register"/>*/}

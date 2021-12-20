@@ -2,15 +2,17 @@
 height: calc(100vh - 6.9em);
 justify-content: center;
 align-items: center;
-background: url('../../images/background-3.png');
+background: url('../../assets/images/background-3.png');
 display: flex;
 background-color: rgb(240, 240, 240);
 width: 100%;
 height: fit-content;
-min-height: 48em;
+height: 100%;
+min-height: calc(100vh - 14.4em);
 padding: 3em 0em;
 display: flex;
 justify-content: center;
+background-size: cover;
 }
 .sendButton {
 height: 3em;
