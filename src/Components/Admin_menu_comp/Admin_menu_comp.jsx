@@ -97,21 +97,21 @@ const Admin_menu_comp = () => {
                 <div className='admin-m-comp-data-right'>
 
                     <div className='admin-m-comp-menu-links'>
-                        <div onClick={() => go_to_the_link("admin-home")} className='admin-m-comp-data-see-offert'>
+                        <div onClick={() => go_to_the_link("admin-home")} className='admin-m-comp-data-see-offert pointer'>
                             <img className="admin-m-face_icon" src={menu} alt="icon face" />
 
                             <p>Panel principal</p>
                         </div>
-                        <div onClick={() => go_to_the_link("admin-offers")} className='admin-m-comp-data-see-offert'>
+                        <div onClick={() => go_to_the_link("admin-offers")} className='admin-m-comp-data-see-offert pointer'>
                             <img className="admin-m-face_icon" src={buy} alt="icon face" />
 
                             <p>Ver ofertas</p>
                         </div>
 
                     </div>
-                    <div className='admin-m-icon-profile'>
+                    <div className='admin-m-icon-profile pointer' >
                         <img className="admin-m-face_icon" src={profile} alt="icon face" />
-                        <p className='admin-m-icon-profile-name'>Raul</p>
+                        <p className='admin-m-icon-profile-name '>Raul</p>
                     </div>
 
                 </div>
