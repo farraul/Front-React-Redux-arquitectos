@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import face_icon from '../../assets/images/face-icon.jpg';
-
+import person from '../../assets/images/person.svg';
+import bag from '../../assets/images/bag.svg';
 
 
 const Registration = () => {
@@ -219,7 +220,7 @@ const Registration = () => {
                                     <div>
                                         <div>
                                             <p className='p-face-icon'>
-                                                <img className="face_icon" src={face_icon} alt="icon face" />
+                                                <img className="face_icon" src={person} alt="icon face" />
                                             </p>
                                         </div>
                                         <div className='registration-section3-radio-text'>
@@ -231,7 +232,7 @@ const Registration = () => {
                                     <div>
                                         <div>
                                             <p className='p-face-icon'>
-                                                <img className="face_icon" src={face_icon} alt="icon face" />
+                                                <img className="face_icon" src={bag} alt="icon face" />
                                             </p>
                                         </div>
                                         <div className='registration-section3-radio-text'>
