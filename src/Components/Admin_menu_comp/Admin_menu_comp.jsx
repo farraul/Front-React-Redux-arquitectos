@@ -20,19 +20,19 @@ import email from '../../assets/images/email.svg';
 const Admin_menu_comp = () => {
 
     const history = useNavigate();
-    
+
     const go_to_the_link = (url) => {
         console.log("history", url)
-        history("/"+url);
+        history("/" + url);
     }
-  
+
 
     const [timenow, settimenow] = useState([""]);
     let today;
     let Time;
 
 
- 
+
 
 
 
@@ -93,22 +93,23 @@ const Admin_menu_comp = () => {
                     </div>
                 </div>
 
-                <div className='admin-m-comp-dropdown'>
+                <div className='admin-m-comp-data-right'>
 
+                <div className='admin-m-comp-menu-links'>
+                    <div onClick={() => go_to_the_link("admin-home")} className='admin-m-comp-data-see-offert'>
+                        <p>Panel principal</p>
+                    </div>
+                    <div onClick={() => go_to_the_link("admin-offers")} className='admin-m-comp-data-see-offert'>
+                        <p>Ver ofertas</p>
+                    </div>
+                    
+                </div>
+                    <div className='admin-m-icon-profile'>
+                        <img className="admin-m-face_icon" src={face_icon} alt="icon face" />
+                        <p className='admin-m-icon-profile-name'>Raul</p>
+                    </div>
 
-                </div>
-                <div  onClick={()=>go_to_the_link("admin-home")} className='admin-m-comp-data-see-offert'>
-                    Home
-                </div>
-                <div  onClick={()=>go_to_the_link("admin-offers")} className='admin-m-comp-data-see-offert'>
-                    Ver ofertas
-                </div>
-                <div className='admin-m-icon-profile'>
-                    <img className="admin-m-face_icon" src={face_icon} alt="icon face" />
-                    <p className='admin-m-icon-profile-name'>Raul</p>
-                </div>
-
-
+                    </div>
 
 
 
@@ -126,12 +127,12 @@ const Admin_menu_comp = () => {
                     <a target="_blank|_self|_parent|_top|framename" href="+34628086995">
                         <img className="admin-m-face_icon" src={phone} alt="icon face" />
                     </a>
-                    <a  target="_blank" href="mailto:raulfarllobell@gmail.com">
+                    <a target="_blank" href="mailto:raulfarllobell@gmail.com">
                         <img className="admin-m-face_icon" src={email} alt="icon face" />
                     </a>
                 </div>
                 <button onClick={() => myFunction()} className="drop-button">
-                ☎ 
+                    ☎
                 </button>
             </div>
 
