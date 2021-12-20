@@ -25,8 +25,7 @@ const Admin_home = () => {
                 </div>
                 <div className='admin-h-section-2'>
                     <div>
-                        <h2>Bienvenido al Panel de admin</h2>
-                        <h4>En el menu superior tienes las ofertas</h4>
+                        <h1>Bienvenido al Panel de admin</h1>
                     </div>
 
 
