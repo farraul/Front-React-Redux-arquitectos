@@ -14,15 +14,91 @@ background-size: cover;
 color: white;
 display: flex;
 flex-direction: column;
-
+height: fit-content;
 }
 .admin-m-icon-profile {
 display: flex;
 }
 
 .admin-h-section-2 {
-    display: flex;
-    justify-content: center;
-    height: calc(100vh - 3em);
-    align-items: center;
+display: flex;
+justify-content: center;
+height: calc(100vh - 3em);
+align-items: center;
+}
+.iframe-arquitects {
+
+margin: auto;
+
+}
+
+.iframe-arquitects-lead {
+width: 100%;
+max-width: 24em;
+min-height: 15em;
+background-color: white;
+padding: 2em 0em 0em 0em;
+border-radius: 1em;
+color: black;
+height: fit-content;
+margin: 0em 1em;
+}
+.admin-offers-section-2 {
+padding: 7em;
+}
+h1.admin-offers-section-2-title {
+text-align: center;
+}
+.iframe-arquitects-client-descrip-extra {
+display: flex;
+justify-content: flex-start;
+padding: 1em 0em;
+}
+.iframe-arquitects-client-date {
+margin-left: 2em;
+}
+
+.iframe-arquitects-client-info-contact {
+display: flex;
+background-color: #00718a;
+padding: 1em 0em;
+flex-direction: column;
+border-radius: 0em 0em 1em 1em;
+}
+.iframe-arquitects-client-contact-email {
+margin-left: 1em;
+}
+.iframe-arquitects-client-info-contact-data {
+display: flex;
+justify-content: center;
+color: white;
+}
+
+.iframe-arquitects-client-data-top {
+padding: 0em 2em 1em 2em;
+}
+.iframe-arquitects-client-buy-div {
+display: flex;
+justify-content: center;
+}
+button.iframe-arquitects-client-buy {
+font-size: 1.4em;
+padding: 0.4em 2em;
+border-radius: 3em;
+margin: 1.2em 0em 0.6em 0em;
+border: unset;
+font-weight: 700;
+}
+.iframe-arquitects-client-blur{
+filter: blur(2.8px);
+}
+.iframe-arquitects-h {
+display: flex;
+width: 100%;
+max-width: 1200px;
+height: fit-content;
+margin: auto;
+display: flex;
+padding: 1em 0em;
+justify-content: space-between;
 }

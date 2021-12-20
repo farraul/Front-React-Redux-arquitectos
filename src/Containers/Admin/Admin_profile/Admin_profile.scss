@@ -1,0 +1,87 @@
+// .login-section-1{
+// height: calc(100vh - 6.9em);
+// justify-content: center;
+// align-items: center;
+// background: url('../../assets/images/background-3.png');
+// display: flex;
+// background-size: cover;
+// }
+
+.admin-p-section-1{
+height: fit-content;
+background: url('../../../assets/images/background-full-weight.png');
+background-size: cover;
+color: white;
+display: flex;
+flex-direction: column;
+padding: 0em 0em 8em 0em;
+
+}
+.admin-p-profile-info {
+display: flex;
+}
+
+.admin-p-profile {
+width: fit-content;
+//padding: 1em 3em 3em 3em;
+background-color: white;
+color: black;
+border-radius: 0.5em;
+}
+.admin-p-profile-t {
+width: 7em;
+}
+.admin-p-profile-info {
+padding: 0.5em 0em;
+border-bottom: 1px solid;
+}
+.admin-p-width {
+width: 100%;
+max-width: 1200px;
+padding: 6em;
+margin: auto;
+}
+.admin-p-profile-padding {
+padding: 2em 4em;
+}
+.admin-p-profile-buttons-down {
+display: flex;
+height: 3em;
+justify-content: space-between;   
+height: 3em;
+align-items: center;
+color: white;
+}
+
+.admin-p-profile-buttons-down-update {
+background-color: green;
+width: 50%;
+display: flex;
+height: 100%;
+align-items: center;
+justify-content: center;
+border-radius: 0em 0em 0em 0.5em;
+}
+
+.admin-p-profile-buttons-down-delete {
+background-color: rgb(116, 0, 0);
+width: 50%;
+display: flex;
+height: 100%;
+align-items: center;
+justify-content: center;
+border-radius: 0em 0em 0.5em 0em;
+}
+.iframe-arquitects-iframe-profile {
+display: flex;
+width: 100%;
+max-width: 1200px;
+margin: auto;
+}
+.iframe-arquitects-iframe-profile-section {
+    display: flex;
+    flex-direction: column;
+}
+.cent{
+text-align: center;
+}

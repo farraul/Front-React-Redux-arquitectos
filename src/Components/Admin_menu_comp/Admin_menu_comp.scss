@@ -1,14 +1,16 @@
 .admin-m-comp-section1 {
 height: 3em;
-background-color: #00bcd4;
+background-color: #ffffff;
 display: flex;
 align-items: center;
-justify-content: flex-end;
+justify-content: space-between;
 padding: 0em 3em;
 color: black;
+font-weight: bold;
 }
 img.admin-m-face_icon {
 height: 1.2em;
+margin: 0.2em;
 }
 .admin-m-icon-profile {
 display: flex;
@@ -21,10 +23,11 @@ font-size: 1.2em;
 margin-left: 0.2em;
 }
 .admin-m-comp-iframe-info {
-width: 100%;
+    width: fit-content;
 }
 .admin-m-comp-data-see-offert {
-width: 10em;
+width: fit-content;
+margin: 1em
 }
 
 ////codigo desplegable////
@@ -50,7 +53,7 @@ background-color: #2EABAB;
 .dropdown{
 position: relative;
 display: inline-block;
-position: absolute;
+position: fixed;
 bottom: 1em;
 right: 1em;
 }
@@ -75,6 +78,9 @@ border-radius: 11em;
 height: 1.2em;
 margin-top: 0.4em;
 padding: 0.3em;
+display: flex;
+align-items: center;
+justify-content: center;
 }
 
 .dropdown-content a:hover{
@@ -88,9 +94,29 @@ margin-top: -14em;
 margin-left: 0em;
 }
 img.admin-m-face_icon.main-hone {
-    font-size: 1.7em;
+font-size: 1.7em;
 }
- 
-
-
 ////fin  codigo desplegable////
+
+
+.admin-m-comp-menu-links {
+display: flex;
+height: fit-content;
+align-items: center;
+}
+.admin-m-comp-data-right {
+display: flex;
+flex-direction: row;
+align-items: center;
+}
+
+.admin-m-comp-data-see-offert {
+    display: flex;
+    align-items: center;
+}
+.pointer{
+cursor:pointer ;
+}
+.pointer:visited{
+color: red;
+}
