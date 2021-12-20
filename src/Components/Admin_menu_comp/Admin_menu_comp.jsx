@@ -8,11 +8,12 @@ import { render } from 'react-dom';
 import { useNavigate } from 'react-router-dom';
 //import { connect } from 'react-redux';
 //import logo from '../../assets/images/logo.png';
-import face_icon from '../../assets/images/face-icon.jpg';
+import profile from '../../assets/images/profile.svg';
 import whats from '../../assets/images/whats.svg';
 import phone from '../../assets/images/phone.svg';
 import email from '../../assets/images/email.svg';
-
+import buy from '../../assets/images/buy.svg';
+import menu from '../../assets/images/menu.svg';
 
 
 
@@ -95,21 +96,25 @@ const Admin_menu_comp = () => {
 
                 <div className='admin-m-comp-data-right'>
 
-                <div className='admin-m-comp-menu-links'>
-                    <div onClick={() => go_to_the_link("admin-home")} className='admin-m-comp-data-see-offert'>
-                        <p>Panel principal</p>
+                    <div className='admin-m-comp-menu-links'>
+                        <div onClick={() => go_to_the_link("admin-home")} className='admin-m-comp-data-see-offert'>
+                            <img className="admin-m-face_icon" src={menu} alt="icon face" />
+
+                            <p>Panel principal</p>
+                        </div>
+                        <div onClick={() => go_to_the_link("admin-offers")} className='admin-m-comp-data-see-offert'>
+                            <img className="admin-m-face_icon" src={buy} alt="icon face" />
+
+                            <p>Ver ofertas</p>
+                        </div>
+
                     </div>
-                    <div onClick={() => go_to_the_link("admin-offers")} className='admin-m-comp-data-see-offert'>
-                        <p>Ver ofertas</p>
-                    </div>
-                    
-                </div>
                     <div className='admin-m-icon-profile'>
-                        <img className="admin-m-face_icon" src={face_icon} alt="icon face" />
+                        <img className="admin-m-face_icon" src={profile} alt="icon face" />
                         <p className='admin-m-icon-profile-name'>Raul</p>
                     </div>
 
-                    </div>
+                </div>
 
 
 
