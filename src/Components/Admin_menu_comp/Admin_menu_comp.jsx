@@ -23,7 +23,7 @@ const Admin_menu_comp = () => {
     
     const go_to_the_link = (url) => {
         console.log("history", url)
-        history(url);
+        history("/"+url);
     }
   
 

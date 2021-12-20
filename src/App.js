@@ -9,10 +9,11 @@ import Home from './Containers/Home/Home';
 import Login from './Containers/Login/Login';
 import Registration from './Containers/Registration/Registration';
 import Architects from './Containers/Architects/Architects';
-import Admin_home from './Containers/Admin_home/Admin_home';
 import Admin_menu_comp from './Components/Admin_menu_comp/Admin_menu_comp';
 
-import Admin_offers from './Containers/Admin_offers/Admin_offers';
+import Admin_offers from './Containers/Admin/Admin_offers/Admin_offers';
+import Admin_home from './Containers/Admin/Admin_home/Admin_home';
+
 
 
 

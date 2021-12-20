@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Admin_menu_comp from '../../Components/Admin_menu_comp/Admin_menu_comp';
+import Admin_menu_comp from '../../../Components/Admin_menu_comp/Admin_menu_comp';
 
 
 
