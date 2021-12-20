@@ -15,16 +15,14 @@ const Admin_offers = () => {
 
 
 
-
-
     return (
 
         <div className="">
-            <div className="admin-h-section-1">
+            <div className="admin-offers-section-1">
                 <div>
                     <Admin_menu_comp />
                 </div>
-                <div className='admin-h-section-2'>
+                <div className='admin-offers-section-2'>
                     <div>
                         <h2>admin offers</h2>
                         <h4>En el menu superior tienes las ofertas</h4>
