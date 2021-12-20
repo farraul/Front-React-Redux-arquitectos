@@ -7,7 +7,7 @@ import { render } from 'react-dom';
 
 import { useNavigate } from 'react-router-dom';
 //import { connect } from 'react-redux';
-import logo from '../../assets/images/logo.png';
+//import logo from '../../assets/images/logo.png';
 import face_icon from '../../assets/images/face-icon.jpg';
 import whats from '../../assets/images/whats.svg';
 import phone from '../../assets/images/phone.svg';
