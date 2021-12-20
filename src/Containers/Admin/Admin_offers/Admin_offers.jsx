@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Admin_menu_comp from '../../Components/Admin_menu_comp/Admin_menu_comp';
+import Admin_menu_comp from '../../../Components/Admin_menu_comp/Admin_menu_comp';
 
 
 
@@ -7,13 +7,14 @@ import Admin_menu_comp from '../../Components/Admin_menu_comp/Admin_menu_comp';
 
 
 
-const Admin_home = () => {
+
+const Admin_offers = () => {
 
     //Hooks
 
 
 
-   
+
 
 
     return (
@@ -25,7 +26,7 @@ const Admin_home = () => {
                 </div>
                 <div className='admin-h-section-2'>
                     <div>
-                        <h2>Bienbenido al Panel de admin</h2>
+                        <h2>admin offers</h2>
                         <h4>En el menu superior tienes las ofertas</h4>
                     </div>
 
@@ -36,4 +37,4 @@ const Admin_home = () => {
     )
 };
 
-export default Admin_home;
+export default Admin_offers;
