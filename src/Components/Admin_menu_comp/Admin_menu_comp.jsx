@@ -109,7 +109,7 @@ const Admin_menu_comp = () => {
                         </div>
 
                     </div>
-                    <div className='admin-m-icon-profile pointer' >
+                    <div onClick={() => go_to_the_link("admin-profile")} className='admin-m-icon-profile pointer' >
                         <img className="admin-m-face_icon" src={profile} alt="icon face" />
                         <p className='admin-m-icon-profile-name '>Raul</p>
                     </div>

@@ -1,6 +1,6 @@
 .admin-m-comp-section1 {
 height: 3em;
-background-color: #00bcd4;
+background-color: #ffffff;
 display: flex;
 align-items: center;
 justify-content: space-between;
@@ -53,7 +53,7 @@ background-color: #2EABAB;
 .dropdown{
 position: relative;
 display: inline-block;
-position: absolute;
+position: fixed;
 bottom: 1em;
 right: 1em;
 }
