@@ -19,10 +19,20 @@ import email from '../../assets/images/email.svg';
 
 const Admin_menu_comp = () => {
 
+    const history = useNavigate();
+    
+    const go_to_the_link = (url) => {
+        console.log("history", url)
+        history(url);
+    }
+  
 
     const [timenow, settimenow] = useState([""]);
     let today;
     let Time;
+
+
+ 
 
 
 
@@ -87,7 +97,10 @@ const Admin_menu_comp = () => {
 
 
                 </div>
-                <div className='admin-m-comp-data-see-offert'>
+                <div  onClick={()=>go_to_the_link("admin-home")} className='admin-m-comp-data-see-offert'>
+                    Home
+                </div>
+                <div  onClick={()=>go_to_the_link("admin-offers")} className='admin-m-comp-data-see-offert'>
                     Ver ofertas
                 </div>
                 <div className='admin-m-icon-profile'>
