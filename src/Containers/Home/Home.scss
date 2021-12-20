@@ -106,9 +106,9 @@ font-weight: 700;
 color: white;
 line-height: 1em;
 }
-.home-section-3-iframe-images {
+/*.home-section-3-iframe-images {
     //background-image: url(../../images/home-section-1.png);
-}
+}*/
 .home-section-3-div-title {
 height: 4em;
 display: flex;
@@ -178,7 +178,7 @@ justify-content: center;
 
 }
 .home-container{
-    background-image: url(../../assets/images/background-full-weight.png);
+   background-image: url('../../assets/images/background-full-weight.png');
     padding-bottom: 12em;
     background-size: cover;
 
