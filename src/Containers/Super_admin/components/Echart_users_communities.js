@@ -1,9 +1,9 @@
-import eChart from "./configs/eChart";
+import eChart from "./configs/users_communities";
 import ReactApexChart from "react-apexcharts";
 import React, { useState, useEffect } from 'react';
 
 
-function EChart() {
+function EChart_users_communities() {
 
 
 
@@ -37,4 +37,4 @@ function EChart() {
   );
 }
 
-export default EChart;
+export default EChart_users_communities;
