@@ -170,5 +170,28 @@ justify-content: center;
 p.update-email-nochange {
 font-size: 0.7em;
 }
+.update-delete-user {
+display: flex;
+justify-content: space-evenly;
+align-items: center;
+}
+.update-delete-user-buttons.no-delete {
+height: 2em;
+width: 4em;
+border-radius: 0.2em;
+background-color: #00b800;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.update-delete-user-buttons.yes-delete {
+height: 2em;
+width: 4em;
+border-radius: 0.2em;
+background-color: #9e2d2d;
+display: flex;
+justify-content: center;
+align-items: center;
+}
 
 ////////////// finnn elements window update//////////////
