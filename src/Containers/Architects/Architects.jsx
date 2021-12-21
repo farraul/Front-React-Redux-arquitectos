@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import face_archi from '../../assets/images/archi-1.png';
-
+import { useNavigate } from 'react-router-dom';
 
 
 const Architects = () => {
@@ -8,6 +8,14 @@ const Architects = () => {
     //Hooks
     const [msgError, setmsgError] = useState("");
     const [credentials, setCredentials] = useState({ correo: '', clave: '' });
+
+    const history = useNavigate();
+    const go_to_the_link = (url) => {
+        history("/" + url);
+    }
+  
+    
+    
     //Handler o manejador
     const manejadorInputs = (e) => {
         console.log("e: ", e);
@@ -60,6 +68,8 @@ const Architects = () => {
                 <h2 className="architects-section-1-title">
                 Los mejores profesionales a tu mano
                 </h2>
+                <p  className='architects-go-to-link' onClick={()=>go_to_the_link("registro-usuarios")}>Quiero que me contacten para mi proyecto</p>
+
 
                 <div className='archi-template'>
                     <div className='archi-template-photo-info'>

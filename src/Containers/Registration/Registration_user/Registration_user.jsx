@@ -1,10 +1,18 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import face_icon from '../../../assets/images/face-icon.jpg';
 import person from '../../../assets/images/person.svg';
 import bag from '../../../assets/images/bag.svg';
 
 
 const Registration_user = () => {
+
+    const history = useNavigate();
+    const go_to_the_link = (url) => {
+        history("/" + url);
+    }
+  
 
     //Hooks
     const [button_send_data_user, setbutton_send_data_user] = useState(<div className="sendButton-no-ready">Registrame</div>);
@@ -184,7 +192,7 @@ const Registration_user = () => {
 
 
                             <div className='registration-form-full-w'>
-                                <h4 className='registration-section3-h4'>Te contactarán hasta 3 arquitectos para darte el mejor presupuesto en las próximas 72h</h4>
+                                <h4 className='registration-section3-h4'>Te contactarán 3 arquitectos en las próximas 72h</h4>
                     
                             </div>
                         
