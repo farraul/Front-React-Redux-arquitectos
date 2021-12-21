@@ -19,6 +19,9 @@ import Admin_offers from './Containers/Admin/Admin_offers/Admin_offers';
 import Admin_home from './Containers/Admin/Admin_home/Admin_home';
 import Admin_profile from './Containers/Admin/Admin_profile/Admin_profile';
 
+import Super_admin from './Containers/Super_admin/Super_admin';
+
+
 
 
 
@@ -43,6 +46,8 @@ function App() {
           <Route path="/admin-menu_comp" element={<Admin_menu_comp/>} />
           <Route path="/admin-offers" element={<Admin_offers/>} />
           <Route path="/admin-profile" element={<Admin_profile/>} />
+
+          <Route path="/super-admin" element={<Super_admin/>} />
          
 
         </Routes>
