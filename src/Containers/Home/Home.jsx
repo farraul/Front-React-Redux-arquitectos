@@ -22,14 +22,14 @@ const Home = () => {
         <div className='home-container'>
 
             <div className='home-section-1'>
-                <div>
-                    <p className='home-title'>Una Plataforma para arquitectos</p>
-                    <p className='home-section-1-n-1'>Nº 1 en España</p>
+                <div className='algin-center'>
+                    <p className='home-title'>Encuentra a tu arquitecto</p>
+                    <p className='home-section-1-n-1'>Los 3 arquitectos que más se ajusten a tu proyecto se pondrán en contacto contigo </p>
                 </div>
                 <div>
                     <div className='home-section-1-buttons'>
-                        <div><button onClick={() => go_to_the_link("registro")} className='home-section-1-button' type="button">Pedir Presupuesto</button></div>
-                        <div><button onClick={() => go_to_the_link("arquitectos")} className='home-section-1-button' type="button">Buscar Arquitecto</button></div>
+                        <div><button onClick={() => go_to_the_link("registro-usuarios")} className='home-section-1-button' type="button">Empezar registro</button></div>
+                        <div><button onClick={() => go_to_the_link("arquitectos")} className='home-section-1-button' type="button">Ver arquitectos</button></div>
                     </div>
                 </div>
             </div>

@@ -8,6 +8,10 @@ import Footer from './Components/Footer/Footer';
 import Home from './Containers/Home/Home';
 import Login from './Containers/Login/Login';
 import Registration from './Containers/Registration/Registration';
+import Registration_user from './Containers/Registration/Registration_user/Registration_user';
+import Registration_architect from './Containers/Registration/Registration_architect/Registration_architect';
+
+
 import Architects from './Containers/Architects/Architects';
 import Admin_menu_comp from './Components/Admin_menu_comp/Admin_menu_comp';
 
@@ -30,6 +34,9 @@ function App() {
           <Route path="/" element={<Home/>} />
           <Route path="/login" element={<Login/>} />
           <Route path="/registro" element={<Registration/>} />
+          <Route path="/registro-usuarios" element={<Registration_user/>} />
+          <Route path="/registro-arquitectos" element={<Registration_architect/>} />
+
           <Route path="/arquitectos" element={<Architects/>} />
 
           <Route path="/admin-home" element={<Admin_home/>} />
