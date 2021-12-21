@@ -6,14 +6,15 @@ function EChart() {
 
   return (
     <>
-      <div>
+      <div className='super-admin-panel-comunity-in-spain'>
         <div id="chart">
+          <h2>Usuarios por comunidades autonomas</h2>
           <ReactApexChart
             className="bar-chart"
             options={eChart.options}
             series={eChart.series}
             type="bar"
-            height={220}
+            height={300}
           />
         </div>
       </div>
