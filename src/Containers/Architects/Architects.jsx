@@ -58,7 +58,7 @@ const Architects = () => {
 
 
                 <h2 className="architects-section-1-title">
-                Encuentra tu arquitecto
+                Los mejores profesionales a tu mano
                 </h2>
 
                 <div className='archi-template'>
