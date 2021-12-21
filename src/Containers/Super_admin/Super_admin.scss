@@ -26,3 +26,6 @@ display: flex;
     height: calc(100vh - 3em);
     align-items: center;
 }
+.apexcharts-tooltip.apexcharts-theme-light.apexcharts-active {
+    color: black;
+}

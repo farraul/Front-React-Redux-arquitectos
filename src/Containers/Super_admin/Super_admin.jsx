@@ -1,19 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Admin_menu_comp from '../../Components/Admin_menu_comp/Admin_menu_comp';
+import Echart from "./components/Echart";
 
 
 
 
+const Super_Admin = () => {
 
-
-
-const Admin_home = () => {
-
-    //Hooks
-
-
-
-   
 
 
     return (
@@ -26,13 +19,14 @@ const Admin_home = () => {
                 <div className='admin-h-section-2'>
                     <div>
                         <h1>super admin</h1>
+                        <Echart />
+
+                      
                     </div>
-
-
                 </div>
             </div>
         </div>
     )
 };
 
-export default Admin_home;
+export default Super_Admin;
