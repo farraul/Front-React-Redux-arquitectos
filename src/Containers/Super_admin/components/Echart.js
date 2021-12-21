@@ -15,6 +15,7 @@ function EChart() {
             series={eChart.series}
             type="bar"
             height={300}
+            //width={1200}
           />
         </div>
       </div>

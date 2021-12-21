@@ -83,7 +83,7 @@ const eChart = {
             "#fff",
             "#fff",
             "#fff",
-            "#fff",
+
           ],
         },
       },
@@ -96,7 +96,6 @@ const eChart = {
         maxWidth: 160,
         style: {
           colors: [
-            "#fff",
             "#fff",
             "#fff",
             "#fff",
