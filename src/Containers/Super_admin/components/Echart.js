@@ -8,24 +8,20 @@ function EChart() {
 
 
   useEffect(() => {
-        ajustar(); 
      
     })
-
-    const ajustar = () => {
+ /*parceh comunidad autonoma
+      ajustar();   ( esto en el usseeffect)
+    const adjust_width_users_autonomous_community = () => {
         let panelIzquierda = document.getElementById("get-width").clientWidth;
         console.log(panelIzquierda);
-        
-
-      
-      }
+      }*/
 
 
   return (
     <>
       <div id="get-width" className='super-admin-panel-comunity-in-spain'>
         <div id="chart">
-          <h2>Usuarios por comunidades autonomas</h2>
           <ReactApexChart
             className="bar-chart"
             options={eChart.options}

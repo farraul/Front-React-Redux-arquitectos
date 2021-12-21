@@ -8,7 +8,7 @@
 // }
 
 .super-admin-h-section-1{
-height: calc(100vh - 6.9em);
+height: fit-content;
 background: url('../../assets/images/background-admin.jpg');
 background-size: cover;
 color: white;
@@ -57,14 +57,21 @@ display: flex;
 
 
 
-// parche se desmonta
-
+// parche se desmonta comunidad autonoma
 .bar-chart > div:nth-child(1){ 
 width: 100%!important;
 max-width: 1200px!important;
 }
-
 .bar-chart > div > svg{ 
   width: 100%!important;
   max-width: 1200px!important;
   }
+  //fin parche
+  .super-admin-container-info-s1 {
+    display: flex;
+    justify-content: space-between;
+}
+.super-admin-container-info-s1-p{
+width: 100%;
+max-width: 550px;
+}
