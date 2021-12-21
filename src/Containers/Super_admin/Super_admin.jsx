@@ -7,6 +7,7 @@ import Echart from "./components/Echart";
 
 const Super_Admin = () => {
 
+  
 
 
     return (
@@ -16,7 +17,7 @@ const Super_Admin = () => {
                 <div>
                     <Admin_menu_comp />
                 </div>
-                <div className='super-admin-h-section-2'>
+                <div  className='super-admin-h-section-2'>
 
                     <div  className='super-admin-container-info'> 
                         <Echart />

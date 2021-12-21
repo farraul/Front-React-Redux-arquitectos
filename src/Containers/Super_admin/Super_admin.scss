@@ -54,3 +54,17 @@ display: flex;
 .super-admin-h-section-2 {
   padding: 8em;
 }
+
+
+
+// parche se desmonta
+
+.bar-chart > div:nth-child(1){ 
+width: 100%!important;
+max-width: 1200px!important;
+}
+
+.bar-chart > div > svg{ 
+  width: 100%!important;
+  max-width: 1200px!important;
+  }
