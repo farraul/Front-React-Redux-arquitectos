@@ -29,3 +29,26 @@ display: flex;
 .apexcharts-tooltip.apexcharts-theme-light.apexcharts-active {
     color: black;
 }
+.bar-chart {
+    background: transparent
+      linear-gradient(62deg, #00369e 0%, #005cfd 53%, #a18dff 100%) 0% 0%
+      no-repeat padding-box;
+    box-shadow: 0px 4px 6px #0000001f;
+    border-radius: 8px;
+    //min-height: 535px
+  }
+
+  .super-admin-container-info {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+//
+.super-admin-panel-comunity-in-spain {
+  width: 100%;
+  
+}
+.super-admin-h-section-2 {
+  padding: 8em;
+}

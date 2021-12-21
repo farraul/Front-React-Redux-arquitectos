@@ -4,7 +4,7 @@ const eChart = {
   series: [
     {
       name: "Sales",
-      data: [450, 200, 100, 220, 500, 100, 400, 230, 500],
+      data: [5, 20, 42, 6, 9, 32, 43, 30, 45, 34, 14, 43, 24, 32 ,53, 9, 23],
       color: "#fff",
     },
   ],
@@ -41,15 +41,23 @@ const eChart = {
     },
     xaxis: {
       categories: [
-        "Feb",
-        "Mar",
-        "Apr",
-        "May",
-        "Jun",
-        "Jul",
-        "Aug",
-        "Sep",
-        "Oct",
+        "And.",
+        "Ar.",
+        "Ast.",
+        "Bal.",
+        "Can.",
+        "Cantb.",
+        "C-L. M.",
+        "C. y L.",
+        "Cat.",
+        "Com. Val.",
+        "Ext.",
+        "Gal.",
+        "L. R.",
+        "Mad.",
+        "Nav.",
+        "P. Vasco",
+        "Mur.",
       ],
       labels: {
         show: true,
@@ -58,6 +66,14 @@ const eChart = {
         maxWidth: 160,
         style: {
           colors: [
+            "#fff",
+            "#fff",
+            "#fff",
+            "#fff",
+            "#fff",
+            "#fff",
+            "#fff",
+            "#fff",
             "#fff",
             "#fff",
             "#fff",
@@ -90,6 +106,14 @@ const eChart = {
             "#fff",
             "#fff",
             "#fff",
+            "#fff",
+            "#fff",
+            "#fff",
+            "#fff",
+            "#fff",
+            "#fff",
+            "#fff",
+            "#fff",
           ],
         },
       },
@@ -98,7 +122,7 @@ const eChart = {
     tooltip: {
       y: {
         formatter: function (val) {
-          return "$ " + val + " thousands";
+          return "$ " + val + " Usuarios";
         },
       },
     },
