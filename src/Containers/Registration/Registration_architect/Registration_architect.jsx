@@ -214,6 +214,33 @@ const Registration_architect = () => {
 
                                     <div className='registration-form-full-w'><input onChange={e => { validate_inputs(e); userHandler(e) }} className="registration-form-fields" type='text' name='telf' title='telf' lenght='30' placeholder='Teléfono' /></div>
                                     <div className='registration-form-fields-ok'>{inputs_data_form.telf}</div>
+                                    <div className='registration-form-budget-p'>
+                                    <select className='registration-form-full-w select-a' name="comunidad_a" id="comunidad-a">
+                                        <option selected="true" disabled="disabled">Comunidad autónoma</option>
+                                        <option value="andalucia">Andalucía</option>
+                                        <option value="Aragón">Aragón</option>
+                                        <option value="Principado de Asturias">Principado de Asturias</option>
+                                        <option value="Illes Balears">Illes Balears</option>
+                                        <option value="Canarias">Canarias</option>
+                                        <option value="Cantabria">Cantabria</option>
+                                        <option value="Castilla La Mancha">Castilla La Mancha</option>
+                                        <option value="Cataluña">Cataluña</option>
+                                        <option value="Comunidad Valenciana">Comunidad Valenciana</option>
+                                        <option value="Extremadura">Extremadura</option>
+                                        <option value="Galicia">Galicia</option>
+                                        <option value="La Rioja<">La Rioja</option>
+                                        <option value="Comunidad de Madrid">Comunidad de Madrid</option>
+                                        <option value="Región de Murcia">Región de Murcia</option>
+                                        <option value="Comunidad Foral de Navarra">Comunidad Foral de Navarra</option>
+                                        <option value="País Vasco o Euskadi"> País Vasco o Euskadi</option>
+                                    </select>
+
+                                    <select className='registration-form-full-w select-a' name="comunidad_genero" id="comunidad_genero">
+                                        <option selected="true" disabled="disabled">Género</option>
+                                        <option value="Marculino">Masculino</option>
+                                        <option value="Femenino">Femenino</option>
+                                    </select>
+                                </div>
 
                                     <h4>Crear cuenta</h4>
                                     <div className='registration-form-full-w'><input onChange={e => { validate_inputs(e); userHandler(e) }} className="registration-form-fields" type='email' name='email' title='email' lenght='30' placeholder='Email' /></div>
