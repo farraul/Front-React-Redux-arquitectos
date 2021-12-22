@@ -189,7 +189,7 @@ const Registration_user = () => {
             <div>
                 <div className='registration-section-3'>
                     <div className='registration-section3-form-width'>
-                        <p className='registration-ask-3-architects'>Registrate y disfruta</p>
+                        <p className='registration-ask-3-architects'>¿Buscas un arquitecto?</p>
                         <div className="registration-form-fields-div">
 
 

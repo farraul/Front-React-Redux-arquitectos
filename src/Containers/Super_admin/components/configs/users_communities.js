@@ -3,7 +3,7 @@
 const eChart = {
   series: [
     {
-      name: "Sales",
+      name: "Nº usuarios",
       data: [5, 20, 42, 6, 9, 32, 43, 30, 45, 34, 14, 43, 24, 32 ,53, 9, 23],
       color: "#fff",
     },
@@ -121,7 +121,7 @@ const eChart = {
     tooltip: {
       y: {
         formatter: function (val) {
-          return "$ " + val + " Usuarios";
+          return "" + val + "";
         },
       },
     },
