@@ -213,9 +213,20 @@ const Registration_user = () => {
                                         <div className='registration-form-full-w'><input onChange={e => { validate_inputs(e); userHandler(e) }} className="registration-form-fields" type="date" name="u_data_to_work" step="1"></input></div>
                                     </div>
                                 </div>
+
+
+                                <h4>Datos personales</h4>
+                                <div className='registration-form-full-w'><input onChange={e => { validate_inputs(e); userHandler(e) }} className="registration-form-fields" type='text' name='name' title='name' lenght='30' placeholder='Nombre' /></div>
+                                <div className='registration-form-fields-ok'>{inputs_data_form.name}</div>
+                                <div className='registration-form-full-w'><input onChange={e => { validate_inputs(e); userHandler(e) }} className="registration-form-fields" type='text' name='username' title='username' lenght='30' placeholder='Apellidos' /></div>
+
+                                <div className='registration-form-full-w'><input onChange={e => { validate_inputs(e); userHandler(e) }} className="registration-form-fields" type='text' name='telf' title='telf' lenght='30' placeholder='Teléfono' /></div>
+                                <div className='registration-form-fields-ok'>{inputs_data_form.telf}</div>
+                                <div className='registration-form-full-w'><input onChange={e => { validate_inputs(e); userHandler(e) }} className="registration-form-fields" type='email' name='email' title='email' lenght='30' placeholder='Email' /></div>
+                                <div className='registration-form-fields-ok'>{inputs_data_form.email}</div>
                                 <div className='registration-form-budget-p'>
-                                    <p >Comunidad autónoma</p>
-                                    <select className='registration-form-full-w select-a'  name="comunidad_a" id="comunidad-a">
+                                    <select className='registration-form-full-w select-a' name="comunidad_a" id="comunidad-a">
+                                        <option defaultValue disabled hidden>Comunidad autónoma</option>
                                         <option value="andalucia">Andalucía</option>
                                         <option value="Aragón">Aragón</option>
                                         <option value="Principado de Asturias">Principado de Asturias</option>
@@ -232,21 +243,15 @@ const Registration_user = () => {
                                         <option value="Región de Murcia">Región de Murcia</option>
                                         <option value="Comunidad Foral de Navarra">Comunidad Foral de Navarra</option>
                                         <option value="País Vasco o Euskadi"> País Vasco o Euskadi</option>
-                                        
-
                                     </select>
 
+                                    <select className='registration-form-full-w select-a' name="comunidad_genero" id="comunidad_genero">
+                                        <option defaultValue disabled hidden>Género</option>
+                                        <option value="Marculino">Masculino</option>
+                                        <option value="Femenino">Femenino</option>
+                                    </select>
                                 </div>
 
-                                <h4>Datos personales</h4>
-                                <div className='registration-form-full-w'><input onChange={e => { validate_inputs(e); userHandler(e) }} className="registration-form-fields" type='text' name='name' title='name' lenght='30' placeholder='Nombre' /></div>
-                                <div className='registration-form-fields-ok'>{inputs_data_form.name}</div>
-                                <div className='registration-form-full-w'><input onChange={e => { validate_inputs(e); userHandler(e) }} className="registration-form-fields" type='text' name='username' title='username' lenght='30' placeholder='Apellidos' /></div>
-
-                                <div className='registration-form-full-w'><input onChange={e => { validate_inputs(e); userHandler(e) }} className="registration-form-fields" type='text' name='telf' title='telf' lenght='30' placeholder='Teléfono' /></div>
-                                <div className='registration-form-fields-ok'>{inputs_data_form.telf}</div>
-                                <div className='registration-form-full-w'><input onChange={e => { validate_inputs(e); userHandler(e) }} className="registration-form-fields" type='email' name='email' title='email' lenght='30' placeholder='Email' /></div>
-                                <div className='registration-form-fields-ok'>{inputs_data_form.email}</div>
                                 {button_send_data_user}
 
                             </div>
