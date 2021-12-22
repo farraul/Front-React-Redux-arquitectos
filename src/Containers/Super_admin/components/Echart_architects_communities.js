@@ -23,7 +23,7 @@ function EChart_users_communities() {
       <div id="get-width" className='super-admin-panel-comunity-in-spain'>
         <div id="chart">
           <ReactApexChart
-            className="bar-chart"
+            className="bar-chart-architects"
             options={eChart.options}
             series={eChart.series}
             type="bar"
