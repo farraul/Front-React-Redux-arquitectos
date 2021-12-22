@@ -12,7 +12,7 @@ const Registration_user = () => {
     const go_to_the_link = (url) => {
         history("/" + url);
     }
-  
+
 
     //Hooks
     const [button_send_data_user, setbutton_send_data_user] = useState(<div className="sendButton-no-ready">Registrame</div>);
@@ -23,7 +23,8 @@ const Registration_user = () => {
         u_description_order_client: '',
         u_data_to_work: '',
         u_city: '',
-     
+        comunidad_a: '',
+
         //PERSONAL DATA
         name: '',
         username: '',
@@ -133,7 +134,7 @@ const Registration_user = () => {
                 };
                 break;
 
-        
+
             default:
                 break;
         }
@@ -152,7 +153,8 @@ const Registration_user = () => {
                 u_title_order_client: user.u_title_order_client,
                 u_data_to_work: user.u_data_to_work,
                 u_city: user.u_city,
-        
+                u_comunidad_a: user.comunidad_a,
+
                 //
                 name: user.name,
                 username: user.username,
@@ -187,51 +189,75 @@ const Registration_user = () => {
             <div>
                 <div className='registration-section-3'>
                     <div className='registration-section3-form-width'>
-                        <p className='registration-ask-3-architects'>Registrate y disfruta</p>
+                        <p className='registration-ask-3-architects'>¿Buscas un arquitecto?</p>
                         <div className="registration-form-fields-div">
 
 
                             <div className='registration-form-full-w'>
                                 <h4 className='registration-section3-h4'>Te contactarán 3 arquitectos en las próximas 72h</h4>
-                    
+
                             </div>
-                        
-                                <div className='width-100'>
-                                    <p className='registration-form-budget-p'>Titulo</p>
-                                    <div className='registration-form-full-w'><input onChange={e => { validate_inputs(e); userHandler(e) }} className="registration-form-fields" type='text' name='u_title_order_client' title='u_title_order_client' lenght='30' placeholder='Reforma cocina, planos edificio, construcción de...' /></div>
-                                    <p className='registration-form-budget-p'>Descripción</p>
-                                    <div className='registration-form-full-w'><textarea onChange={e => { validate_inputs(e); userHandler(e) }} className=" no-height registration-form-fields no-height" type='text-area' name='u_description_order_client' title='u_description_order_client' lenght='30' placeholder='Tenemos unas casa de 140 m2 y queremos cambiar...' rows="6" cols="50" /></div>
-                                    <div className='registration-form-city-date'>
-                                        <div>
-                                            <p className='registration-form-budget-p'>Localidad</p>
-                                            <div className='registration-form-full-w'><input onChange={e => { validate_inputs(e); userHandler(e) }} className="registration-form-fields" type='text' name='u_city' title='u_city' lenght='30' placeholder='Valencia, Madrid, Gandia..' /></div>
-                                        </div>
-                                        <div>
-                                            <p className='registration-form-budget-p'>¿Sabes la fecha aproximada?</p>
-                                            <div className='registration-form-full-w'><input onChange={e => { validate_inputs(e); userHandler(e) }} className="registration-form-fields" type="date" name="u_data_to_work" step="1"></input></div>
-                                        </div>
+
+                            <div className='width-100'>
+                                <p className='registration-form-budget-p'>Titulo</p>
+                                <div className='registration-form-full-w'><input onChange={e => { validate_inputs(e); userHandler(e) }} className="registration-form-fields" type='text' name='u_title_order_client' title='u_title_order_client' lenght='30' placeholder='Reforma cocina, planos edificio, construcción de...' /></div>
+                                <p className='registration-form-budget-p'>Descripción</p>
+                                <div className='registration-form-full-w'><textarea onChange={e => { validate_inputs(e); userHandler(e) }} className=" no-height registration-form-fields no-height" type='text-area' name='u_description_order_client' title='u_description_order_client' lenght='30' placeholder='Tenemos unas casa de 140 m2 y queremos cambiar...' rows="6" cols="50" /></div>
+                                <div className='registration-form-city-date'>
+                                    <div>
+                                        <p className='registration-form-budget-p'>Localidad</p>
+                                        <div className='registration-form-full-w'><input onChange={e => { validate_inputs(e); userHandler(e) }} className="registration-form-fields" type='text' name='u_city' title='u_city' lenght='30' placeholder='Valencia, Madrid, Gandia..' /></div>
                                     </div>
-
-                                    <h4>Datos personales</h4>
-                                    <div className='registration-form-full-w'><input onChange={e => { validate_inputs(e); userHandler(e) }} className="registration-form-fields" type='text' name='name' title='name' lenght='30' placeholder='Nombre' /></div>
-                                    <div className='registration-form-fields-ok'>{inputs_data_form.name}</div>
-                                    <div className='registration-form-full-w'><input onChange={e => { validate_inputs(e); userHandler(e) }} className="registration-form-fields" type='text' name='username' title='username' lenght='30' placeholder='Apellidos' /></div>
-
-                                    <div className='registration-form-full-w'><input onChange={e => { validate_inputs(e); userHandler(e) }} className="registration-form-fields" type='text' name='telf' title='telf' lenght='30' placeholder='Teléfono' /></div>
-                                    <div className='registration-form-fields-ok'>{inputs_data_form.telf}</div>
-                                    <div className='registration-form-full-w'><input onChange={e => { validate_inputs(e); userHandler(e) }} className="registration-form-fields" type='email' name='email' title='email' lenght='30' placeholder='Email' /></div>
-                                    <div className='registration-form-fields-ok'>{inputs_data_form.email}</div>
-                                    {button_send_data_user}
-                                
+                                    <div>
+                                        <p className='registration-form-budget-p'>¿Sabes la fecha aproximada?</p>
+                                        <div className='registration-form-full-w'><input onChange={e => { validate_inputs(e); userHandler(e) }} className="registration-form-fields" type="date" name="u_data_to_work" step="1"></input></div>
+                                    </div>
                                 </div>
-                            
+                                <div className='registration-form-budget-p'>
+                                    <p >Comunidad autónoma</p>
+                                    <select className='registration-form-full-w select-a'  name="comunidad_a" id="comunidad-a">
+                                        <option value="andalucia">Andalucía</option>
+                                        <option value="Aragón">Aragón</option>
+                                        <option value="Principado de Asturias">Principado de Asturias</option>
+                                        <option value="Illes Balears">Illes Balears</option>
+                                        <option value="Canarias">Canarias</option>
+                                        <option value="Cantabria">Cantabria</option>
+                                        <option value="Castilla La Mancha">Castilla La Mancha</option>
+                                        <option value="Cataluña">Cataluña</option>
+                                        <option value="Comunidad Valenciana">Comunidad Valenciana</option>
+                                        <option value="Extremadura">Extremadura</option>
+                                        <option value="Galicia">Galicia</option>
+                                        <option value="La Rioja<">La Rioja</option>
+                                        <option value="Comunidad de Madrid">Comunidad de Madrid</option>
+                                        <option value="Región de Murcia">Región de Murcia</option>
+                                        <option value="Comunidad Foral de Navarra">Comunidad Foral de Navarra</option>
+                                        <option value="País Vasco o Euskadi"> País Vasco o Euskadi</option>
+                                        
 
-                         
-                           
-                              
+                                    </select>
+
+                                </div>
+
+                                <h4>Datos personales</h4>
+                                <div className='registration-form-full-w'><input onChange={e => { validate_inputs(e); userHandler(e) }} className="registration-form-fields" type='text' name='name' title='name' lenght='30' placeholder='Nombre' /></div>
+                                <div className='registration-form-fields-ok'>{inputs_data_form.name}</div>
+                                <div className='registration-form-full-w'><input onChange={e => { validate_inputs(e); userHandler(e) }} className="registration-form-fields" type='text' name='username' title='username' lenght='30' placeholder='Apellidos' /></div>
+
+                                <div className='registration-form-full-w'><input onChange={e => { validate_inputs(e); userHandler(e) }} className="registration-form-fields" type='text' name='telf' title='telf' lenght='30' placeholder='Teléfono' /></div>
+                                <div className='registration-form-fields-ok'>{inputs_data_form.telf}</div>
+                                <div className='registration-form-full-w'><input onChange={e => { validate_inputs(e); userHandler(e) }} className="registration-form-fields" type='email' name='email' title='email' lenght='30' placeholder='Email' /></div>
+                                <div className='registration-form-fields-ok'>{inputs_data_form.email}</div>
+                                {button_send_data_user}
+
+                            </div>
 
 
-                           
+
+
+
+
+
+
                         </div>
                     </div>
                 </div>

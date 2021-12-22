@@ -1,31 +1,27 @@
-import eChart from "./configs/eChart";
+import eChart from "./configs/users_communities";
 import ReactApexChart from "react-apexcharts";
 import React, { useState, useEffect } from 'react';
 
 
-function EChart() {
+function EChart_users_communities() {
 
 
 
   useEffect(() => {
-        ajustar(); 
      
     })
-
-    const ajustar = () => {
+ /*parceh comunidad autonoma
+      ajustar();   ( esto en el usseeffect)
+    const adjust_width_users_autonomous_community = () => {
         let panelIzquierda = document.getElementById("get-width").clientWidth;
         console.log(panelIzquierda);
-        
-
-      
-      }
+      }*/
 
 
   return (
     <>
       <div id="get-width" className='super-admin-panel-comunity-in-spain'>
         <div id="chart">
-          <h2>Usuarios por comunidades autonomas</h2>
           <ReactApexChart
             className="bar-chart"
             options={eChart.options}
@@ -41,4 +37,4 @@ function EChart() {
   );
 }
 
-export default EChart;
+export default EChart_users_communities;
