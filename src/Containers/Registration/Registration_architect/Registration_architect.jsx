@@ -216,7 +216,7 @@ const Registration_architect = () => {
                                     <div className='registration-form-fields-ok'>{inputs_data_form.telf}</div>
                                     <div className='registration-form-budget-p'>
                                     <select className='registration-form-full-w select-a' name="comunidad_a" id="comunidad-a">
-                                        <option defaultValue disabled hidden>Comunidad autónoma</option>
+                                        <option selected="true" disabled="disabled">Comunidad autónoma</option>
                                         <option value="andalucia">Andalucía</option>
                                         <option value="Aragón">Aragón</option>
                                         <option value="Principado de Asturias">Principado de Asturias</option>
@@ -236,7 +236,7 @@ const Registration_architect = () => {
                                     </select>
 
                                     <select className='registration-form-full-w select-a' name="comunidad_genero" id="comunidad_genero">
-                                        <option defaultValue disabled hidden>Género</option>
+                                        <option selected="true" disabled="disabled">Género</option>
                                         <option value="Marculino">Masculino</option>
                                         <option value="Femenino">Femenino</option>
                                     </select>
