@@ -49,7 +49,7 @@ const Admin_menu_comp = () => {
             clearInterval(Time)
             // let lettimes = new Date().toDateString();
             let lettimes = new Date().toUTCString();
-            console.log("hola");
+            console.log("funtion to time in admin_menu");
             settimenow(lettimes);
         }, 1000
 
