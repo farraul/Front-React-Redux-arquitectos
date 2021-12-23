@@ -364,7 +364,7 @@ const Registration_user = () => {
                                 <div className='registration-form-budget-p'>
                                     <div className='width_50_per_100'>
                                         <select onChange={e => { validate_inputs(e); userHandler(e) }} className='registration-form-full-w select-a' name="select_community" id="select_community">
-                                            <option value={true} disabled="disabled" selected >Comunidad autónoma</option>  {/*selected*/}
+                                            <option value={true} /*disabled="disabled"*/ >Comunidad autónoma</option>  {/*selected*/}
                                             <option value="andalucia">Andalucía</option>
                                             <option value="Aragón">Aragón</option>
                                             <option value="Principado de Asturias">Principado de Asturias</option>
