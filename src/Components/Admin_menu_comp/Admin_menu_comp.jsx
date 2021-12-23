@@ -136,7 +136,7 @@ const Admin_menu_comp = () => {
                         <img className="admin-m-face_icon" src={email} alt="icon face" />
                     </a>
                 </div>
-                <button onClick={() => myFunction()} className="drop-button">
+                <button onClick={() => myFunction()} className="drop-button" id='phone-to-help'>
                     ☎
                 </button>
             </div>
