@@ -129,7 +129,7 @@ const Admin_menu_comp = () => {
                         <img className="admin-m-face_icon" src={whats} alt="icon face" />
                     </a>
 
-                    <a target="_blank|_self|_parent|_top|framename" href="+34628086995">
+                    <a target="_blank|_self|_parent|_top|framename" href="tel:+34628086995">
                         <img className="admin-m-face_icon" src={phone} alt="icon face" />
                     </a>
                     <a target="_blank" href="mailto:raulfarllobell@gmail.com">
