@@ -35,7 +35,7 @@ const Admin_offers = () => {
                                                 <h4>Reforma casa</h4>
                                             </div>
                                             <div className='iframe-arquitects-client-descrip'>
-                                                <hp>Necesitamos que alguien nos reformae la casa ya que la estrcutura esta muy vieja, la casa tiene 70 años esta situada en el bariios del carmen cerca del rio, por otro lado tenemos un garaje que nos juntaria hacerlo de nuevo...</hp>
+                                                <p>Necesitamos que alguien nos reformae la casa ya que la estrcutura esta muy vieja, la casa tiene 70 años esta situada en el bariios del carmen cerca del rio, por otro lado tenemos un garaje que nos juntaria hacerlo de nuevo...</p>
                                             </div>
                                             <div className='iframe-arquitects-client-descrip-extra'>
                                                 <div className='iframe-arquitects-client-location'>
@@ -74,7 +74,7 @@ const Admin_offers = () => {
                                                 <h4>Reforma casa</h4>
                                             </div>
                                             <div className='iframe-arquitects-client-descrip'>
-                                                <hp>Necesitamos que alguien nos reformae la casa ya que la estrcutura esta muy vieja, la casa tiene 70 años esta situada en el bariios del carmen cerca del rio, por otro lado tenemos un garaje que nos juntaria hacerlo de nuevo...</hp>
+                                                <p>Necesitamos que alguien nos reformae la casa ya que la estrcutura esta muy vieja, la casa tiene 70 años esta situada en el bariios del carmen cerca del rio, por otro lado tenemos un garaje que nos juntaria hacerlo de nuevo...</p>
                                             </div>
                                             <div className='iframe-arquitects-client-descrip-extra'>
                                                 <div className='iframe-arquitects-client-location'>
@@ -112,7 +112,7 @@ const Admin_offers = () => {
                                                 <h4>Reforma casa</h4>
                                             </div>
                                             <div className='iframe-arquitects-client-descrip'>
-                                                <hp>Necesitamos que alguien nos reformae la casa ya que la estrcutura esta muy vieja, la casa tiene 70 años esta situada en el bariios del carmen cerca del rio, por otro lado tenemos un garaje que nos juntaria hacerlo de nuevo...</hp>
+                                                <p>Necesitamos que alguien nos reformae la casa ya que la estrcutura esta muy vieja, la casa tiene 70 años esta situada en el bariios del carmen cerca del rio, por otro lado tenemos un garaje que nos juntaria hacerlo de nuevo...</p>
                                             </div>
                                             <div className='iframe-arquitects-client-descrip-extra'>
                                                 <div className='iframe-arquitects-client-location'>
@@ -154,7 +154,7 @@ const Admin_offers = () => {
                                                 <h4>Reforma casa</h4>
                                             </div>
                                             <div className='iframe-arquitects-client-descrip'>
-                                                <hp>Necesitamos que alguien nos reformae la casa ya que la estrcutura esta muy vieja, la casa tiene 70 años esta situada en el bariios del carmen cerca del rio, por otro lado tenemos un garaje que nos juntaria hacerlo de nuevo...</hp>
+                                                <p>Necesitamos que alguien nos reformae la casa ya que la estrcutura esta muy vieja, la casa tiene 70 años esta situada en el bariios del carmen cerca del rio, por otro lado tenemos un garaje que nos juntaria hacerlo de nuevo...</p>
                                             </div>
                                             <div className='iframe-arquitects-client-descrip-extra'>
                                                 <div className='iframe-arquitects-client-location'>
@@ -193,7 +193,7 @@ const Admin_offers = () => {
                                                 <h4>Reforma casa</h4>
                                             </div>
                                             <div className='iframe-arquitects-client-descrip'>
-                                                <hp>Necesitamos que alguien nos reformae la casa ya que la estrcutura esta muy vieja, la casa tiene 70 años esta situada en el bariios del carmen cerca del rio, por otro lado tenemos un garaje que nos juntaria hacerlo de nuevo...</hp>
+                                                <p>Necesitamos que alguien nos reformae la casa ya que la estrcutura esta muy vieja, la casa tiene 70 años esta situada en el bariios del carmen cerca del rio, por otro lado tenemos un garaje que nos juntaria hacerlo de nuevo...</p>
                                             </div>
                                             <div className='iframe-arquitects-client-descrip-extra'>
                                                 <div className='iframe-arquitects-client-location'>
@@ -231,7 +231,7 @@ const Admin_offers = () => {
                                                 <h4>Reforma casa</h4>
                                             </div>
                                             <div className='iframe-arquitects-client-descrip'>
-                                                <hp>Necesitamos que alguien nos reformae la casa ya que la estrcutura esta muy vieja, la casa tiene 70 años esta situada en el bariios del carmen cerca del rio, por otro lado tenemos un garaje que nos juntaria hacerlo de nuevo...</hp>
+                                                <p>Necesitamos que alguien nos reformae la casa ya que la estrcutura esta muy vieja, la casa tiene 70 años esta situada en el bariios del carmen cerca del rio, por otro lado tenemos un garaje que nos juntaria hacerlo de nuevo...</p>
                                             </div>
                                             <div className='iframe-arquitects-client-descrip-extra'>
                                                 <div className='iframe-arquitects-client-location'>

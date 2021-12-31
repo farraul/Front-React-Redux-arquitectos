@@ -27,9 +27,10 @@ height: unset!important;
 }
 .header-menu-links{
 cursor: pointer;
+padding: 0em 1em;
 }
 .header-menu {
 display: flex;
 width: 36em;
-justify-content: space-between;
+justify-content:flex-end;
 }

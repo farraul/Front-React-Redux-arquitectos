@@ -1,8 +1,16 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+
+
 
 const Registration_user = () => {
+    let history = useNavigate();
 
     //Hooks
+    const [msgError, setmsgError] = useState("");
+    const [ready_to_backend, setready_to_backend,] = useState("");
+
     const [button_send_data_user, setbutton_send_data_user] = useState(<div className="sendButton-no-ready">Registrame</div>);
     const [user, setUser] = useState({
         rol: 'user',
@@ -11,14 +19,15 @@ const Registration_user = () => {
         u_description_order_client: '',
         u_date_to_work: '',
         u_city: '',
-        comunidad_a: '',
+       // comunidad_a: '',
         //PERSONAL DATA
         name: '',
         username: '',
         telf: '',
         email: '',
-        select_community: '',
+        c_a: '',
         select_gender: '',
+        rol:'user',
 
     });
     const [inputs_data_form, setinputs_data_form] = useState({
@@ -30,7 +39,7 @@ const Registration_user = () => {
         username: '',
         telf: '',
         email: '',
-        select_community: '',
+        c_a: '',
         select_gender: '',
     });
     const [ready_data_user, setready_data_user] = useState({
@@ -42,13 +51,14 @@ const Registration_user = () => {
         username: false,
         email: false,
         telf: false,
-        select_community: false,
+        c_a: false,
         select_gender: false,
     });
 
     useEffect(() => {
-        if (ready_data_user.name === true && ready_data_user.username === true && ready_data_user.email === true && ready_data_user.telf === true && ready_data_user.u_title_order_client === true && ready_data_user.u_description_order_client === true && ready_data_user.u_city === true && ready_data_user.u_date_to_work === true && ready_data_user.select_community === true && ready_data_user.select_gender === true) {
+        if (ready_data_user.name === true && ready_data_user.username === true && ready_data_user.email === true && ready_data_user.telf === true && ready_data_user.u_title_order_client === true && ready_data_user.u_description_order_client === true && ready_data_user.u_city === true && ready_data_user.u_date_to_work === true && ready_data_user.c_a === true && ready_data_user.select_gender === true) {
             setbutton_send_data_user(<div className="sendButton" onClick={() => send_data_backend()}>Registrame</div>);
+            setready_to_backend(true);
         } else {
             setbutton_send_data_user(<div className="sendButton-no-ready">Registrame</div>);
         }
@@ -184,7 +194,7 @@ const Registration_user = () => {
                 } else {
                     setinputs_data_form({
                         ...inputs_data_form,
-                        username: "✗ Utiliza solo letras y minimo 4 caracteres"
+                        username: "✗ Utiliza solo letras y minimo 3 caracteres"
                     });
                     setready_data_user({
                         ...ready_data_user,
@@ -234,25 +244,25 @@ const Registration_user = () => {
                         telf: false
                     });
                 }; break;
-            /// seleccionar comunidad autonoma/////////////////////////
-            case 'select_community':
+           /// seleccionar select comunity autonoma/////////////////////////
+            case 'c_a':
                 if (e.target.value.length !== false) { // && (/^[a-z]/gi.test(user.name))  
                     setinputs_data_form({
                         ...inputs_data_form,
-                        select_community: "✓ Comunidad correcta "
+                        c_a: "✓ Comunidad correcta "
                     });
                     setready_data_user({
                         ...ready_data_user,
-                        select_community: true
+                        c_a: true
                     });
                 } else {
                     setinputs_data_form({
                         ...inputs_data_form,
-                        select_community: "✗ Comunidad incorrecta"
+                        c_a: "✗ Comunidad incorrecta"
                     });
                     setready_data_user({
                         ...ready_data_user,
-                        select_community: false
+                        c_a: false
                     });
                 }; break;
             /// seleccionar genero/////////////////////////////////
@@ -283,9 +293,9 @@ const Registration_user = () => {
 
     const send_data_backend = async () => {
 
-        if (ready_data_user.name && ready_data_user.email && ready_data_user.telf && ready_data_user.u_title_order_client) {
-
-            /*  //Generación del body
+        //if (ready_data_user.name && ready_data_user.email && ready_data_user.telf && ready_data_user.u_title_order_client) {
+              //Generación del body
+              console.log("user",user)
               let body = {
   
                   rol: user.rol,
@@ -294,33 +304,30 @@ const Registration_user = () => {
                   u_title_order_client: user.u_title_order_client,
                   u_data_to_work: user.u_data_to_work,
                   u_city: user.u_city,
-                  u_comunidad_a: user.comunidad_a,
+                  c_a: user.c_a,
   
                   //
                   name: user.name,
                   username: user.username,
                   telf: user.telf,
-                  //account
                   email: user.email,
+                  c_a: user.c_a,
+                  gender: user.select_gender,
               }
-  
+              console.log("body",body)
               //Conexion a axios y envio de datos
-              console.log("ENVIANDO AL BACKEND ESTO....", body);
-              /* try {
-                   let res = await axios.post("https://app-movies-mongoose.herokuapp.com/api/signup", body);
+               try {
+                   let res = await axios.post("https://api-laravel-arquitectos.herokuapp.com/api/newUser", body);
                    console.log("imprimir res: ", res)
                    //Guardado de datos en localStorage
-                   localStorage.setItem("datosLogin", JSON.stringify(res.data.user));
                    setmsgError("Usuario registrado con éxito");
        
                    history("/login");
                } catch (error) {
                    console.log(error)
-               }*/
+               }
 
-        } else {
-            console.log("no es todo true");
-        }
+        
     };
 
     return (
@@ -363,7 +370,7 @@ const Registration_user = () => {
                                 <div className='registration-form-fields-ok'>{inputs_data_form.email}</div>
                                 <div className='registration-form-budget-p'>
                                     <div className='width_50_per_100'>
-                                        <select onChange={e => { validate_inputs(e); userHandler(e) }} className='registration-form-full-w select-a' name="select_community" id="select_community">
+                                        <select onChange={e => { validate_inputs(e); userHandler(e) }} className='registration-form-full-w select-a' name="c_a" id="c_a">
                                             <option value={true} /*disabled="disabled"*/ >Comunidad autónoma</option>  {/*selected*/}
                                             <option value="andalucia">Andalucía</option>
                                             <option value="Aragón">Aragón</option>
@@ -382,11 +389,11 @@ const Registration_user = () => {
                                             <option value="Comunidad Foral de Navarra">Comunidad Foral de Navarra</option>
                                             <option value="País Vasco o Euskadi"> País Vasco o Euskadi</option>
                                         </select>
-                                        <div className='registration-form-fields-ok'>{inputs_data_form.select_community}</div>
+                                        <div className='registration-form-fields-ok'>{inputs_data_form.c_a}</div>
                                     </div>
                                     <div className='width_50_per_100'>
                                         <select onChange={e => { validate_inputs(e); userHandler(e) }} className='registration-form-full-w select-a' name="select_gender" id="select_gender">
-                                            <option defaultValue={true} disabled="disabled">Género</option>
+                                            <option Value={true} >Género</option>
                                             <option value="Marculino">Masculino</option>
                                             <option value="Femenino">Femenino</option>
                                         </select>
