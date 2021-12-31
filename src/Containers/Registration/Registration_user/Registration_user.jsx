@@ -324,6 +324,7 @@ const Registration_user = () => {
        
                    history("/login");
                } catch (error) {
+                setmsgError("✗ Error el mail está ya registrado");
                    console.log(error)
                }
 
@@ -400,7 +401,9 @@ const Registration_user = () => {
                                         <div className='registration-form-fields-ok'>{inputs_data_form.select_gender}</div>
                                     </div>
                                 </div>
+                                <p>{msgError}</p>
                                 {button_send_data_user}
+
                             </div>
                         </div>
                     </div>
