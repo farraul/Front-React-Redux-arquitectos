@@ -2,11 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { render } from 'react-dom';
 import { connect } from 'react-redux';
-
-
-
-
-
+import { LOGOUT} from '../../redux/types';
 import { useNavigate } from 'react-router-dom';
 //import { connect } from 'react-redux';
 //import logo from '../../assets/images/logo.png';
@@ -22,13 +18,20 @@ import menu from '../../assets/images/menu.svg';
 
 const Admin_menu_comp = (props) => {
 
-    console.log("props",props)
+    //console.log("props",props)
     const history = useNavigate();
 
     const go_to_the_link = (url) => {
         console.log("history", url)
         history("/" + url);
     }
+    const logOut = () => {
+        //vaciamos redux. Así ya no estamos logueados
+        props.dispatch({ type: LOGOUT });
+        history("/login");
+        console.log("entreeee4")
+    }
+    
 
 
     const [timenow, settimenow] = useState([""]);
@@ -52,7 +55,7 @@ const Admin_menu_comp = (props) => {
             clearInterval(Time)
             // let lettimes = new Date().toDateString();
             let lettimes = new Date().toUTCString();
-            console.log("funtion to time in admin_menu");
+            //console.log("funtion to time in admin_menu");
             settimenow(lettimes);
         }, 1000
 
@@ -100,7 +103,7 @@ const Admin_menu_comp = (props) => {
                 <div className='admin-m-comp-data-right'>
 
                     <div className='admin-m-comp-menu-links'>
-                        <div onClick={() => go_to_the_link("admin-home")} className='admin-m-comp-data-see-offert pointer' id='admin-m-comp-data-see-offert-menu'>
+                        <div onClick={() => go_to_the_link("admin")} className='admin-m-comp-data-see-offert pointer' id='admin-m-comp-data-see-offert-menu'>
                             <img className="admin-m-face_icon" src={menu} alt="icon face" />
 
                             <p>Panel principal</p>
@@ -115,6 +118,11 @@ const Admin_menu_comp = (props) => {
                     <div onClick={() => go_to_the_link("admin-profile")} className='admin-m-icon-profile pointer'  id='admin-m-comp-data-see-offert-profile'>
                         <img className="admin-m-face_icon" src={profile} alt="icon face" />
                         <p className='admin-m-icon-profile-name '>{props.data_user?.user?.name}</p>
+                    </div>
+
+                    <div  onClick={() => logOut()} className='admin-m-icon-profile pointer'  id='admin-m-comp-data-see-offert-disconnect'>
+                        <img className="admin-m-face_icon" src={profile} alt="icon face" />
+                        <p className='admin-m-icon-profile-name'>Desconectar</p>
                     </div>
 
                 </div>

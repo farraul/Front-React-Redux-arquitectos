@@ -10,8 +10,8 @@ font-weight: bold;
 }
 img.admin-m-face_icon {
 height: 1.2em;
-margin: 0.2em;
-margin-right: 1em;
+margin: 0.1em;
+margin-right: 0.3em;
 }
 .admin-m-icon-profile {
 display: flex;
@@ -122,4 +122,7 @@ cursor:pointer ;
 }
 .pointer:visited{
 color: red;
+}
+#admin-m-comp-data-see-offert-disconnect{
+font-size: 1em;    
 }

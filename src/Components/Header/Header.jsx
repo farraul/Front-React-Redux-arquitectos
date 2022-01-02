@@ -17,7 +17,7 @@ const Header = (props) => {
     const go_to_the_link = (url) => {
         history(url);
     }
-  
+  console.log("adminnn:",props.data_user);
 
     return (
         <header>
@@ -28,11 +28,11 @@ const Header = (props) => {
                 <div className="header-menu">
 
                     <div className="header-menu-links" onClick={()=>go_to_the_link("arquitectos")}>Arquitectos</div>
-                    { props.data_user?.user?.rol=="admin" ? <div className="header-menu-links" onClick={()=>go_to_the_link("admin")}>Admin Arquitecto</div>: null}
+                    { props.data_user?.user?.rol=="admin" ? <div className="header-menu-links" onClick={()=>go_to_the_link("admin")}>Admin</div>: null}
                     { props.data_user?.user?.rol=="super-admin" ? <div className="header-menu-links" onClick={()=>go_to_the_link("super-admin")}>Super Admin</div>: null}
 
-                    <div className="header-menu-links" onClick={()=>go_to_the_link("registro")}>Registrarme</div>
-                    <div className="header-menu-links" onClick={()=>go_to_the_link("login")}>Login</div>
+                    { props.data_user?.user?.rol==null ?<div className="header-menu-links" onClick={()=>go_to_the_link("registro")}>Registrarme</div> : null}
+                    { props.data_user?.user?.rol!=("admin"||"super-admin")  ?<div className="header-menu-links" onClick={()=>go_to_the_link("login")}>Login</div> : null}
 
                     {/*<Boton destino="Registro" url="/register"/>*/}
                 </div>
@@ -43,4 +43,7 @@ const Header = (props) => {
 };
 
 
-export default Header;
+
+export default connect((state) => ({
+    data_user: state.data_user,
+}))(Header);
