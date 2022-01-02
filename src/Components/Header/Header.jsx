@@ -28,7 +28,7 @@ const Header = (props) => {
                 <div className="header-menu">
 
                     <div className="header-menu-links" onClick={()=>go_to_the_link("arquitectos")}>Arquitectos</div>
-                    { props.data_user?.user?.rol=="admin" ? <div className="header-menu-links" onClick={()=>go_to_the_link("admin-home")}>Admin Arquitecto</div>: null}
+                    { props.data_user?.user?.rol=="admin" ? <div className="header-menu-links" onClick={()=>go_to_the_link("admin")}>Admin Arquitecto</div>: null}
                     { props.data_user?.user?.rol=="super-admin" ? <div className="header-menu-links" onClick={()=>go_to_the_link("super-admin")}>Super Admin</div>: null}
 
                     <div className="header-menu-links" onClick={()=>go_to_the_link("registro")}>Registrarme</div>

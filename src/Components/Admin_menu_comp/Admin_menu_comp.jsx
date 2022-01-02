@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { render } from 'react-dom';
+import { connect } from 'react-redux';
+
 
 
 
@@ -18,8 +20,9 @@ import menu from '../../assets/images/menu.svg';
 
 
 
-const Admin_menu_comp = () => {
+const Admin_menu_comp = (props) => {
 
+    console.log("props",props)
     const history = useNavigate();
 
     const go_to_the_link = (url) => {
@@ -111,7 +114,7 @@ const Admin_menu_comp = () => {
                     </div>
                     <div onClick={() => go_to_the_link("admin-profile")} className='admin-m-icon-profile pointer'  id='admin-m-comp-data-see-offert-profile'>
                         <img className="admin-m-face_icon" src={profile} alt="icon face" />
-                        <p className='admin-m-icon-profile-name '>Raul</p>
+                        <p className='admin-m-icon-profile-name '>{props.data_user?.user?.name}</p>
                     </div>
 
                 </div>
@@ -149,4 +152,8 @@ const Admin_menu_comp = () => {
 };
 
 
-export default Admin_menu_comp;
+
+
+export default connect((state) => ({
+    data_user: state.data_user,
+}))(Admin_menu_comp);

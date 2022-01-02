@@ -1,8 +1,9 @@
-import {LOGIN, LOGOUT, UPDATE_USER} from '../types';
+// import {LOGIN, LOGOUT, UPDATE_USER} from '../types';
+import {LOGIN} from '../types';
 
 const initialState = {
     token : '',
-    user : {} //ponia usuario
+    user : {} 
 };
 
 const data_user = (state = initialState, action) => {
@@ -13,11 +14,11 @@ const data_user = (state = initialState, action) => {
             return action.payload;
 
         //Ejemplo de reestablecimiento o borrado de datos
-        case LOGOUT : 
-            return initialState;
+        // case LOGOUT : 
+        //     return initialState;
             
-        case UPDATE_USER:
-            return{ ...state, user: action.payload}; //emn user metes en este caso el body
+        // case UPDATE_USER:
+        //     return{ ...state, user: action.payload}; //emn user metes en este caso el body
         default :
             return state
     }

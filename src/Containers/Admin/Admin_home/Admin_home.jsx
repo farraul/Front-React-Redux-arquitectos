@@ -5,6 +5,7 @@ import max from '../../../assets/images/max.png'
 import profile from '../../../assets/images/profile.svg';
 import buy from '../../../assets/images/buy.svg';
 import menu from '../../../assets/images/menu.svg';
+import { connect } from 'react-redux';
 
 
 
@@ -13,10 +14,11 @@ import menu from '../../../assets/images/menu.svg';
 
 
 
-const Admin_home = () => {
+
+const Admin_home = (props) => {
 
     //Hooks
-
+console.log("porps",props)
     const help = async () => {
         setTimeout(() => {
             let element = document.getElementById("help-start");
@@ -177,4 +179,8 @@ const Admin_home = () => {
     )
 };
 
-export default Admin_home;
+
+
+export default connect((state) => ({
+    data_user: state.data_user,
+}))(Admin_home);
