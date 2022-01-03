@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import Admin_menu_comp from '../../../Components/Admin_menu_comp/Admin_menu_comp';
+import axios from 'axios';
+import { connect } from 'react-redux';
 
-const Admin_profile = () => {
+
+const Admin_profile = (props) => {
 
     //Hooks
+    const [all_buys, setall_buys] = useState([]);
+
 
     const see_update = async () => {
         let element = document.getElementById("my-update");
@@ -33,6 +38,30 @@ const Admin_profile = () => {
         let element_back = document.getElementById("open-files-background-delete");
         element_back.classList.remove("see-update");
     }
+
+
+    useEffect(() => {
+        take_reserves(props);
+    }, []);
+
+    const take_reserves = async (props) => {
+        let body = {
+            id_architect: props.data_user.user.id,
+        };
+        console.log("props de id:", props.data_user.user.id);
+
+        let config = {
+            headers: { Authorization: `Bearer ${props.data_user.token}` }
+        };
+        let res = await axios.post("https://api-laravel-arquitectos.herokuapp.com/api/Reservesunion",body,config);
+        setall_buys(res.data);
+
+        console.log("res", res)
+    }
+
+    useEffect(() => {
+        console.log("datos recibidos", all_buys)
+    }, [all_buys]);
 
 
     return (
@@ -88,7 +117,7 @@ const Admin_profile = () => {
                                         Actualizar
 
                                     </div>
-                                    <div  onClick={() => see_delete()} className='admin-p-profile-buttons-down-delete'>
+                                    <div onClick={() => see_delete()} className='admin-p-profile-buttons-down-delete'>
                                         Borrar cuenta
                                     </div>
                                 </div>
@@ -102,25 +131,27 @@ const Admin_profile = () => {
                         <h2 className='cent'>Tus clientes</h2>
 
                         <div className='iframe-arquitects-iframe-profile'>
+                        {all_buys.map(name => <div key={name.id}>
+
                             <div className='iframe-arquitects-h'>
                                 <div className='iframe-arquitects-lead'>
                                     <div className='iframe-arquitects-client'>
                                         <div className='iframe-arquitects-client-data-top'>
                                             <div className='iframe-arquitects-client-name'>
-                                                <h3>Maria Antonia</h3>
+                                                <h3>{name.name}</h3>
                                             </div>
                                             <div className='iframe-arquitects-client-title'>
-                                                <h4>Reforma casa</h4>
+                                                <h4>{name.u_title_order_client}</h4>
                                             </div>
                                             <div className='iframe-arquitects-client-descrip'>
-                                                <p>Necesitamos que alguien nos reformae la casa ya que la estrcutura esta muy vieja, la casa tiene 70 años esta situada en el bariios del carmen cerca del rio, por otro lado tenemos un garaje que nos juntaria hacerlo de nuevo...</p>
+                                                <p>{name.u_description_order_client}</p>
                                             </div>
                                             <div className='iframe-arquitects-client-descrip-extra'>
                                                 <div className='iframe-arquitects-client-location'>
-                                                    <strong>Ciudad:</strong> Valencia
+                                                    <strong>Ciudad: </strong>{name.u_city}
                                                 </div>
                                                 <div className='iframe-arquitects-client-date'>
-                                                    <strong>Fechas:</strong> 12-01-2022
+                                                    <strong>Fechas: </strong>{name.u_date_to_work}
                                                 </div>
                                             </div>
                                         </div>
@@ -128,10 +159,10 @@ const Admin_profile = () => {
                                         <div className='iframe-arquitects-client-info-contact'>
                                             <div className='iframe-arquitects-client-info-contact-data'>
                                                 <div className='iframe-arquitects-client-contact'>
-                                                    Telf:<span className=''>666555444</span>
+                                                    Telf:<span className=''>{name.telf}</span>
                                                 </div>
                                                 <div className='iframe-arquitects-client-contact-email'>
-                                                    <span className=''>cliente@gmasil.com</span>
+                                                    <span className=''>{name.email}</span>
                                                 </div>
                                             </div>
 
@@ -139,7 +170,7 @@ const Admin_profile = () => {
                                     </div>
                                 </div>
                             </div>
-                        
+                            </div>)}
                         </div>
                     </div>
 
@@ -192,13 +223,6 @@ const Admin_profile = () => {
 
 
 
-
-
-
-
-
-
-
                     </div>
 
 
@@ -213,4 +237,7 @@ const Admin_profile = () => {
     )
 };
 
-export default Admin_profile;
+
+export default connect((state) => ({
+    data_user: state.data_user,
+}))(Admin_profile);
