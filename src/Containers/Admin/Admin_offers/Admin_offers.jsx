@@ -1,11 +1,104 @@
 import React, { useState, useEffect } from 'react';
 import Admin_menu_comp from '../../../Components/Admin_menu_comp/Admin_menu_comp';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { DECREMENT_MONEY } from '../../../redux/types';
 
 
-const Admin_offers = () => {
 
-    //Hooks
 
+const Admin_offers = (props) => {
+    let history = useNavigate();
+
+
+    let res;
+    let res_money;
+   // const [stateaccount, setstateaccount] = useState(1);
+    const [restmoney, setrestmoney] = useState();
+    const [all_leads, setall_leads] = useState([]);
+
+
+    useEffect(() => {
+        takeleads();
+    }, []);
+
+    // useEffect(() => {
+    //    // check_money();
+
+    // }, [restmoney]);
+
+    // useEffect(() => {
+    //   //  check_money();
+
+    // });
+
+    // const check_money = async () => {
+    //     // const button = document.getElementById('button-to-buy');
+    //     setstateaccount(props.data_money);
+
+    //     // console.log("stateaccount: ", stateaccount)
+
+    //     if (stateaccount <= 0) {
+    //         // document.getElementById('button-to-buy').onclick = null
+    //         console.log("menos igual a 0")
+    //     } else {
+    //         // button.disabled = false
+    //         console.log("mayor que 0")
+    //     }
+    // }
+
+
+    ///////////////take the last leads to show///////////////
+    const takeleads = async () => {
+        let config = {
+            headers: { Authorization: `Bearer ${props.data_user.token}` }
+        };
+        try {
+            res = await axios.get("https://api-laravel-arquitectos.herokuapp.com/api/Leads", config);
+            setall_leads(res.data);
+        }
+        catch (error) {
+            console.log("Error al enviar datos");
+        }
+    }
+
+////////select the lead to buy//////
+
+        
+
+
+    const select_lead = async (name) => {
+
+        setrestmoney(props.data_money-1);
+
+        let body_money = {
+            money: props.data_money-1,
+        }
+        let body = {
+            id_architect: props.data_user.user.id,
+            id_lead: name.id,
+        }
+
+
+        let config = {
+            headers: { Authorization: `Bearer ${props.data_user.token}` }
+        };
+        try {
+            res = await axios.post("https://api-laravel-arquitectos.herokuapp.com/api/newReserve", body, config);
+        } catch (error) {
+            console.log("Error al enviar datos");
+        }
+
+        try {
+            res_money = await axios.put(`https://api-laravel-arquitectos.herokuapp.com/api/UserMoney/${props.data_user?.user?.id}`, body_money, config);
+
+            props.dispatch({ type: DECREMENT_MONEY, payload: props.data_money-1 });
+            history("/admin-profile");
+        } catch (error) {
+        }
+    }
+    
 
 
     return (
@@ -22,256 +115,61 @@ const Admin_offers = () => {
 
                         <div className='iframe-arquitects'>
 
-
-                            {/* bloque-1*/}
                             <div className='iframe-arquitects-h'>
-                                <div className='iframe-arquitects-lead'>
-                                    <div className='iframe-arquitects-client'>
-                                        <div className='iframe-arquitects-client-data-top'>
-                                            <div className='iframe-arquitects-client-name'>
-                                                <h3>Maria Antonia</h3>
-                                            </div>
-                                            <div className='iframe-arquitects-client-title'>
-                                                <h4>Reforma casa</h4>
-                                            </div>
-                                            <div className='iframe-arquitects-client-descrip'>
-                                                <hp>Necesitamos que alguien nos reformae la casa ya que la estrcutura esta muy vieja, la casa tiene 70 años esta situada en el bariios del carmen cerca del rio, por otro lado tenemos un garaje que nos juntaria hacerlo de nuevo...</hp>
-                                            </div>
-                                            <div className='iframe-arquitects-client-descrip-extra'>
-                                                <div className='iframe-arquitects-client-location'>
-                                                    <strong>Ciudad:</strong> Valencia
-                                                </div>
-                                                <div className='iframe-arquitects-client-date'>
-                                                    <strong>Fechas:</strong> 12-01-2022
-                                                </div>
-                                            </div>
-                                        </div>
 
-                                        <div className='iframe-arquitects-client-info-contact'>
-                                            <div className='iframe-arquitects-client-info-contact-data'>
-                                                <div className='iframe-arquitects-client-contact'>
-                                                    Teléfono:<span className='iframe-arquitects-client-blur'>Valencia</span>
-                                                </div>
-                                                <div className='iframe-arquitects-client-contact-email'>
-                                                    Email: <span className='iframe-arquitects-client-blur'>cliente@gmasil.com</span>
-                                                </div>
-                                            </div>
-                                            <div className='iframe-arquitects-client-buy-div'>
-                                                <button className='iframe-arquitects-client-buy'>Comprar</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                {all_leads.map(name => <div key={name.id}>
 
+                                    <div className='iframe-arquitects-lead'>
+                                        <div className='iframe-arquitects-client'>
+                                            <div className='iframe-arquitects-client-data-top'>
+                                                {/* <div className='iframe-arquitects-client-name'>
+                                                    <div>Raúl</div>
+                                                </div> */}
+                                                <div className='iframe-arquitects-client-title'>
+                                                    <h4>{name.u_title_order_client}</h4>
+                                                </div>
+                                                <div className='iframe-arquitects-client-descrip'>
+                                                    <p>{name.u_description_order_client}</p>
+                                                </div>
+                                                <div className='iframe-arquitects-client-descrip-extra'>
+                                                    <div className='iframe-arquitects-client-location'>
+                                                        <strong>Ciudad:</strong> {name.u_city}
+                                                    </div>
+                                                    <div className='iframe-arquitects-client-date'>
+                                                        <strong>Fechas:</strong> {name.u_date_to_work}
+                                                    </div>
+                                                </div>
+                                            </div>
 
-                                <div className='iframe-arquitects-lead'>
-                                    <div className='iframe-arquitects-client'>
-                                        <div className='iframe-arquitects-client-data-top'>
-                                            <div className='iframe-arquitects-client-name'>
-                                                <h3>Maria Antonia</h3>
-                                            </div>
-                                            <div className='iframe-arquitects-client-title'>
-                                                <h4>Reforma casa</h4>
-                                            </div>
-                                            <div className='iframe-arquitects-client-descrip'>
-                                                <hp>Necesitamos que alguien nos reformae la casa ya que la estrcutura esta muy vieja, la casa tiene 70 años esta situada en el bariios del carmen cerca del rio, por otro lado tenemos un garaje que nos juntaria hacerlo de nuevo...</hp>
-                                            </div>
-                                            <div className='iframe-arquitects-client-descrip-extra'>
-                                                <div className='iframe-arquitects-client-location'>
-                                                    <strong>Ciudad:</strong> Valencia
+                                            <div className='iframe-arquitects-client-info-contact'>
+                                                <div className='iframe-arquitects-client-info-contact-data'>
+                                                    <div className='iframe-arquitects-client-contact'>
+                                                        Teléfono:<span className='iframe-arquitects-client-blur'>6666666</span>
+                                                    </div>
+                                                    <div className='iframe-arquitects-client-contact-email'>
+                                                        Email: <span className='iframe-arquitects-client-blur'>pruea@gmasil.com</span>
+                                                    </div>
                                                 </div>
-                                                <div className='iframe-arquitects-client-date'>
-                                                    <strong>Fechas:</strong> 12-01-2022
+                                                <div className='iframe-arquitects-client-buy-div'>
+                                                    <button id="button-to-buy" className='iframe-arquitects-client-buy' onClick={() => select_lead(name)}>Comprar</button>
                                                 </div>
-                                            </div>
-                                        </div>
-
-                                        <div className='iframe-arquitects-client-info-contact'>
-                                            <div className='iframe-arquitects-client-info-contact-data'>
-                                                <div className='iframe-arquitects-client-contact'>
-                                                    Teléfono:<span className='iframe-arquitects-client-blur'>Valencia</span>
-                                                </div>
-                                                <div className='iframe-arquitects-client-contact-email'>
-                                                    Email: <span className='iframe-arquitects-client-blur'>cliente@gmasil.com</span>
-                                                </div>
-                                            </div>
-                                            <div className='iframe-arquitects-client-buy-div'>
-                                                <button className='iframe-arquitects-client-buy'>Comprar</button>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div>)}
 
-                                <div className='iframe-arquitects-lead'>
-                                    <div className='iframe-arquitects-client'>
-                                        <div className='iframe-arquitects-client-data-top'>
-                                            <div className='iframe-arquitects-client-name'>
-                                                <h3>Maria Antonia</h3>
-                                            </div>
-                                            <div className='iframe-arquitects-client-title'>
-                                                <h4>Reforma casa</h4>
-                                            </div>
-                                            <div className='iframe-arquitects-client-descrip'>
-                                                <hp>Necesitamos que alguien nos reformae la casa ya que la estrcutura esta muy vieja, la casa tiene 70 años esta situada en el bariios del carmen cerca del rio, por otro lado tenemos un garaje que nos juntaria hacerlo de nuevo...</hp>
-                                            </div>
-                                            <div className='iframe-arquitects-client-descrip-extra'>
-                                                <div className='iframe-arquitects-client-location'>
-                                                    <strong>Ciudad:</strong> Valencia
-                                                </div>
-                                                <div className='iframe-arquitects-client-date'>
-                                                    <strong>Fechas:</strong> 12-01-2022
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div className='iframe-arquitects-client-info-contact'>
-                                            <div className='iframe-arquitects-client-info-contact-data'>
-                                                <div className='iframe-arquitects-client-contact'>
-                                                    Teléfono:<span className='iframe-arquitects-client-blur'>Valencia</span>
-                                                </div>
-                                                <div className='iframe-arquitects-client-contact-email'>
-                                                    Email: <span className='iframe-arquitects-client-blur'>cliente@gmasil.com</span>
-                                                </div>
-                                            </div>
-                                            <div className='iframe-arquitects-client-buy-div'>
-                                                <button className='iframe-arquitects-client-buy'>Comprar</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
-                            {/*fin bloque1*/}
-
-                            {/* bloque-1*/}
-                            <div className='iframe-arquitects-h'>
-                                <div className='iframe-arquitects-lead'>
-                                    <div className='iframe-arquitects-client'>
-                                        <div className='iframe-arquitects-client-data-top'>
-                                            <div className='iframe-arquitects-client-name'>
-                                                <h3>Maria Antonia</h3>
-                                            </div>
-                                            <div className='iframe-arquitects-client-title'>
-                                                <h4>Reforma casa</h4>
-                                            </div>
-                                            <div className='iframe-arquitects-client-descrip'>
-                                                <hp>Necesitamos que alguien nos reformae la casa ya que la estrcutura esta muy vieja, la casa tiene 70 años esta situada en el bariios del carmen cerca del rio, por otro lado tenemos un garaje que nos juntaria hacerlo de nuevo...</hp>
-                                            </div>
-                                            <div className='iframe-arquitects-client-descrip-extra'>
-                                                <div className='iframe-arquitects-client-location'>
-                                                    <strong>Ciudad:</strong> Valencia
-                                                </div>
-                                                <div className='iframe-arquitects-client-date'>
-                                                    <strong>Fechas:</strong> 12-01-2022
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div className='iframe-arquitects-client-info-contact'>
-                                            <div className='iframe-arquitects-client-info-contact-data'>
-                                                <div className='iframe-arquitects-client-contact'>
-                                                    Teléfono:<span className='iframe-arquitects-client-blur'>Valencia</span>
-                                                </div>
-                                                <div className='iframe-arquitects-client-contact-email'>
-                                                    Email: <span className='iframe-arquitects-client-blur'>cliente@gmasil.com</span>
-                                                </div>
-                                            </div>
-                                            <div className='iframe-arquitects-client-buy-div'>
-                                                <button className='iframe-arquitects-client-buy'>Comprar</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <div className='iframe-arquitects-lead'>
-                                    <div className='iframe-arquitects-client'>
-                                        <div className='iframe-arquitects-client-data-top'>
-                                            <div className='iframe-arquitects-client-name'>
-                                                <h3>Maria Antonia</h3>
-                                            </div>
-                                            <div className='iframe-arquitects-client-title'>
-                                                <h4>Reforma casa</h4>
-                                            </div>
-                                            <div className='iframe-arquitects-client-descrip'>
-                                                <hp>Necesitamos que alguien nos reformae la casa ya que la estrcutura esta muy vieja, la casa tiene 70 años esta situada en el bariios del carmen cerca del rio, por otro lado tenemos un garaje que nos juntaria hacerlo de nuevo...</hp>
-                                            </div>
-                                            <div className='iframe-arquitects-client-descrip-extra'>
-                                                <div className='iframe-arquitects-client-location'>
-                                                    <strong>Ciudad:</strong> Valencia
-                                                </div>
-                                                <div className='iframe-arquitects-client-date'>
-                                                    <strong>Fechas:</strong> 12-01-2022
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div className='iframe-arquitects-client-info-contact'>
-                                            <div className='iframe-arquitects-client-info-contact-data'>
-                                                <div className='iframe-arquitects-client-contact'>
-                                                    Teléfono:<span className='iframe-arquitects-client-blur'>Valencia</span>
-                                                </div>
-                                                <div className='iframe-arquitects-client-contact-email'>
-                                                    Email: <span className='iframe-arquitects-client-blur'>cliente@gmasil.com</span>
-                                                </div>
-                                            </div>
-                                            <div className='iframe-arquitects-client-buy-div'>
-                                                <button className='iframe-arquitects-client-buy'>Comprar</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div className='iframe-arquitects-lead'>
-                                    <div className='iframe-arquitects-client'>
-                                        <div className='iframe-arquitects-client-data-top'>
-                                            <div className='iframe-arquitects-client-name'>
-                                                <h3>Maria Antonia</h3>
-                                            </div>
-                                            <div className='iframe-arquitects-client-title'>
-                                                <h4>Reforma casa</h4>
-                                            </div>
-                                            <div className='iframe-arquitects-client-descrip'>
-                                                <hp>Necesitamos que alguien nos reformae la casa ya que la estrcutura esta muy vieja, la casa tiene 70 años esta situada en el bariios del carmen cerca del rio, por otro lado tenemos un garaje que nos juntaria hacerlo de nuevo...</hp>
-                                            </div>
-                                            <div className='iframe-arquitects-client-descrip-extra'>
-                                                <div className='iframe-arquitects-client-location'>
-                                                    <strong>Ciudad:</strong> Valencia
-                                                </div>
-                                                <div className='iframe-arquitects-client-date'>
-                                                    <strong>Fechas:</strong> 12-01-2022
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div className='iframe-arquitects-client-info-contact'>
-                                            <div className='iframe-arquitects-client-info-contact-data'>
-                                                <div className='iframe-arquitects-client-contact'>
-                                                    Teléfono:<span className='iframe-arquitects-client-blur'>Valencia</span>
-                                                </div>
-                                                <div className='iframe-arquitects-client-contact-email'>
-                                                    Email: <span className='iframe-arquitects-client-blur'>cliente@gmasil.com</span>
-                                                </div>
-                                            </div>
-                                            <div className='iframe-arquitects-client-buy-div'>
-                                                <button className='iframe-arquitects-client-buy'>Comprar</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            {/*fin bloque1*/}
-
-
                         </div>
-
-
                     </div>
-
-
                 </div>
             </div>
         </div >
     )
 };
 
-export default Admin_offers;
+
+
+export default connect((state) => ({
+    data_user: state.data_user,
+    data_money: state.data_money
+}))(Admin_offers);

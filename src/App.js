@@ -43,7 +43,7 @@ function App() {
 
           <Route path="/arquitectos" element={<Architects/>} />
 
-          <Route path="/admin-home" element={<Admin_home/>} />
+          <Route path="/admin" element={<Admin_home/>} />
           <Route path="/admin-menu_comp" element={<Admin_menu_comp/>} />
           <Route path="/admin-offers" element={<Admin_offers/>} />
           <Route path="/admin-profile" element={<Admin_profile/>} />

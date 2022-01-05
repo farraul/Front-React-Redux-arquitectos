@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { connect } from 'react-redux';
 
 import { useNavigate } from 'react-router-dom';
 //import { connect } from 'react-redux';
@@ -8,15 +9,15 @@ import logo from '../../assets/images/logo.png';
 
 
 
-const Header = () => {
+const Header = (props) => {
 
     const history = useNavigate();
-
+ console.log("props",props);
 
     const go_to_the_link = (url) => {
         history(url);
     }
-  
+  console.log("adminnn:",props.data_user);
 
     return (
         <header>
@@ -26,12 +27,12 @@ const Header = () => {
                 </div>
                 <div className="header-menu">
 
-                    <div className="header-menu-links" onClick={()=>go_to_the_link("arquitectos")}>Arquitectos</div>
-                    <div className="header-menu-links" onClick={()=>go_to_the_link("admin-home")}>Admin Arquitecto</div>
-                    <div className="header-menu-links" onClick={()=>go_to_the_link("super-admin")}>Super Admin</div>
+                { props.data_user?.user?.rol==null ? <div className="header-menu-links" onClick={()=>go_to_the_link("arquitectos")}>Arquitectos</div> :null}
+                    { props.data_user?.user?.rol!=null ? <div className="header-menu-links" onClick={()=>go_to_the_link("admin")}>Panel Administrador</div>: null}
+                    <div className="header-menu-links" onClick={()=>go_to_the_link("super-admin")}>Super Admin</div> 
 
-                    <div className="header-menu-links" onClick={()=>go_to_the_link("registro")}>Registrarme</div>
-                    <div className="header-menu-links" onClick={()=>go_to_the_link("login")}>Login</div>
+                    { props.data_user?.user?.rol==null ?<div className="header-menu-links" onClick={()=>go_to_the_link("registro")}>Registrarme</div> : null}
+                    { props.data_user?.user?.rol==null   ?<div className="header-menu-links" onClick={()=>go_to_the_link("login")}>Login</div> : null}
 
                     {/*<Boton destino="Registro" url="/register"/>*/}
                 </div>
@@ -42,4 +43,7 @@ const Header = () => {
 };
 
 
-export default Header;
+
+export default connect((state) => ({
+    data_user: state.data_user,
+}))(Header);

@@ -1,19 +1,23 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { LOGIN } from '../../redux/types';
+import { LOGIN_MONEY } from '../../redux/types';
 
 
 
-const Login = () => {
+const Login = (props) => {
+    let history = useNavigate();
 
     //Hooks
     const [msgError, setmsgError] = useState("");
-    const [credentials, setCredentials] = useState({ correo: '', clave: '' });
+    const [credentials, setCredentials] = useState({ email: '', password: '' });
     //Handler o manejador
     const manejadorInputs = (e) => {
-        console.log("e: ", e);
         setCredentials({ ...credentials, [e.target.name]: e.target.value });
         /*console.log("e.target.name::: ", e.target.name)
         console.log("e.target.value::: ", e.target.value)*/
-        console.log("credentials: ", credentials)
     }
 
     const go_to_login = async () => {
@@ -25,19 +29,25 @@ const Login = () => {
 
         try {
 
-            /* let res = await axios.post("https://app-movies-mongoose.herokuapp.com/api/signin", body); */
+            let res = await axios.post("https://api-laravel-arquitectos.herokuapp.com/api/loginUser", body); 
             console.log("imprimir ", body);
+            console.log("res ", );
 
-            /* //Guardamos en REDUX
-             let datos = res.data;
+            ///Guardamos en REDUX
+
+            let datos = res.data;
+            
+            
+            props.dispatch({type:LOGIN,payload:datos});
+            props.dispatch({type:LOGIN_MONEY,payload:datos.user.money});
              
-             props.dispatch({type:LOGIN,payload:datos});
-            console.log("datos:",datos);
+             console.log("datos.user.money:", datos.user.money)
+             console.log("todas las props:", props)
  
  
               setTimeout(() => {
-                 history("/profile");
-             }, 1000); */
+                 history("/admin");
+             }, 1000); 
              } catch (error) {
              setmsgError("Error al logearmeee");
              }
@@ -52,7 +62,7 @@ const Login = () => {
                 {/*<pre>{JSON.stringify(credentials, null,2)}</pre>*/}
                 <h2>Acceder</h2>
                 <input className="login-form-input" type='email' name='email' title='email' onChange={manejadorInputs} lenght='30' placeholder="Email" />
-                <input className="login-form-input" type='password' name='clave' title='password' onChange={manejadorInputs} lenght='30' placeholder="Contraseña" />
+                <input className="login-form-input" type='password' name='password' title='password' onChange={manejadorInputs} lenght='30' placeholder="Contraseña" />
                 <div className="sendButton" onClick={() => go_to_login()}>Login</div>
                 <div className="error">{msgError}</div>
             </div>
@@ -60,4 +70,4 @@ const Login = () => {
     )
 };
 
-export default Login;
+export default connect()(Login);

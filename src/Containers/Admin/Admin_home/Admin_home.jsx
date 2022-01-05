@@ -5,6 +5,7 @@ import max from '../../../assets/images/max.png'
 import profile from '../../../assets/images/profile.svg';
 import buy from '../../../assets/images/buy.svg';
 import menu from '../../../assets/images/menu.svg';
+import { connect } from 'react-redux';
 
 
 
@@ -13,10 +14,11 @@ import menu from '../../../assets/images/menu.svg';
 
 
 
-const Admin_home = () => {
+
+const Admin_home = (props) => {
 
     //Hooks
-
+console.log("props admin home", props)
     const help = async () => {
         setTimeout(() => {
             let element = document.getElementById("help-start");
@@ -94,6 +96,7 @@ const Admin_home = () => {
                 <div className='admin-h-section-2'>
                     <div>
                         <h1>Bienvenido al Panel de admin</h1>
+                        <h3 className='align-center'>Regalo de bienvenida: 3€</h3>
                     </div>
 
                     <div className='chat' id='chat-tour'>
@@ -128,9 +131,9 @@ const Admin_home = () => {
                                 </div>
                                 <div className='chat-conversation-inside-text'>
                                     <p>Arriba a la derecha tenemos: perfil <img className="admin-m-face_icon" src={profile} alt="icon face" /></p>
-                                    <p>Podrás:</p>
-                                    <p>⚫ Ver y actualizar tu perfil 🖊️ </p>
-                                    <p>⚫ Ver las compras realizadas 📊</p>
+                                    
+                                    <p>* Mira y actualiza tu perfil 🖊️ </p>
+                                    <p>* Revisa las compras realizadas 📊</p>
                                 </div>
                             </div>
                         </div>
@@ -141,8 +144,8 @@ const Admin_home = () => {
                                 </div>
                                 <div className='chat-conversation-inside-text'>
                                     <p>En "Ver ofertas" <img className="admin-m-face_icon" src={buy} alt="icon face" /></p>
-                                    <p>Podrás:</p>
-                                    <p>⚫ Comprar los leads disponibles 💲</p>
+                                    
+                                    <p>* Compra los leads disponibles 💲</p>
                                 </div>
                             </div>
                         </div>
@@ -153,7 +156,7 @@ const Admin_home = () => {
                                 </div>
                                 <div className='chat-conversation-inside-text'>
                                     <p>En el "Panel principal" <img className="admin-m-face_icon" src={menu} alt="icon face" /></p>
-                                    <p>⚫ Es donde estamos actualmente, podrás acceder si quieres revisar el tour de nuevo 📕</p>
+                                    <p>* Es donde estamos actualmente, podrás acceder si quieres revisar el tour de nuevo 📕</p>
                                 </div>
                             </div>
                         </div>
@@ -177,4 +180,8 @@ const Admin_home = () => {
     )
 };
 
-export default Admin_home;
+
+
+export default connect((state) => ({
+    data_user: state.data_user,
+}))(Admin_home);

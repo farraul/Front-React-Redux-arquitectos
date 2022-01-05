@@ -22,7 +22,7 @@ const Home = () => {
         <div className='home-container'>
 
             <div className='home-section-1'>
-                <div className='algin-center'>
+                <div className='align-center'>
                     <p className='home-title'>Encuentra a tu arquitecto</p>
                     <p className='home-section-1-n-1'>Los 3 arquitectos que más se ajusten a tu proyecto se pondrán en contacto contigo </p>
                 </div>
