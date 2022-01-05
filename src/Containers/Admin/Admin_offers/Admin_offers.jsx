@@ -1,14 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import Admin_menu_comp from '../../../Components/Admin_menu_comp/Admin_menu_comp';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { DECREMENT_MONEY } from '../../../redux/types';
+
 
 
 
 const Admin_offers = (props) => {
+    let history = useNavigate();
 
 
     let res;
+    let res_money;
 
     //Hooks
     const [all_leads, setall_leads] = useState([]);
@@ -19,31 +24,57 @@ const Admin_offers = (props) => {
 
 
     const takeleads = async () => {
+
         let config = {
             headers: { Authorization: `Bearer ${props.data_user.token}` }
         };
-        res = await axios.get("https://api-laravel-arquitectos.herokuapp.com/api/Leads", config);
-        setall_leads(res.data);
+        try {
+            res = await axios.get("https://api-laravel-arquitectos.herokuapp.com/api/Leads", config);
+            setall_leads(res.data);
 
-    }
-
-
-    const select_lead = async (name) => {
-        let body = {
-             id_architect: props.data_user.user.id,
-             id_lead: name.id,
         }
 
-        console.log("name", name);
-        console.log("props", props);
-        console.log("body", body);
+        catch (error) {
+            console.log("Error al enviar datos");
+        }
 
+    }
+    const select_lead = async (name) => {
+
+
+        let body = {
+            id_architect: props.data_user.user.id,
+            id_lead: name.id,
+        }
+
+        ///////////////////////////////////
+        let restmoney = props.data_money - 1;
+        debugger
+        console.log("restmoney", restmoney);
+
+        let body_money = {
+            money: restmoney,
+        }
 
         let config = {
             headers: { Authorization: `Bearer ${props.data_user.token}` }
         };
-        res = await axios.post("https://api-laravel-arquitectos.herokuapp.com/api/newReserve",body,config);
-        console.log("res",res)
+        try {
+            res = await axios.post("https://api-laravel-arquitectos.herokuapp.com/api/newReserve", body, config);
+        } catch (error) {
+            console.log("Error al enviar datos");
+        }
+
+        try {
+            res_money = await axios.put(`https://api-laravel-arquitectos.herokuapp.com/api/UserMoney/${props.data_user?.user?.id}`, body_money, config);
+
+            props.dispatch({ type: DECREMENT_MONEY, payload: restmoney });
+            history("/admin-profile");
+        } catch (error) {
+        }
+
+
+
     }
 
     useEffect(() => {
@@ -101,7 +132,7 @@ const Admin_offers = (props) => {
                                                     </div>
                                                 </div>
                                                 <div className='iframe-arquitects-client-buy-div'>
-                                                    <button className='iframe-arquitects-client-buy' onClick={()=>select_lead(name)}>Comprar</button>
+                                                    <button className='iframe-arquitects-client-buy' onClick={() => select_lead(name)}>Comprar</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -121,4 +152,5 @@ const Admin_offers = (props) => {
 
 export default connect((state) => ({
     data_user: state.data_user,
+    data_money: state.data_money
 }))(Admin_offers);

@@ -18,7 +18,7 @@ const Super_Admin = () => {
         <div className="super-admin">
             <div className="super-admin-h-section-1">
                 <div>
-                    <Admin_menu_comp />
+                {/*<Admin_menu_comp />*/}
                 </div>
                 <div className='super-admin-h-section-2'>
 

@@ -27,12 +27,12 @@ const Header = (props) => {
                 </div>
                 <div className="header-menu">
 
-                    <div className="header-menu-links" onClick={()=>go_to_the_link("arquitectos")}>Arquitectos</div>
-                    { props.data_user?.user?.rol=="admin" ? <div className="header-menu-links" onClick={()=>go_to_the_link("admin")}>Admin</div>: null}
-                    { props.data_user?.user?.rol=="super-admin" ? <div className="header-menu-links" onClick={()=>go_to_the_link("super-admin")}>Super Admin</div>: null}
+                { props.data_user?.user?.rol==null ? <div className="header-menu-links" onClick={()=>go_to_the_link("arquitectos")}>Arquitectos</div> :null}
+                    { props.data_user?.user?.rol!=null ? <div className="header-menu-links" onClick={()=>go_to_the_link("admin")}>Panel Administrador</div>: null}
+                    <div className="header-menu-links" onClick={()=>go_to_the_link("super-admin")}>Super Admin</div> 
 
                     { props.data_user?.user?.rol==null ?<div className="header-menu-links" onClick={()=>go_to_the_link("registro")}>Registrarme</div> : null}
-                    { props.data_user?.user?.rol!=("admin"||"super-admin")  ?<div className="header-menu-links" onClick={()=>go_to_the_link("login")}>Login</div> : null}
+                    { props.data_user?.user?.rol==null   ?<div className="header-menu-links" onClick={()=>go_to_the_link("login")}>Login</div> : null}
 
                     {/*<Boton destino="Registro" url="/register"/>*/}
                 </div>

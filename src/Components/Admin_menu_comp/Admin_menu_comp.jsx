@@ -3,6 +3,7 @@ import axios from 'axios';
 import { render } from 'react-dom';
 import { connect } from 'react-redux';
 import { LOGOUT} from '../../redux/types';
+import { LOGOUT_MONEY} from '../../redux/types';
 import { useNavigate } from 'react-router-dom';
 //import { connect } from 'react-redux';
 //import logo from '../../assets/images/logo.png';
@@ -12,6 +13,7 @@ import phone from '../../assets/images/phone.svg';
 import email from '../../assets/images/email.svg';
 import buy from '../../assets/images/buy.svg';
 import menu from '../../assets/images/menu.svg';
+import exit from '../../assets/images/exit.svg';
 
 
 
@@ -28,8 +30,8 @@ const Admin_menu_comp = (props) => {
     const logOut = () => {
         //vaciamos redux. Así ya no estamos logueados
         props.dispatch({ type: LOGOUT });
+        props.dispatch({ type: LOGOUT_MONEY });
         history("/login");
-        console.log("entreeee4")
     }
     
 
@@ -111,7 +113,7 @@ const Admin_menu_comp = (props) => {
                         <div onClick={() => go_to_the_link("admin-offers")} className='admin-m-comp-data-see-offert pointer'  id='admin-m-comp-data-see-offert-offerts'>
                             <img className="admin-m-face_icon" src={buy} alt="icon face" />
 
-                            <p>Ver ofertas</p>
+                            <p>Ver ofertas<span  className="money"> (Saldo: {props.data_money}€)</span></p>
                         </div>
 
                     </div>
@@ -121,7 +123,7 @@ const Admin_menu_comp = (props) => {
                     </div>
 
                     <div  onClick={() => logOut()} className='admin-m-icon-profile pointer'  id='admin-m-comp-data-see-offert-disconnect'>
-                        <img className="admin-m-face_icon" src={profile} alt="icon face" />
+                        <img className="admin-m-face_icon" src={exit} alt="icon face" />
                         <p className='admin-m-icon-profile-name'>Desconectar</p>
                     </div>
 
@@ -164,4 +166,6 @@ const Admin_menu_comp = (props) => {
 
 export default connect((state) => ({
     data_user: state.data_user,
+    data_money: state.data_money, 
+
 }))(Admin_menu_comp);

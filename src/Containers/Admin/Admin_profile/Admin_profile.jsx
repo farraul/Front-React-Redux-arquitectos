@@ -48,19 +48,15 @@ const Admin_profile = (props) => {
         let body = {
             id_architect: props.data_user.user.id,
         };
-        console.log("props de id:", props.data_user.user.id);
 
         let config = {
             headers: { Authorization: `Bearer ${props.data_user.token}` }
         };
-        let res = await axios.post("https://api-laravel-arquitectos.herokuapp.com/api/Reservesunion",body,config);
+        let res = await axios.post("https://api-laravel-arquitectos.herokuapp.com/api/Reservesunion", body, config);
         setall_buys(res.data);
-
-        console.log("res", res)
     }
-
+ 
     useEffect(() => {
-        console.log("datos recibidos", all_buys)
     }, [all_buys]);
 
 
@@ -123,6 +119,17 @@ const Admin_profile = (props) => {
                                 </div>
                             </div>
                         </div>
+                        <div className='admin-p-section-2-price'>
+                            
+                                <div>
+                                <h3>Saldo restante:</h3>
+                                    <div className='admin-p-section-2-price-money'>{props.data_money} €</div>
+                                    
+                                </div>
+                                <div className='admin-p-section-2-price-money-recarge'>Recargar Cartera</div>
+                          
+
+                        </div>
                     </div>
                     {/*fin data user */}
 
@@ -131,45 +138,45 @@ const Admin_profile = (props) => {
                         <h2 className='cent'>Tus clientes</h2>
 
                         <div className='iframe-arquitects-iframe-profile'>
-                        {all_buys.map(name => <div key={name.id}>
+                            {all_buys.map((name, index) => <div key={index}>
 
-                            <div className='iframe-arquitects-h'>
-                                <div className='iframe-arquitects-lead'>
-                                    <div className='iframe-arquitects-client'>
-                                        <div className='iframe-arquitects-client-data-top'>
-                                            <div className='iframe-arquitects-client-name'>
-                                                <h3>{name.name}</h3>
-                                            </div>
-                                            <div className='iframe-arquitects-client-title'>
-                                                <h4>{name.u_title_order_client}</h4>
-                                            </div>
-                                            <div className='iframe-arquitects-client-descrip'>
-                                                <p>{name.u_description_order_client}</p>
-                                            </div>
-                                            <div className='iframe-arquitects-client-descrip-extra'>
-                                                <div className='iframe-arquitects-client-location'>
-                                                    <strong>Ciudad: </strong>{name.u_city}
+                                <div className='iframe-arquitects-h'>
+                                    <div className='iframe-arquitects-lead'>
+                                        <div className='iframe-arquitects-client'>
+                                            <div className='iframe-arquitects-client-data-top'>
+                                                <div className='iframe-arquitects-client-name'>
+                                                    <h3>{name.name}</h3>
                                                 </div>
-                                                <div className='iframe-arquitects-client-date'>
-                                                    <strong>Fechas: </strong>{name.u_date_to_work}
+                                                <div className='iframe-arquitects-client-title'>
+                                                    <h4>{name.u_title_order_client}</h4>
                                                 </div>
-                                            </div>
-                                        </div>
-
-                                        <div className='iframe-arquitects-client-info-contact'>
-                                            <div className='iframe-arquitects-client-info-contact-data'>
-                                                <div className='iframe-arquitects-client-contact'>
-                                                    Telf:<span className=''>{name.telf}</span>
+                                                <div className='iframe-arquitects-client-descrip'>
+                                                    <p>{name.u_description_order_client}</p>
                                                 </div>
-                                                <div className='iframe-arquitects-client-contact-email'>
-                                                    <span className=''>{name.email}</span>
+                                                <div className='iframe-arquitects-client-descrip-extra'>
+                                                    <div className='iframe-arquitects-client-location'>
+                                                        <strong>Ciudad: </strong>{name.u_city}
+                                                    </div>
+                                                    <div className='iframe-arquitects-client-date'>
+                                                        <strong>Fechas: </strong>{name.u_date_to_work}
+                                                    </div>
                                                 </div>
                                             </div>
 
+                                            <div className='iframe-arquitects-client-info-contact'>
+                                                <div className='iframe-arquitects-client-info-contact-data'>
+                                                    <div className='iframe-arquitects-client-contact'>
+                                                        Telf:<span className=''>{name.telf}</span>
+                                                    </div>
+                                                    <div className='iframe-arquitects-client-contact-email'>
+                                                        <span className=''>{name.email}</span>
+                                                    </div>
+                                                </div>
+
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
                             </div>)}
                         </div>
                     </div>
@@ -240,4 +247,5 @@ const Admin_profile = (props) => {
 
 export default connect((state) => ({
     data_user: state.data_user,
+    data_money: state.data_money,
 }))(Admin_profile);

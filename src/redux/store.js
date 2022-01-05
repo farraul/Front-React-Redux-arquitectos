@@ -7,7 +7,7 @@ const createStoreWithMiddleware = applyMiddleware(
 
     	// save({ states: ["data_user" , "data_lead"]  })
 
-        save({ states: ["data_user"]  })
+        save({ states: ["data_user" , "data_money"]  })
 
 
 
@@ -19,7 +19,7 @@ const store = createStoreWithMiddleware(
     //load({ states: ["data_user", "data_film","data_estad"]}),
     // load({ states: ["data_user" , "data_lead"] }),
 
-    load({ states: ["data_user"] }),
+    load({ states: ["data_user", "data_money"] }),
 
 
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__({

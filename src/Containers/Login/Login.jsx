@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { LOGIN } from '../../redux/types';
+import { LOGIN_MONEY } from '../../redux/types';
 
 
 
@@ -14,11 +15,9 @@ const Login = (props) => {
     const [credentials, setCredentials] = useState({ email: '', password: '' });
     //Handler o manejador
     const manejadorInputs = (e) => {
-        console.log("e: ", e);
         setCredentials({ ...credentials, [e.target.name]: e.target.value });
         /*console.log("e.target.name::: ", e.target.name)
         console.log("e.target.value::: ", e.target.value)*/
-        console.log("credentials: ", credentials)
     }
 
     const go_to_login = async () => {
@@ -32,17 +31,18 @@ const Login = (props) => {
 
             let res = await axios.post("https://api-laravel-arquitectos.herokuapp.com/api/loginUser", body); 
             console.log("imprimir ", body);
+            console.log("res ", );
 
             ///Guardamos en REDUX
-            console.log("res:",res);
 
             let datos = res.data;
-            console.log("datosss:",datos);
             
-             props.dispatch({type:LOGIN,payload:datos});
+            
+            props.dispatch({type:LOGIN,payload:datos});
+            props.dispatch({type:LOGIN_MONEY,payload:datos.user.money});
              
-             console.log("propsss:",props);
-         
+             console.log("datos.user.money:", datos.user.money)
+             console.log("todas las props:", props)
  
  
               setTimeout(() => {
