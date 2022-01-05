@@ -10,6 +10,12 @@ import { DECREMENT_MONEY } from '../../../redux/types';
 
 const Admin_offers = (props) => {
     let history = useNavigate();
+    
+
+    const go_to_the_link = (url) => {
+        console.log("history", url)
+        history("/" + url);
+    }
 
 
     let res;
@@ -28,25 +34,25 @@ const Admin_offers = (props) => {
 
     // }, [restmoney]);
 
-    // useEffect(() => {
-    //   //  check_money();
+    useEffect(() => {
+        check_money();
 
-    // });
+    });
 
-    // const check_money = async () => {
-    //     // const button = document.getElementById('button-to-buy');
-    //     setstateaccount(props.data_money);
+    const check_money = async () => {
+        // const button = document.getElementById('button-to-buy');
+       
 
-    //     // console.log("stateaccount: ", stateaccount)
+        // console.log("stateaccount: ", stateaccount)
 
-    //     if (stateaccount <= 0) {
-    //         // document.getElementById('button-to-buy').onclick = null
-    //         console.log("menos igual a 0")
-    //     } else {
-    //         // button.disabled = false
-    //         console.log("mayor que 0")
-    //     }
-    // }
+        if (props.data_money <= 0) {
+            //document.getElementById('button-to-buy').removeAttribute("onclick");
+            console.log("menos igual a 0")
+        } else {
+            // button.disabled = false
+            console.log("mayor que 0")
+        }
+    }
 
 
     ///////////////take the last leads to show///////////////
@@ -151,7 +157,7 @@ const Admin_offers = (props) => {
                                                     </div>
                                                 </div>
                                                 <div className='iframe-arquitects-client-buy-div'>
-                                                    <button id="button-to-buy" className='iframe-arquitects-client-buy' onClick={() => select_lead(name)}>Comprar</button>
+                                                   {(props.data_money <= 0) ? <button id="button-to-buy" className='iframe-arquitects-client-buy' onClick={() => go_to_the_link("admin-profile")}>Recargar saldo</button> : <button id="button-to-buy" className='iframe-arquitects-client-buy' onClick={() => select_lead(name)}>Comprar</button> }
                                                 </div>
                                             </div>
                                         </div>
