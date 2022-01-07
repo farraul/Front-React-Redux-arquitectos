@@ -46,14 +46,17 @@ const Admin_profile = (props) => {
 
     const take_reserves = async (props) => {
         let body = {
-            id_architect: props.data_user.user.id,
+            id_architect: props.data_user.user[0].id,
         };
+        
 
         let config = {
             headers: { Authorization: `Bearer ${props.data_user.token}` }
         };
+        debugger
         let res = await axios.post("https://api-laravel-arquitectos.herokuapp.com/api/Reservesunion", body, config);
         setall_buys(res.data);
+        
     }
  
     useEffect(() => {

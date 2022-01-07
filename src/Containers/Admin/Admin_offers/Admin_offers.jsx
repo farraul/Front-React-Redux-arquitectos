@@ -19,6 +19,7 @@ const Admin_offers = (props) => {
 
 
     let res;
+    let resbuy;
     let res_money;
    // const [stateaccount, setstateaccount] = useState(1);
     const [restmoney, setrestmoney] = useState();
@@ -60,9 +61,19 @@ const Admin_offers = (props) => {
         let config = {
             headers: { Authorization: `Bearer ${props.data_user.token}` }
         };
+        let body = {
+            id_architect: props.data_user.user.id,
+        };
+
+
         try {
             res = await axios.get("https://api-laravel-arquitectos.herokuapp.com/api/Leads", config);
+            resbuy = await axios.post("https://api-laravel-arquitectos.herokuapp.com/api/Reservesunion", body, config);
+
             setall_leads(res.data);
+            console.log("res",res)
+            console.log("res_buy",resbuy)
+
         }
         catch (error) {
             console.log("Error al enviar datos");
@@ -82,7 +93,7 @@ const Admin_offers = (props) => {
             money: props.data_money-1,
         }
         let body = {
-            id_architect: props.data_user.user.id,
+            id_architect: props.data_user.user[0].id,
             id_lead: name.id,
         }
 
@@ -92,12 +103,14 @@ const Admin_offers = (props) => {
         };
         try {
             res = await axios.post("https://api-laravel-arquitectos.herokuapp.com/api/newReserve", body, config);
+            // debugger
         } catch (error) {
             console.log("Error al enviar datos");
         }
-
+console.log("body money", body_money);
+console.log("config", config);
         try {
-            res_money = await axios.put(`https://api-laravel-arquitectos.herokuapp.com/api/UserMoney/${props.data_user?.user?.id}`, body_money, config);
+            res_money = await axios.put(`https://api-laravel-arquitectos.herokuapp.com/api/UserMoney/${props.data_user?.user[0]?.id_user}`, body_money, config);
 
             props.dispatch({ type: DECREMENT_MONEY, payload: props.data_money-1 });
             history("/admin-profile");

@@ -30,19 +30,19 @@ const Login = (props) => {
         try {
 
             let res = await axios.post("https://api-laravel-arquitectos.herokuapp.com/api/loginUser", body); 
-            console.log("imprimir ", body);
-            console.log("res ", );
+      
 
             ///Guardamos en REDUX
 
             let datos = res.data;
             
-            
+            console.log("datos ",datos);      
+            console.log("datos.user.money:", datos.user[0].money)
             props.dispatch({type:LOGIN,payload:datos});
-            props.dispatch({type:LOGIN_MONEY,payload:datos.user.money});
-             
+             props.dispatch({type:LOGIN_MONEY,payload:datos.user[0].money});
+             console.log("olaaaa")
              console.log("datos.user.money:", datos.user.money)
-             console.log("todas las props:", props)
+             console.log("todas las props,bien:", props)
  
  
               setTimeout(() => {

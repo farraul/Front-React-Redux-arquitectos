@@ -119,7 +119,7 @@ const Admin_menu_comp = (props) => {
                     </div>
                     <div onClick={() => go_to_the_link("admin-profile")} className='admin-m-icon-profile pointer'  id='admin-m-comp-data-see-offert-profile'>
                         <img className="admin-m-face_icon" src={profile} alt="icon face" />
-                        <p className='admin-m-icon-profile-name '>{props.data_user?.user?.name}</p>
+                        <p className='admin-m-icon-profile-name '>{props.data_user?.user[0]?.name}</p>
                     </div>
 
                     <div  onClick={() => logOut()} className='admin-m-icon-profile pointer'  id='admin-m-comp-data-see-offert-disconnect'>
