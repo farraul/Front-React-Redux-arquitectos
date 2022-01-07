@@ -48,17 +48,16 @@ const Admin_profile = (props) => {
         let body = {
             id_architect: props.data_user.user[0].id,
         };
-        
+
 
         let config = {
             headers: { Authorization: `Bearer ${props.data_user.token}` }
         };
-        debugger
         let res = await axios.post("https://api-laravel-arquitectos.herokuapp.com/api/Reservesunion", body, config);
         setall_buys(res.data);
-        
+
     }
- 
+
     useEffect(() => {
     }, [all_buys]);
 
@@ -123,14 +122,20 @@ const Admin_profile = (props) => {
                             </div>
                         </div>
                         <div className='admin-p-section-2-price'>
-                            
-                                <div>
+
+                            <div>
                                 <h3>Saldo restante:</h3>
-                                    <div className='admin-p-section-2-price-money'>{props.data_money} €</div>
-                                    
+                                <div className='admin-p-section-2-price-money'>{props.data_money} €</div>
+
+                                <div className='admin-profile-info-time-to-recharge'>
+                                    <p>Una vez hecho el pago, recibirás la recarga en 24/72 horas </p>
                                 </div>
-                                <div className='admin-p-section-2-price-money-recarge'>Recargar Cartera</div>
-                          
+
+                            </div>
+                            <a href="https://www.paypal.com/paypalme/raulfar" target="_blank" className='link-to-buy-paypal'>
+                                <div className='admin-p-section-2-price-money-recarge'>  Recargar Cartera  </div>
+                            </a>
+
 
                         </div>
                     </div>

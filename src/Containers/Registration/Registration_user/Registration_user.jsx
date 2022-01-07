@@ -9,7 +9,8 @@ const Registration_user = () => {
 
     //Hooks
     const [msgError, setmsgError] = useState("");
-    const [ready_to_backend, setready_to_backend,] = useState("");
+    const [id_user_back, set_id_user_back] = useState("");
+
 
     const [button_send_data_user, setbutton_send_data_user] = useState(<div className="sendButton-no-ready">Registrame</div>);
     const [user, setUser] = useState({
@@ -19,7 +20,7 @@ const Registration_user = () => {
         u_description_order_client: '',
         u_date_to_work: '',
         u_city: '',
-       // comunidad_a: '',
+        // comunidad_a: '',
         //PERSONAL DATA
         name: '',
         username: '',
@@ -27,7 +28,7 @@ const Registration_user = () => {
         email: '',
         c_a: '',
         select_gender: '',
-        rol:'user',
+        rol: 'user',
 
     });
     const [inputs_data_form, setinputs_data_form] = useState({
@@ -58,7 +59,7 @@ const Registration_user = () => {
     useEffect(() => {
         if (ready_data_user.name === true && ready_data_user.username === true && ready_data_user.email === true && ready_data_user.telf === true && ready_data_user.u_title_order_client === true && ready_data_user.u_description_order_client === true && ready_data_user.u_city === true && ready_data_user.u_date_to_work === true && ready_data_user.c_a === true && ready_data_user.select_gender === true) {
             setbutton_send_data_user(<div className="sendButton" onClick={() => send_data_backend()}>Registrame</div>);
-            setready_to_backend(true);
+            //  setready_to_backend(true);
         } else {
             setbutton_send_data_user(<div className="sendButton-no-ready">Registrame</div>);
         }
@@ -98,7 +99,7 @@ const Registration_user = () => {
                 }; break;
             ///description///////////////////////////////////////////////////
             case 'u_description_order_client':
-                if ((e.target.value.length >= 100) && (e.target.value.length <= 400)) { // && (/^[a-z]/gi.test(user.name))  
+                if ((e.target.value.length >= 30) && (e.target.value.length <= 150)) { // && (/^[a-z]/gi.test(user.name))  
                     setinputs_data_form({
                         ...inputs_data_form,
                         u_description_order_client: "✓ Descripción "
@@ -110,7 +111,7 @@ const Registration_user = () => {
                 } else {
                     setinputs_data_form({
                         ...inputs_data_form,
-                        u_description_order_client: "✗ Utiliza entre 100 y 400 caracteres"
+                        u_description_order_client: "✗ Utiliza entre 30 y 150 caracteres"
                     });
                     setready_data_user({
                         ...ready_data_user,
@@ -244,7 +245,7 @@ const Registration_user = () => {
                         telf: false
                     });
                 }; break;
-           /// seleccionar select comunity autonoma/////////////////////////
+            /// seleccionar select comunity autonoma/////////////////////////
             case 'c_a':
                 if (e.target.value.length !== false) { // && (/^[a-z]/gi.test(user.name))  
                     setinputs_data_form({
@@ -294,41 +295,65 @@ const Registration_user = () => {
     const send_data_backend = async () => {
 
         //if (ready_data_user.name && ready_data_user.email && ready_data_user.telf && ready_data_user.u_title_order_client) {
-              //Generación del body
-              console.log("user",user)
-              let body = {
-  
-                  rol: user.rol,
-                  //users
-                  u_description_order_client: user.u_description_order_client,
-                  u_title_order_client: user.u_title_order_client,
-                  u_data_to_work: user.u_data_to_work,
-                  u_city: user.u_city,
-                  c_a: user.c_a,
-  
-                  //
-                  name: user.name,
-                  username: user.username,
-                  telf: user.telf,
-                  email: user.email,
-                  c_a: user.c_a,
-                  gender: user.select_gender,
-              }
-              console.log("body",body)
-              //Conexion a axios y envio de datos
-               try {
-                   let res = await axios.post("https://api-laravel-arquitectos.herokuapp.com/api/newUser", body);
-                   console.log("imprimir res: ", res)
-                   //Guardado de datos en localStorage
-                   setmsgError("Usuario registrado con éxito");
-       
-                   history("/login");
-               } catch (error) {
-                setmsgError("✗ Error el mail está ya registrado");
-                   console.log(error)
-               }
+        //Generación del body
+        console.log("user", user)
+        let body = {
 
-        
+            rol: user.rol,
+            //users
+            u_description_order_client: user.u_description_order_client,
+            u_title_order_client: user.u_title_order_client,
+            u_date_to_work: user.u_date_to_work,
+            u_city: user.u_city,
+            c_a: user.c_a,
+
+
+            //
+            name: user.name,
+            username: user.username,
+            telf: user.telf,
+            email: user.email,
+            c_a: user.c_a,
+            gender: user.select_gender,
+            id_user: id_user_back,
+        }
+        console.log("body", body)
+        //Conexion a axios y envio de datos
+        try {
+
+
+            axios.post("https://api-laravel-arquitectos.herokuapp.com/api/newUser", body).then(res => {
+                set_id_user_back(res.data.user.id)
+                let config = {
+                    headers: { Authorization: `Bearer ${res.data.token}` }
+                };
+
+                setTimeout(() => {
+                }, 400);
+                
+                axios.post("https://api-laravel-arquitectos.herokuapp.com/api/newLead", body, config).then(response => {
+                    //     //console.log("imprimir res: ", res);
+                    //     console.log("segunda entrada")
+                    //     //Guardado de datos en localStorage
+                    //     //setmsgError("Usuario registrado con éxito");
+
+                    history("/");
+
+                }
+                )
+
+            })
+
+
+
+
+
+        } catch (error) {
+            setmsgError("✗ Error el mail está ya registrado");
+            console.log(error)
+        }
+
+
     };
 
     return (
