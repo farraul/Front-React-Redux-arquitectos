@@ -332,9 +332,10 @@ const Registration_architect = () => {
                 };
                 console.log("config",config)
                 console.log("body",body)
-                axios.post("https://api-laravel-arquitectos.herokuapp.com/api/newArchitect", body, config)
+               res= axios.post("https://api-laravel-arquitectos.herokuapp.com/api/newArchitect", body, config);
+               console.log("respuesta2",res)
 
-              //   history("/login");
+                history("/login");
 
              })
 

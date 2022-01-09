@@ -66,21 +66,21 @@ const Admin_profile = (props) => {
 
 
     const deleteuser = async () => {
-      
+
         let config = {
             headers: { Authorization: `Bearer ${props.data_user.token}` }
         };
         console.log("ENVIANDO AL BACKEND ESTO....", config);
         console.log("props: ", props.data_user.user[0]);
         try {
-            let res = await axios.delete(`https://api-laravel-arquitectos.herokuapp.com/api/User/${props.data_user?.user[0]?.id_user}`,config);
+            let res = await axios.delete(`https://api-laravel-arquitectos.herokuapp.com/api/User/${props.data_user?.user[0]?.id_user}`, config);
             console.log("dentro del try", res);
             history("/");
-             props.dispatch({ type: LOGOUT });
-             props.dispatch({ type: LOGOUT_MONEY });
+            props.dispatch({ type: LOGOUT });
+            props.dispatch({ type: LOGOUT_MONEY });
 
 
-             history("/login");
+            history("/login");
 
         } catch (error) {
             console.log("error de front", error);
@@ -99,41 +99,95 @@ const Admin_profile = (props) => {
                     <div className='admin-p-width'>
                         {/* datos perfill*/}
                         <div className='admin-p-profile'>
-                            <div className='admin-p-profile-padding'>
-                                <h3>Tus datos </h3>
-                                <div className='admin-p-profile-info'>
-                                    <div className='admin-p-profile-t'>
-                                        Nombre:
+                            <h3 className='admin-profile-data-h3'>Tus datos </h3>
+                            <div className='admin-p-profile-sections-padding'>
+                                <div className='admin-p-data-display-h'>
+                                    <div className='admin-p-profile-padding'>
+
+                                        <div className='admin-p-profile-info'>
+                                            <div className='admin-p-profile-t'>
+                                                Nombre:
+                                            </div>
+                                            <div className='admin-p-profile-d'>
+                                                {props.data_user.user[0].name}
+                                            </div>
+                                        </div>
+                                        <div className='admin-p-profile-info'>
+                                            <div className='admin-p-profile-t'>
+                                                Apellidos:
+                                            </div>
+                                            <div className='admin-p-profile-d'>
+                                                {props.data_user.user[0].username}
+                                            </div>
+                                        </div>
+                                        <div className='admin-p-profile-info'>
+                                            <div className='admin-p-profile-t'>
+                                                Teléfono:
+                                            </div>
+                                            <div className='admin-p-profile-d'>
+                                                {props.data_user.user[0].telf}
+                                            </div>
+                                        </div>
+                                        <div className='admin-p-profile-info no-border'>
+                                            <div className='admin-p-profile-t'>
+                                                Email:
+                                            </div>
+                                            <div className='admin-p-profile-d'>
+                                                {props.data_user.user[0].email}
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div className='admin-p-profile-d'>
-                                        Raúl
+                                    <div className='admin-p-profile-padding'>
+
+                                        <div className='admin-p-profile-info'>
+                                            <div className='admin-p-profile-t'>
+                                                C.autonoma:
+                                            </div>
+                                            <div className='admin-p-profile-d'>
+                                                {props.data_user.user[0].c_a}
+                                            </div>
+                                        </div>
+                                        <div className='admin-p-profile-info'>
+                                            <div className='admin-p-profile-t'>
+                                                Genero:
+                                            </div>
+                                            <div className='admin-p-profile-d'>
+                                                {props.data_user.user[0].gender}
+                                            </div>
+                                        </div>
+                                        <div className='admin-p-profile-info'>
+                                            <div className='admin-p-profile-t'>
+                                                Página Web:
+                                            </div>
+                                            <div className='admin-p-profile-d'>
+                                                {props.data_user.user[0].web_site}
+                                            </div>
+                                        </div>
+                                        <div className='admin-p-profile-info no-border'>
+                                            <div className='admin-p-profile-t'>
+                                                Id:
+                                            </div>
+                                            <div className='admin-p-profile-d'>
+                                                {props.data_user.user[0].id}
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div className='admin-p-profile-info'>
-                                    <div className='admin-p-profile-t'>
-                                        Apellidos:
-                                    </div>
-                                    <div className='admin-p-profile-d'>
-                                        far llobell
-                                    </div>
-                                </div>
-                                <div className='admin-p-profile-info'>
-                                    <div className='admin-p-profile-t'>
-                                        Teléfono:
-                                    </div>
-                                    <div className='admin-p-profile-d'>
-                                        628086995
-                                    </div>
-                                </div>
-                                <div className='admin-p-profile-info'>
-                                    <div className='admin-p-profile-t'>
-                                        Email:
-                                    </div>
-                                    <div className='admin-p-profile-d'>
-                                        raulfarllobell@gmail.com
+
+                                <div>
+                                    <div id="admin-profile-description-data" className='admin-p-profile-info admin-profile-border-top no-border'>
+                                        <div className='admin-p-profile-t admin-p-profile-t-description'>
+                                            Descripción:
+                                        </div>
+                                        <div className='admin-p-profile-d'>
+                                            {props.data_user.user[0].description_experience}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+
+
+
                             <div>
                                 <div className='admin-p-profile-buttons-down'>
 
@@ -246,7 +300,7 @@ const Admin_profile = (props) => {
                                     <div onClick={() => hide_delete()} className='update-delete-user-buttons no-delete'>
                                         No
                                     </div>
-                                    <div  onClick={() => deleteuser()} className='update-delete-user-buttons yes-delete'>
+                                    <div onClick={() => deleteuser()} className='update-delete-user-buttons yes-delete'>
                                         Sí
                                     </div>
 
