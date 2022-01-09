@@ -9,10 +9,11 @@ const Registration_user = () => {
 
     //Hooks
     const [msgError, setmsgError] = useState("");
-    const [id_user_back, set_id_user_back] = useState("");
+    const [id_user_back, set_id_user_back] = useState();
 
 
     const [button_send_data_user, setbutton_send_data_user] = useState(<div className="sendButton-no-ready">Registrame</div>);
+    const [token, settoken] = useState("");
     const [user, setUser] = useState({
         rol: 'user',
         //USERS
@@ -57,6 +58,11 @@ const Registration_user = () => {
     });
 
     useEffect(() => {
+
+    });
+
+
+    useEffect(() => {
         if (ready_data_user.name === true && ready_data_user.username === true && ready_data_user.email === true && ready_data_user.telf === true && ready_data_user.u_title_order_client === true && ready_data_user.u_description_order_client === true && ready_data_user.u_city === true && ready_data_user.u_date_to_work === true && ready_data_user.c_a === true && ready_data_user.select_gender === true) {
             setbutton_send_data_user(<div className="sendButton" onClick={() => send_data_backend()}>Registrame</div>);
             //  setready_to_backend(true);
@@ -65,6 +71,100 @@ const Registration_user = () => {
         }
 
     }, [inputs_data_form]);
+
+
+
+    const send_data_backend = async () => {
+
+        //if (ready_data_user.name && ready_data_user.email && ready_data_user.telf && ready_data_user.u_title_order_client) {
+        //Generación del body
+        console.log("user", user)
+        let body = {
+
+            rol: user.rol,
+            //users
+            u_description_order_client: user.u_description_order_client,
+            u_title_order_client: user.u_title_order_client,
+            u_date_to_work: user.u_date_to_work,
+            u_city: user.u_city,
+            c_a: user.c_a,
+
+
+            //
+            name: user.name,
+            username: user.username,
+            telf: user.telf,
+            email: user.email,
+            c_a: user.c_a,
+            gender: user.select_gender,
+            id_user: id_user_back,
+        }
+        console.log("body", body)
+        //Conexion a axios y envio de datos
+        try {
+
+
+            axios.post("https://api-laravel-arquitectos.herokuapp.com/api/newUser", body).then(res => {
+                console.log("res primero: ", res)
+                body.id_user=res.data.user.id;
+
+                let config = {
+                    headers: { Authorization: `Bearer ${res.data.token}` }
+                };
+                console.log("config: ", config);
+                console.log("body",body);
+                setTimeout(
+                  
+                    axios.post("https://api-laravel-arquitectos.herokuapp.com/api/newLead", body, config)
+                    , 1000);
+                    history("/");
+                // second_form_create_lead();
+            })
+        } catch (error) {
+            setmsgError("✗ Error el mail está ya registrado");
+            console.log(error)
+        }
+    };
+
+
+    //  const second_form_create_lead= ()=> {
+
+    //         console.log("entre parte2");
+    //         setTimeout(() => {
+
+
+    //         console.log("en la parte 2 el token : ",token);
+    //         let body = {
+    //             u_description_order_client: user.u_description_order_client,
+    //             u_title_order_client: user.u_title_order_client,
+    //             u_date_to_work: user.u_date_to_work,
+    //             u_city: user.u_city,
+    //             c_a: user.c_a,
+    //         }
+
+    //         let config = {
+    //             headers: { Authorization: `Bearer ${token}` }
+    //         };
+    //         console.log("config: ",config)
+    //         // console.log("id_user_back: ",id_user_back)
+    //         // setTimeout(() => {
+    //         // }, 600);
+
+    //         axios.post("https://api-laravel-arquitectos.herokuapp.com/api/newLead", body, config).then(response => {
+    //             //     //console.log("imprimir res: ", res);
+    //             //     console.log("segunda entrada")
+    //             //     //Guardado de datos en localStorage
+    //             //     //setmsgError("Usuario registrado con éxito");
+
+    //             history("/");
+
+    //         }
+    //         )
+    //     }, 4000);
+
+    //     }
+
+
 
 
     //Manejadores o Handlers
@@ -292,69 +392,7 @@ const Registration_user = () => {
         }
     }
 
-    const send_data_backend = async () => {
 
-        //if (ready_data_user.name && ready_data_user.email && ready_data_user.telf && ready_data_user.u_title_order_client) {
-        //Generación del body
-        console.log("user", user)
-        let body = {
-
-            rol: user.rol,
-            //users
-            u_description_order_client: user.u_description_order_client,
-            u_title_order_client: user.u_title_order_client,
-            u_date_to_work: user.u_date_to_work,
-            u_city: user.u_city,
-            c_a: user.c_a,
-
-
-            //
-            name: user.name,
-            username: user.username,
-            telf: user.telf,
-            email: user.email,
-            c_a: user.c_a,
-            gender: user.select_gender,
-            id_user: id_user_back,
-        }
-        console.log("body", body)
-        //Conexion a axios y envio de datos
-        try {
-
-
-            axios.post("https://api-laravel-arquitectos.herokuapp.com/api/newUser", body).then(res => {
-                set_id_user_back(res.data.user.id)
-                let config = {
-                    headers: { Authorization: `Bearer ${res.data.token}` }
-                };
-
-                setTimeout(() => {
-                }, 400);
-                
-                axios.post("https://api-laravel-arquitectos.herokuapp.com/api/newLead", body, config).then(response => {
-                    //     //console.log("imprimir res: ", res);
-                    //     console.log("segunda entrada")
-                    //     //Guardado de datos en localStorage
-                    //     //setmsgError("Usuario registrado con éxito");
-
-                    history("/");
-
-                }
-                )
-
-            })
-
-
-
-
-
-        } catch (error) {
-            setmsgError("✗ Error el mail está ya registrado");
-            console.log(error)
-        }
-
-
-    };
 
     return (
         <div className="registration-section-1">

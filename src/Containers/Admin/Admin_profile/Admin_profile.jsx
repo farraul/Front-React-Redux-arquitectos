@@ -2,9 +2,12 @@ import React, { useState, useEffect } from 'react';
 import Admin_menu_comp from '../../../Components/Admin_menu_comp/Admin_menu_comp';
 import axios from 'axios';
 import { connect } from 'react-redux';
+import { LOGOUT, LOGOUT_MONEY } from '../../../redux/types';
+import { useNavigate } from 'react-router-dom';
 
 
 const Admin_profile = (props) => {
+    const history = useNavigate();
 
     //Hooks
     const [all_buys, setall_buys] = useState([]);
@@ -60,6 +63,29 @@ const Admin_profile = (props) => {
 
     useEffect(() => {
     }, [all_buys]);
+
+
+    const deleteuser = async () => {
+      
+        let config = {
+            headers: { Authorization: `Bearer ${props.data_user.token}` }
+        };
+        console.log("ENVIANDO AL BACKEND ESTO....", config);
+        console.log("props: ", props.data_user.user[0]);
+        try {
+            let res = await axios.delete(`https://api-laravel-arquitectos.herokuapp.com/api/User/${props.data_user?.user[0]?.id_user}`,config);
+            console.log("dentro del try", res);
+            history("/");
+             props.dispatch({ type: LOGOUT });
+             props.dispatch({ type: LOGOUT_MONEY });
+
+
+             history("/login");
+
+        } catch (error) {
+            console.log("error de front", error);
+        }
+    }
 
 
     return (
@@ -220,7 +246,7 @@ const Admin_profile = (props) => {
                                     <div onClick={() => hide_delete()} className='update-delete-user-buttons no-delete'>
                                         No
                                     </div>
-                                    <div className='update-delete-user-buttons yes-delete'>
+                                    <div  onClick={() => deleteuser()} className='update-delete-user-buttons yes-delete'>
                                         Sí
                                     </div>
 
