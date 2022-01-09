@@ -254,7 +254,7 @@ const Admin_profile = (props) => {
                                             <div className='iframe-arquitects-client-info-contact'>
                                                 <div className='iframe-arquitects-client-info-contact-data'>
                                                     <div className='iframe-arquitects-client-contact'>
-                                                        Telf:<span className=''>{name.telf}</span>
+                                                         <span className=''>{name.telf}</span>
                                                     </div>
                                                     <div className='iframe-arquitects-client-contact-email'>
                                                         <span className=''>{name.email}</span>
