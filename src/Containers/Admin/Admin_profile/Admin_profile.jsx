@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Admin_menu_comp from '../../../Components/Admin_menu_comp/Admin_menu_comp';
 import axios from 'axios';
 import { connect } from 'react-redux';
-import { LOGOUT, LOGOUT_MONEY } from '../../../redux/types';
+import { LOGOUT, LOGOUT_MONEY, UPDATE_USER } from '../../../redux/types';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -11,6 +11,9 @@ const Admin_profile = (props) => {
 
     //Hooks
     const [all_buys, setall_buys] = useState([]);
+    const [userData, setUserData] = useState(props.data_user.user[0]);
+    const [msgError, setmsgError] = useState("");
+    console.log("userData", userData)
 
 
     const see_update = async () => {
@@ -86,6 +89,44 @@ const Admin_profile = (props) => {
             console.log("error de front", error);
         }
     }
+
+    const manejaInputs = (e) => {
+        setUserData({ ...userData, [e.target.name]: e.target.value });
+      }
+/////////////update data///////////////7777777777777777777777777777777777777777777777777777777
+      const update = async () => {
+       // props.dispatch({ type: UPDATE_USER, payload: userData });
+    
+    
+        let token = {
+          headers: { Authorization: `Bearer ${props.data_user.token}` }
+        };
+    
+        try {
+          console.log(userData, token)
+          let res = await axios.put(`https://api-laravel-arquitectos.herokuapp.com/api/User/${props.data_user?.user[0]?.id_user}`, userData, token);
+          let res_architect = await axios.put(`https://api-laravel-arquitectos.herokuapp.com/api/Architect/${props.data_user?.user[0]?.id}`, userData, token);
+
+          let movedata=[userData]
+            props.dispatch({ type: UPDATE_USER, payload: movedata });
+
+          setmsgError(`Updated profile data ${res.data.user.body}....`);
+          console.log(res)
+          console.log(res_architect)
+    
+          //window.location.reload();
+    
+        } catch (error) {
+          setmsgError("Failed to update data");
+    
+        }
+        
+        // setTimeout(() => {
+        //   history("/");
+        // }, 1000);
+    }
+
+
 
 
     return (
@@ -275,18 +316,77 @@ const Admin_profile = (props) => {
                             <div className="close-window" id="X" onClick={() => hide_update()}>X</div>
 
                             <div className='iframe-arquitects-pop-up'>
-                                <input className='iframe-arquitects-pop-up-data' type="text" name="name" title="name" lenght="30" placeholder="Nombre"></input>
+                                <input className='iframe-arquitects-pop-up-data' type="text" name="name" title="name" lenght="30" onChange={manejaInputs}  placeholder="Nombre"></input>
                             </div>
                             <div className='iframe-arquitects-pop-up'>
-                                <input className='iframe-arquitects-pop-up-data' type="text" name="name" title="name" lenght="30" placeholder="Apellidos"></input>
+                                <input className='iframe-arquitects-pop-up-data' type="text" name="username" title="username" lenght="30" onChange={manejaInputs} placeholder="Apellidos"></input>
                             </div>
                             <div className='iframe-arquitects-pop-up'>
-                                <input className='iframe-arquitects-pop-up-data' type="text" name="name" title="name" lenght="30" placeholder="Teléfono"></input>
+                                <input className='iframe-arquitects-pop-up-data' type="text" name="telf" title="telf" lenght="30" onChange={manejaInputs} placeholder="Teléfono"></input>
                             </div>
                             <div>
                                 <p className='update-email-nochange'>*El email no se puede cambiar</p>
                             </div>
-                            <div className="update-send-data" /*onClick={() => send_data_backend()}*/>Actualizar</div>
+                            <div className='iframe-arquitects-pop-up'>
+                                <textarea className='iframe-arquitects-pop-up-data admin-profile-text-a-update' type="text" name="description_experience" title="name" lenght="30" onChange={manejaInputs} placeholder="Descripción"></textarea>
+                            </div>
+                            <div className='iframe-arquitects-pop-up'>
+                                <input className='iframe-arquitects-pop-up-data' type="text" name="web_site" title="web_site" lenght="30" onChange={manejaInputs} placeholder="Página Web"></input>
+                            </div>
+                            
+
+
+
+
+
+
+                         
+                            <select  onChange={manejaInputs} className='registration-form-full-w select-a m-t-2' name="c_a" id="c_a">
+                                        <option selected={true} disabled="disabled">Comunidad autónoma</option>
+                                        <option value="andalucia">Andalucía</option>
+                                        <option value="Aragón">Aragón</option>
+                                        <option value="Principado de Asturias">Principado de Asturias</option>
+                                        <option value="Illes Balears">Illes Balears</option>
+                                        <option value="Canarias">Canarias</option>
+                                        <option value="Cantabria">Cantabria</option>
+                                        <option value="Castilla La Mancha">Castilla La Mancha</option>
+                                        <option value="Cataluña">Cataluña</option>
+                                        <option value="Comunidad Valenciana">Comunidad Valenciana</option>
+                                        <option value="Extremadura">Extremadura</option>
+                                        <option value="Galicia">Galicia</option>
+                                        <option value="La Rioja">La Rioja</option>
+                                        <option value="Comunidad de Madrid">Comunidad de Madrid</option>
+                                        <option value="Región de Murcia">Región de Murcia</option>
+                                        <option value="Comunidad Foral de Navarra">Comunidad Foral de Navarra</option>
+                                        <option value="País Vasco o Euskadi"> País Vasco o Euskadi</option>
+                                    </select>
+
+
+                                    
+                             
+                                    <select onChange={manejaInputs} className='registration-form-full-w select-a m-t-1' name="s_gender" id="s_gender">
+                                        <option selected={true} disabled="disabled" >Selecciona género</option>
+                                        <option value="Masculino">Masculino</option>
+                                        <option value="Femenino">Femenino</option>
+                                    </select>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            
+                            <div className="update-send-data" onClick={() => update()} >Actualizar</div>
 
                         </div>
 
@@ -312,20 +412,7 @@ const Admin_profile = (props) => {
                                 </div>
                             </div>
                         </div>
-
-
-
-
-
-
                     </div>
-
-
-
-
-
-
-
                 </div>
             </div>
         </div>

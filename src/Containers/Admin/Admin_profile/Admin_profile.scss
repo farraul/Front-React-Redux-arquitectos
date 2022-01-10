@@ -138,7 +138,7 @@ justify-content: center;
 width: 100%;
 max-width: 16em;
 height: 100%;
-max-height: 10em;
+max-height: 23em;
 display: none;
 }
 .my-style{
@@ -264,4 +264,9 @@ div#admin-profile-description-data {
     border-top: 1px solid;
     margin: 0em 4em 2em;
     padding-top: 1em;
+}
+.admin-profile-text-a-update {
+    width: 100%;
+    padding: 1em;
+    border-radius: 0.5em;
 }
