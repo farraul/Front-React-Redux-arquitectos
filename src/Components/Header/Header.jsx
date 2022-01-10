@@ -31,8 +31,8 @@ const Header = (props) => {
                     { props.data_user?.user[0]?.rol=='arquitect' ? <div className="header-menu-links" onClick={()=>go_to_the_link("admin")}>Panel Administrador</div>: null}
                     { props.data_user?.user[0]?.rol=='super-admin' ?<div className="header-menu-links" onClick={()=>go_to_the_link("super-admin")}>Super Admin</div> : null}
 
-                    { props.data_user?.user[0]?.rol!='arquitect' ?<div className="header-menu-links" onClick={()=>go_to_the_link("registro")}>Registrarme</div> : null}
-                    { props.data_user?.user[0]?.rol!='arquitect'   ?<div className="header-menu-links" onClick={()=>go_to_the_link("login")}>Login</div> : null}
+                    { props.data_user?.user[0]?.rol!='arquitect' &&  props.data_user?.user[0]?.rol!='super-admin' ?<div className="header-menu-links" onClick={()=>go_to_the_link("registro")}>Registrarme</div> : null}
+                    { props.data_user?.user[0]?.rol!='arquitect' &&  props.data_user?.user[0]?.rol!='super-admin' ?<div className="header-menu-links" onClick={()=>go_to_the_link("login")}>Login</div> : null}
 
                     {/*<Boton destino="Registro" url="/register"/>*/}
                 </div>

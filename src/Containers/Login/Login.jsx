@@ -44,10 +44,15 @@ const Login = (props) => {
              console.log("datos.user.money:", datos.user.money)
              console.log("todas las props,bien:", props)
  
- 
+          if( datos.user[0].rol=="super-admin"){
+            history("/super-admin");
+
+          }else{
               setTimeout(() => {
                  history("/admin");
              }, 1000); 
+
+            }
              } catch (error) {
              setmsgError("Error al logearmeee");
              }
