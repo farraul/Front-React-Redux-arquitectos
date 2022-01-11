@@ -87,7 +87,6 @@ const Admin_offers = (props) => {
 
     const select_lead = async (name) => {
 
-        setrestmoney(props.data_money-1);
 
         let body_money = {
             money: props.data_money-1,

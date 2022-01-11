@@ -20,7 +20,7 @@ import Admin_home from './Containers/Admin/Admin_home/Admin_home';
 import Admin_profile from './Containers/Admin/Admin_profile/Admin_profile';
 
 import Super_admin from './Containers/Super_admin/Super_admin';
-
+import Super_admin_home from './Containers/Super_admin/super_admin_home/super_admin_home';
 
 
 
@@ -49,6 +49,7 @@ function App() {
           <Route path="/admin-profile" element={<Admin_profile/>} />
 
           <Route path="/super-admin" element={<Super_admin/>} />
+          <Route path="/super-admin-home" element={<Super_admin_home/>} />
          
 
         </Routes>

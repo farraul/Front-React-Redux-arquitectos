@@ -1,0 +1,64 @@
+// .super-admin-home-div {
+//     display: flex;
+//     margin: auto;
+//     width: 100%;
+//     max-width: 1200px;
+//     justify-content: space-between;
+// }
+
+.super-admin-home-div {
+    //width: 100%;
+    border-bottom: 0.05px solid grey;
+    text-align: center;
+}
+.super-admin-home-div-general {
+    width: 100%;
+    display: flex;
+    max-width:1250px;
+    margin: auto;
+}
+
+
+.super-admin-home-div-all-users {
+    width: 100%;
+    max-width: 1250px;
+    margin: auto;
+    margin-top: 4em;
+    background-color: white;
+    color: black;
+    border-radius: 0.5em;
+}
+////campos///////////
+div#super-admin-home-div-id {
+    width: 4em;
+}
+div#super-admin-home-div-name {
+    width: 8em;
+}
+div#super-admin-home-div-username {
+    width: 13em;
+}
+div#super-admin-home-div-email {
+    width: 16em;
+}
+div#super-admin-home-div-telf {
+    width: 10em;
+}
+div#super-admin-home-div-gender {
+    width: 7em;
+}
+div#super-admin-home-div-c_a {
+    width: 12em;
+}
+div#super-admin-home-div-money {
+    width: 3em;
+}
+//////@at-root
+.super-admin-home-div-all-users-titles {
+    display: flex;
+    background: #00718a;
+    color: white;
+}
+img.icons-super-admin {
+    height: 1.5em;
+}

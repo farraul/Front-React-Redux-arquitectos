@@ -7,6 +7,7 @@ import exit from '../../assets/images/exit.svg';
 import { useNavigate } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { LOGOUT_MONEY, LOGOUT } from '../../redux/types';
+import Super_Admin_menu_comp from '../../..../../Components/Super_Admin_menu_comp/Super_Admin_menu_comp';
 
 
 
@@ -32,13 +33,7 @@ const Super_Admin = (props) => {
 
         <div className="super-admin">
             <div className="super-admin-h-section-1">
-                <div className='super-admin-menu-top'>
-                <div onClick={() => logOut()} className='super-admin-m-icon-profile pointer' id='super-admin-m-comp-data-see-offert-disconnect'>
-                        <img className="super-admin-m-face_icon" src={exit} alt="icon face" />
-                        <p className='super-admin-m-icon-profile-name'>Desconectar</p>
-                    </div>
-
-                </div>
+              <Super_Admin_menu_comp/>
                 <div className='super-admin-h-section-2'>
 
                     <div className='super-admin-container-info'>

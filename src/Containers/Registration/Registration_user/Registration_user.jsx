@@ -447,7 +447,7 @@ const Registration_user = () => {
                                             <option value="Comunidad Valenciana">Comunidad Valenciana</option>
                                             <option value="Extremadura">Extremadura</option>
                                             <option value="Galicia">Galicia</option>
-                                            <option value="La Rioja<">La Rioja</option>
+                                            <option value="La Rioja">La Rioja</option>
                                             <option value="Comunidad de Madrid">Comunidad de Madrid</option>
                                             <option value="Región de Murcia">Región de Murcia</option>
                                             <option value="Comunidad Foral de Navarra">Comunidad Foral de Navarra</option>

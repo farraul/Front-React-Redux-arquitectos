@@ -45,7 +45,7 @@ const Login = (props) => {
              console.log("todas las props,bien:", props)
  
           if( datos.user[0].rol=="super-admin"){
-            history("/super-admin");
+            history("/super-admin-home");
 
           }else{
               setTimeout(() => {

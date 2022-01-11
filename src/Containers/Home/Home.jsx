@@ -28,7 +28,7 @@ const Home = () => {
                 </div>
                 <div>
                     <div className='home-section-1-buttons'>
-                        <div><button onClick={() => go_to_the_link("registro-usuarios")} className='home-section-1-button' type="button">Empezar registro</button></div>
+                        <div><button onClick={() => go_to_the_link("registro")} className='home-section-1-button' type="button">Empezar registro</button></div>
                         <div><button onClick={() => go_to_the_link("arquitectos")} className='home-section-1-button' type="button">Ver arquitectos</button></div>
                     </div>
                 </div>
