@@ -3,11 +3,11 @@ import eChart from "./configs/users_communities";
 import ReactApexChart from "react-apexcharts";
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import all_data_backend from './configs/all_data_backend';
+//import all_data_backend from './configs/all_data_backend';
 
 function EChart_users_communities()/*= async () => */{
 
-console.log("importacion", all_data_backend)
+//console.log("importacion", all_data_backend)
   // const EChart_users_communities= async () => {
 
 
@@ -15,22 +15,22 @@ console.log("importacion", all_data_backend)
 
 
 
-  let res;
-  let token = JSON.parse(localStorage.getItem('redux_localstorage_simple_data_user'));
-  console.log("token: ", token)
-  let token_format = {
-    headers: { Authorization: `Bearer ${token.token}` }
-  };
+//   let res;
+//   let token = JSON.parse(localStorage.getItem('redux_localstorage_simple_data_user'));
+//   console.log("token: ", token)
+//   let token_format = {
+//     headers: { Authorization: `Bearer ${token.token}` }
+//   };
 
-  try {
-    console.log("antes settime")
+//   try {
+//     console.log("antes settime")
 
     
-      //  res =await axios.get("https://api-laravel-arquitectos.herokuapp.com/api/Users", token_format);
+//       //  res =await axios.get("https://api-laravel-arquitectos.herokuapp.com/api/Users", token_format);
    
-//       setTimeout(() => {  
+// //       setTimeout(() => {  
 
-// }, 3000);
+// // }, 3000);
       
   // console.log("despues ")
 
@@ -100,10 +100,10 @@ console.log("importacion", all_data_backend)
     // console.log("users_c_a[4]", users_c_a[0])
     // console.log("biennnnnnnnnnn",)
 
-  }
-  catch (error) {
-    console.log("error de front", error);
-  }
+  // }
+  // catch (error) {
+  //   console.log("error de front", error);
+  // }
 
 
 
