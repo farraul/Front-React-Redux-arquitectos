@@ -11,8 +11,10 @@ const Super_Admin_Home = (props) => {
     //const history = useNavigate();
     const [all_users, setall_users] = useState([]);
     // const [userData, setUserData] = useState();
-    const [moreMoney, setMoreMoney] = useState()
-
+    const [moreMoney, setMoreMoney] = useState({
+        money: ''
+    })
+    const [id_send_money, setId_send_money] = useState("")
     // const go_to_the_link = (url) => {
     //     console.log("history", url)
     //     history("/" + url);
@@ -23,7 +25,9 @@ const Super_Admin_Home = (props) => {
         takeusers();
     }, []);
 
-    const see_update = async () => {
+    const see_update = async (id) => {
+        setId_send_money(id);
+        console.log("iddd", id_send_money)
         let element = document.getElementById("my-update-money");
         element.classList.add("my-style-money");
         let element_back = document.getElementById("open-files-background");
@@ -41,9 +45,10 @@ const Super_Admin_Home = (props) => {
         setMoreMoney({ ...moreMoney, [e.target.name]: e.target.value });
     }
 
-    const more_money = async (id) => {
+    const more_money = async () => {
+        
         let body_money = {
-            money: moreMoney
+            money: moreMoney.money
         }
         let config = {
             headers: { Authorization: `Bearer ${props.data_user.token}` }
@@ -51,7 +56,7 @@ const Super_Admin_Home = (props) => {
         // console.log("body money", body_money);
         // console.log("config", config);
         try {
-            await axios.put(`https://api-laravel-arquitectos.herokuapp.com/api/UserMoney/${id}`, body_money, config);
+            await axios.put(`https://api-laravel-arquitectos.herokuapp.com/api/UserMoney/${id_send_money}`, body_money, config);
 
         } catch (error) {
         }
@@ -203,9 +208,10 @@ const Super_Admin_Home = (props) => {
                                                 {run.money}
                                             </p>
                                         </div>
-                                        <div onClick={() => see_update()} id="super-admin-home-div-money" className="super-admin-home-div">
+                                        <div onClick={() => see_update(run.id)} id="super-admin-home-div-money" className="super-admin-home-div">
                                             <p className="super-admin-home-p">
                                                 <img className="icons-super-admin" src={moneyicon} alt="money" />
+                                                
                                             </p>
                                         </div>
 
@@ -233,8 +239,8 @@ const Super_Admin_Home = (props) => {
                                             <div className="close-window" id="X" onClick={() => hide_update()}>X</div>
 
                                             <div className='iframe-arquitects-pop-up'>
-                                                <input className='iframe-arquitects-pop-up-data' type="text" name="name" title="name" lenght="30" onChange={e => userHandler(e)} placeholder="Monedas"></input>
-                                                <div className="update-send-data" name="new_money" onClick={() => more_money(run.id)} >Actualizar</div>
+                                                <input className='iframe-arquitects-pop-up-data' type="text" name="money" title="money" lenght="30" onChange={e => userHandler(e)} placeholder="¿Cuántas monedas quieres asignar al usuario?"></input>
+                                                <div className="update-send-data" name="new_money" onClick={() => more_money(id_send_money)} >Actualizar</div>
 
                                             </div>
 
