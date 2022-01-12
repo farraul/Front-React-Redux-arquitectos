@@ -10,9 +10,16 @@ import { DECREMENT_MONEY } from '../../../redux/types';
 
 const Admin_offers = (props) => {
     let history = useNavigate();
+    
+
+    const go_to_the_link = (url) => {
+        console.log("history", url)
+        history("/" + url);
+    }
 
 
     let res;
+    let resbuy;
     let res_money;
    // const [stateaccount, setstateaccount] = useState(1);
     const [restmoney, setrestmoney] = useState();
@@ -28,25 +35,25 @@ const Admin_offers = (props) => {
 
     // }, [restmoney]);
 
-    // useEffect(() => {
-    //   //  check_money();
+    useEffect(() => {
+        check_money();
 
-    // });
+    });
 
-    // const check_money = async () => {
-    //     // const button = document.getElementById('button-to-buy');
-    //     setstateaccount(props.data_money);
+    const check_money = async () => {
+        // const button = document.getElementById('button-to-buy');
+       
 
-    //     // console.log("stateaccount: ", stateaccount)
+        // console.log("stateaccount: ", stateaccount)
 
-    //     if (stateaccount <= 0) {
-    //         // document.getElementById('button-to-buy').onclick = null
-    //         console.log("menos igual a 0")
-    //     } else {
-    //         // button.disabled = false
-    //         console.log("mayor que 0")
-    //     }
-    // }
+        if (props.data_money <= 0) {
+            //document.getElementById('button-to-buy').removeAttribute("onclick");
+            console.log("menos igual a 0")
+        } else {
+            // button.disabled = false
+            console.log("mayor que 0")
+        }
+    }
 
 
     ///////////////take the last leads to show///////////////
@@ -54,9 +61,19 @@ const Admin_offers = (props) => {
         let config = {
             headers: { Authorization: `Bearer ${props.data_user.token}` }
         };
+        let body = {
+            id_architect: props.data_user.user.id,
+        };
+
+
         try {
             res = await axios.get("https://api-laravel-arquitectos.herokuapp.com/api/Leads", config);
+            resbuy = await axios.post("https://api-laravel-arquitectos.herokuapp.com/api/Reservesunion", body, config);
+
             setall_leads(res.data);
+            console.log("res",res)
+            console.log("res_buy",resbuy)
+
         }
         catch (error) {
             console.log("Error al enviar datos");
@@ -70,13 +87,12 @@ const Admin_offers = (props) => {
 
     const select_lead = async (name) => {
 
-        setrestmoney(props.data_money-1);
 
         let body_money = {
             money: props.data_money-1,
         }
         let body = {
-            id_architect: props.data_user.user.id,
+            id_architect: props.data_user.user[0].id,
             id_lead: name.id,
         }
 
@@ -86,12 +102,14 @@ const Admin_offers = (props) => {
         };
         try {
             res = await axios.post("https://api-laravel-arquitectos.herokuapp.com/api/newReserve", body, config);
+            // debugger
         } catch (error) {
             console.log("Error al enviar datos");
         }
-
+console.log("body money", body_money);
+console.log("config", config);
         try {
-            res_money = await axios.put(`https://api-laravel-arquitectos.herokuapp.com/api/UserMoney/${props.data_user?.user?.id}`, body_money, config);
+            res_money = await axios.put(`https://api-laravel-arquitectos.herokuapp.com/api/UserMoney/${props.data_user?.user[0]?.id_user}`, body_money, config);
 
             props.dispatch({ type: DECREMENT_MONEY, payload: props.data_money-1 });
             history("/admin-profile");
@@ -151,7 +169,7 @@ const Admin_offers = (props) => {
                                                     </div>
                                                 </div>
                                                 <div className='iframe-arquitects-client-buy-div'>
-                                                    <button id="button-to-buy" className='iframe-arquitects-client-buy' onClick={() => select_lead(name)}>Comprar</button>
+                                                   {(props.data_money <= 0) ? <button id="button-to-buy" className='iframe-arquitects-client-buy' onClick={() => go_to_the_link("admin-profile")}>Recargar saldo</button> : <button id="button-to-buy" className='iframe-arquitects-client-buy' onClick={() => select_lead(name)}>Comprar</button> }
                                                 </div>
                                             </div>
                                         </div>

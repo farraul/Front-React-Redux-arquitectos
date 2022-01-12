@@ -1,6 +1,6 @@
+ 
+const eChart =  {
 
-
-const eChart = {
   series: [
     {
       name: "Nº usuarios",
@@ -129,3 +129,4 @@ const eChart = {
 };
 
 export default eChart;
+

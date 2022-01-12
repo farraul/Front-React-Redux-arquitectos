@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+
 
 
 
 const Registration_architect = () => {
-
+    let history = useNavigate();
     //Hooks
     const [button_send_data_user, setbutton_send_data_user] = useState(<div className="sendButton-no-ready">Registrame</div>);
     const [user, setUser] = useState({
@@ -16,38 +19,47 @@ const Registration_architect = () => {
         name: '',
         username: '',
         telf: '',
+
+        c_a:'',
+        s_gender:'',
+
         //ACCOUNT
         email: '',
         password: '',
-        comunidad_a:'',
-        comunidad_gender:'',
+      
 
     });
     const [inputs_data_form, setinputs_data_form] = useState({
-        a_web_site: '',
+        //a_web_site: '',
         a_description_experience_arquitect: '',
+
         name: '',
-        email: '',
         username: '',
         telf: '',
+        
+        c_a:'',
+        s_gender:'',
+
+        email: '',
         password: '',
-        comunidad_a:'',
-        comunidad_gender:'',
     });
     const [ready_data_user, setready_data_user] = useState({
-        a_web_site: false,
+      //  a_web_site: false,
         a_description_experience_arquitect: false,
+
         name: false,
         username:false,
-        email: false,
         telf: false,
+       
+        c_a:false,
+        s_gender:false,
+
+        email: false,
         password: false,
-        comunidad_a:false,
-        comunidad_gender:false,
     });
 
     useEffect(() => {
-        if (ready_data_user.name == true && ready_data_user.email == true && ready_data_user.telf == true && ready_data_user.password == true && ready_data_user.a_web_site == true && ready_data_user.comunidad_gender == true && ready_data_user.comunidad_a == true && ready_data_user.username == true ) {
+        if (ready_data_user.name == true && ready_data_user.email == true && ready_data_user.telf == true && ready_data_user.password == true && /*ready_data_user.a_web_site == true &&*/ ready_data_user.s_gender == true && ready_data_user.c_a == true && ready_data_user.username == true ) {
             setbutton_send_data_user(<div className="sendButton" onClick={() => send_data_backend()}>Registrame</div>);
         } else {
             setbutton_send_data_user(<div className="sendButton-no-ready">Registrame</div>);
@@ -66,34 +78,34 @@ const Registration_architect = () => {
     const validate_inputs = (e) => {
 
         switch (e.target.name) {
-            case 'a_web_site':
+            // case 'a_web_site':
 
-                //regex para solo letras y más de 4 letras
-                if (e.target.value.length >= 4){ // && (/^[a-z]/gi.test(user.name))  
+            //     //regex para solo letras y más de 4 letras
+            //     if (e.target.value.length >= 4){ // && (/^[a-z]/gi.test(user.name))  
 
-                    setinputs_data_form({
-                        ...inputs_data_form,
-                        a_web_site: "✓ Página Web"
-                    });
-                    setready_data_user({
-                        ...ready_data_user,
-                        a_web_site: true
-                    });
-                } else {
-                    setinputs_data_form({
-                        ...inputs_data_form,
-                        a_web_site: "✗ Mínimo 4 caracteres"
-                    });
-                    setready_data_user({
-                        ...ready_data_user,
-                        a_web_site: false
-                    });
-                };
-                break;
+            //         setinputs_data_form({
+            //             ...inputs_data_form,
+            //             a_web_site: "✓ Página Web"
+            //         });
+            //         setready_data_user({
+            //             ...ready_data_user,
+            //             a_web_site: true
+            //         });
+            //     } else {
+            //         setinputs_data_form({
+            //             ...inputs_data_form,
+            //             a_web_site: "✗ Mínimo 4 caracteres"
+            //         });
+            //         setready_data_user({
+            //             ...ready_data_user,
+            //             a_web_site: false
+            //         });
+            //     };
+            //     break;
                 case 'a_description_experience_arquitect':
 
                     //regex para solo letras y más de 4 letras
-                    if ((e.target.value.length >= 100)&&(e.target.value.length <= 500)){ // && (/^[a-z]/gi.test(user.name))  
+                    if ((e.target.value.length >= 30)&&(e.target.value.length <= 150)){ // && (/^[a-z]/gi.test(user.name))  
     
                         setinputs_data_form({
                             ...inputs_data_form,
@@ -106,7 +118,7 @@ const Registration_architect = () => {
                     } else {
                         setinputs_data_form({
                             ...inputs_data_form,
-                            a_description_experience_arquitect: "✗ Entre 50 y 300 caracteres"
+                            a_description_experience_arquitect: "✗ Entre 30 y 150 caracteres"
                         });
                         setready_data_user({
                             ...ready_data_user,
@@ -231,46 +243,46 @@ const Registration_architect = () => {
                 };
                 break;
                 
-                case 'comunidad_a':
+                case 'c_a':
                     if (e.target.value.length !=false) { // && (/^[a-z]/gi.test(user.name))  no funciona el filtro de letras
                         setinputs_data_form({
                             ...inputs_data_form,
-                            comunidad_a: "✓ Comunidad autónoma"
+                            c_a: "✓ Comunidad autónoma"
                         });
                         setready_data_user({
                             ...ready_data_user,
-                            comunidad_a: true
+                            c_a: true
                         });
                     } else {
                         setinputs_data_form({
                             ...inputs_data_form,
-                            comunidad_a: "✗ Comunidad autónoma"
+                            c_a: "✗ Comunidad autónoma"
                         });
                         setready_data_user({
                             ...ready_data_user,
-                            comunidad_a: false
+                            c_a: false
                         });
                     };
                     break;
 
-                    case 'comunidad_gender':
+                    case 's_gender':
                         if (e.target.value.length !=false) { // && (/^[a-z]/gi.test(user.name))  no funciona el filtro de letras
                             setinputs_data_form({
                                 ...inputs_data_form,
-                                comunidad_gender: "✓ Género"
+                                s_gender: "✓ Género"
                             });
                             setready_data_user({
                                 ...ready_data_user,
-                                comunidad_gender: true
+                                s_gender: true
                             });
                         } else {
                             setinputs_data_form({
                                 ...inputs_data_form,
-                                comunidad_gender: "✗ Género"
+                                s_gender: "✗ Género"
                             });
                             setready_data_user({
                                 ...ready_data_user,
-                                comunidad_gender: false
+                                s_gender: false
                             });
                         };
                         break;
@@ -284,7 +296,6 @@ const Registration_architect = () => {
 
     const send_data_backend = async () => {
 
-        /*if (ready_data_user.name && ready_data_user.email && ready_data_user.telf && ready_data_user.password) {
 
             //Generación del body
             let body = {
@@ -292,34 +303,47 @@ const Registration_architect = () => {
                 rol: user.rol,
                 
                 //arquitect
-                a_web_site: user.a_web_site,
-                a_description_experience_arquitect: user.a_description_experience_arquitect,
+                web_site: user.a_web_site,
+                description_experience: user.a_description_experience_arquitect,
                 //
                 name: user.name,
                 username: user.username,
                 telf: user.telf,
+                c_a: user.c_a,
+                gender: user.s_gender,
+
                 //account
                 email: user.email,
                 password: user.password,
+                id_user: 0,
+
             }
 
             //Conexion a axios y envio de datos
-            console.log("ENVIANDO AL BACKEND ESTO....", body);
+          
              try {
-                 let res = await axios.post("https://app-movies-mongoose.herokuapp.com/api/signup", body);
-                 console.log("imprimir res: ", res)
-                 //Guardado de datos en localStorage
-                 localStorage.setItem("datosLogin", JSON.stringify(res.data.user));
-                 setmsgError("Usuario registrado con éxito");
-     
-                 history("/login");
+                console.log("ENVIANDO AL BACKEND ESTO....", body);
+                axios.post("https://api-laravel-arquitectos.herokuapp.com/api/newUser", body).then(res => {
+                console.log("res primero: ", res);
+                body.id_user=res.data.user.id;
+                
+                let config = {
+                    headers: { Authorization: `Bearer ${res.data.token}` }
+                };
+                console.log("config",config)
+                console.log("body",body)
+               res= axios.post("https://api-laravel-arquitectos.herokuapp.com/api/newArchitect", body, config);
+               console.log("respuesta2",res)
+
+                history("/login");
+
+             })
+
              } catch (error) {
                  console.log(error)
              }
 
-        } else {
-            console.log("no es todo true");
-        }*/
+       
 
     };
 
@@ -346,7 +370,7 @@ const Registration_architect = () => {
                                     <div className='registration-form-fields-ok'>{inputs_data_form.telf}</div>
                                     <div className='registration-form-budget-p'>
                                     <div className='width_50_per_100'>
-                                    <select onChange={e => { validate_inputs(e); userHandler(e) }} className='registration-form-full-w select-a' name="comunidad_a" id="comunidad_a">
+                                    <select onChange={e => { validate_inputs(e); userHandler(e) }} className='registration-form-full-w select-a' name="c_a" id="c_a">
                                         <option selected={true} disabled="disabled">Comunidad autónoma</option>
                                         <option value="andalucia">Andalucía</option>
                                         <option value="Aragón">Aragón</option>
@@ -359,7 +383,7 @@ const Registration_architect = () => {
                                         <option value="Comunidad Valenciana">Comunidad Valenciana</option>
                                         <option value="Extremadura">Extremadura</option>
                                         <option value="Galicia">Galicia</option>
-                                        <option value="La Rioja<">La Rioja</option>
+                                        <option value="La Rioja">La Rioja</option>
                                         <option value="Comunidad de Madrid">Comunidad de Madrid</option>
                                         <option value="Región de Murcia">Región de Murcia</option>
                                         <option value="Comunidad Foral de Navarra">Comunidad Foral de Navarra</option>
@@ -368,9 +392,9 @@ const Registration_architect = () => {
                                     <div className='registration-form-fields-ok'>{inputs_data_form.comunidad_a}</div>
                                     </div>
                                     <div className='width_50_per_100'>
-                                    <select onChange={e => { validate_inputs(e); userHandler(e) }} className='registration-form-full-w select-a' name="comunidad_gender" id="comunidad_gender">
+                                    <select onChange={e => { validate_inputs(e); userHandler(e) }} className='registration-form-full-w select-a' name="s_gender" id="s_gender">
                                         <option selected={true} disabled="disabled" >Selecciona género</option>
-                                        <option value="Marculino">Masculino</option>
+                                        <option value="Masculino">Masculino</option>
                                         <option value="Femenino">Femenino</option>
                                     </select>
                                     <div className='registration-form-fields-ok'>{inputs_data_form.comunidad_gender}</div>
