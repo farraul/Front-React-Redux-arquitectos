@@ -33,10 +33,10 @@ div#super-admin-home-div-id {
     width: 4em;
 }
 div#super-admin-home-div-name {
-    width: 8em;
+    width: 7em;
 }
 div#super-admin-home-div-username {
-    width: 13em;
+    width: 12em;
 }
 div#super-admin-home-div-email {
     width: 16em;
@@ -53,7 +53,7 @@ div#super-admin-home-div-c_a {
 div#super-admin-home-div-money {
     width: 3em;
 }
-//////@at-root
+
 .super-admin-home-div-all-users-titles {
     display: flex;
     background: #00718a;
@@ -62,3 +62,91 @@ div#super-admin-home-div-money {
 img.icons-super-admin {
     height: 1.5em;
 }
+
+
+//////////////elements window update//////////////
+.my-update-money {
+    width: 30em;
+    height: 25em;
+    background-color: #000000bf;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    display: none;
+    justify-content: flex-end;
+    }
+    #my-update-money  {
+color:white;
+justify-content: flex-end;
+height: 9em!important;
+}
+   
+    .see-update-money{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.856);
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    .open-files-back-dark {
+    width: 100vw;
+    height: 100vh;
+    background-color: #000000d3;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    }
+  
+    .my-style-money{
+    background-color: #00718a;
+    top: 25%;
+    align-content: inherit;
+    font-size: 1.4em;
+    cursor: pointer; 
+    border-radius: 1em;
+    padding: 1.7em 3em 4.5em 3em;
+    display: block;
+    }
+    div#X {
+    display: flex;
+    justify-content: flex-end;
+    }
+    //////popup field/////
+    input.iframe-arquitects-pop-up-data {
+    width: 100%;
+    height: 3em;
+    border-radius: 0.3em;
+    padding-left: 1em;
+    margin-top: 1em;
+    border: unset;
+    }
+    .update-send-data {
+    background-color: white;
+    color: black;
+    height: 2em;
+    border-radius: 2em;
+    margin-top: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+    .class-update-mone{
+        width: 100%;
+        max-width: 16em;
+        height: 100%;
+        max-height: 15em;
+        display: none;
+        }
+      

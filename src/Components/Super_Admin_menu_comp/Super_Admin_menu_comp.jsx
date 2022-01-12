@@ -14,7 +14,7 @@ import email from '../../assets/images/email.svg';
 import buy from '../../assets/images/buy.svg';
 import menu from '../../assets/images/menu.svg';
 import exit from '../../assets/images/exit.svg';
-
+import graphic from '../../assets/images/graphic.svg';
 
 
 
@@ -89,7 +89,7 @@ const Super_Admin_menu_comp = (props) => {
                             <p>Panel principal</p>
                         </div>
                         <div onClick={() => go_to_the_link("super-admin")} className='admin-m-comp-data-see-offert pointer' id='admin-m-comp-data-see-offert-menu'>
-                            <img className="admin-m-face_icon" src={menu} alt="icon face" />
+                            <img className="admin-m-face_icon" src={graphic} alt="icon face" />
 
                             <p>Graficos</p>
                         </div>

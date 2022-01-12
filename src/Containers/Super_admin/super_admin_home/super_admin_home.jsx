@@ -2,14 +2,16 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import Super_Admin_menu_comp from '../../../Components/Super_Admin_menu_comp/Super_Admin_menu_comp';
-import money from '../../../assets/images/money.png'
+import moneyicon from '../../../assets/images/money.png'
 import email from '../../../assets/images/email.png'
+
 
 const Super_Admin_Home = (props) => {
     let res;
     //const history = useNavigate();
     const [all_users, setall_users] = useState([]);
-
+    // const [userData, setUserData] = useState();
+    const [moreMoney, setMoreMoney] = useState()
 
     // const go_to_the_link = (url) => {
     //     console.log("history", url)
@@ -20,6 +22,46 @@ const Super_Admin_Home = (props) => {
     useEffect(() => {
         takeusers();
     }, []);
+
+    const see_update = async () => {
+        let element = document.getElementById("my-update-money");
+        element.classList.add("my-style-money");
+        let element_back = document.getElementById("open-files-background");
+        element_back.classList.add("see-update-money");
+    }
+    const hide_update = () => {
+        let element = document.getElementById("my-update-money");
+        element.classList.remove("my-style-money");
+
+        let element_back = document.getElementById("open-files-background");
+        element_back.classList.remove("see-update-money");
+    }
+
+    const userHandler = (e) => {
+        setMoreMoney({ ...moreMoney, [e.target.name]: e.target.value });
+    }
+
+    const more_money = async (id) => {
+        let body_money = {
+            money: moreMoney
+        }
+        let config = {
+            headers: { Authorization: `Bearer ${props.data_user.token}` }
+        };
+        // console.log("body money", body_money);
+        // console.log("config", config);
+        try {
+            await axios.put(`https://api-laravel-arquitectos.herokuapp.com/api/UserMoney/${id}`, body_money, config);
+
+        } catch (error) {
+        }
+
+    }
+
+
+
+
+
 
     const takeusers = async () => {
         let config = {
@@ -90,17 +132,17 @@ const Super_Admin_Home = (props) => {
                             </div>
                             <div id="super-admin-home-div-money" className="super-admin-home-div">
                                 <p className="super-admin-home-p">
-                                  €
+                                    €
                                 </p>
                             </div>
                             <div id="super-admin-home-div-money" className="super-admin-home-div">
                                 <p className="super-admin-home-p">
-                                    
+
                                 </p>
                             </div>
                             <div id="super-admin-home-div-money" className="super-admin-home-div">
                                 <p className="super-admin-home-p">
-                                 
+
                                 </p>
                             </div>
                             <div>
@@ -161,23 +203,46 @@ const Super_Admin_Home = (props) => {
                                                 {run.money}
                                             </p>
                                         </div>
-                                        <div id="super-admin-home-div-money" className="super-admin-home-div">
+                                        <div onClick={() => see_update()} id="super-admin-home-div-money" className="super-admin-home-div">
                                             <p className="super-admin-home-p">
-                                            <img className="icons-super-admin" src={money} alt="money"  />
+                                                <img className="icons-super-admin" src={moneyicon} alt="money" />
                                             </p>
                                         </div>
-{/*${run.email}*/}
+
                                         <a href={`mailto:  ${run.email}`}>
-                                        <div id="super-admin-home-div-money" className="super-admin-home-div">
-                                            <p className="super-admin-home-p">
-                                            <img className="icons-super-admin" src={email} alt="email"  />
-                                            </p>
-                                        </div>
+                                            <div id="super-admin-home-div-money" className="super-admin-home-div">
+                                                <p className="super-admin-home-p">
+                                                    <img className="icons-super-admin" src={email} alt="email" />
+                                                </p>
+                                            </div>
                                         </a>
 
 
-                                       
+
                                     </div>
+
+                                    {/*pop-up*/}
+
+
+
+
+
+                                    <div className="" id="open-files-background">
+                                        <div className="class-update" id="my-update-money">
+
+                                            <div className="close-window" id="X" onClick={() => hide_update()}>X</div>
+
+                                            <div className='iframe-arquitects-pop-up'>
+                                                <input className='iframe-arquitects-pop-up-data' type="text" name="name" title="name" lenght="30" onChange={e => userHandler(e)} placeholder="Monedas"></input>
+                                                <div className="update-send-data" name="new_money" onClick={() => more_money(run.id)} >Actualizar</div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+
 
                                 </div>
                             )

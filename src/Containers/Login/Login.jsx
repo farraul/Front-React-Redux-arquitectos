@@ -41,7 +41,7 @@ const Login = (props) => {
             props.dispatch({type:LOGIN,payload:datos});
              props.dispatch({type:LOGIN_MONEY,payload:datos.user[0].money});
              console.log("olaaaa")
-             console.log("datos.user.money:", datos.user.money)
+             console.log("datos.user.money:::", datos.user.money)
              console.log("todas las props,bien:", props)
  
           if( datos.user[0].rol=="super-admin"){
