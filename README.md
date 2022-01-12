@@ -35,10 +35,11 @@ Arquitect es la plataforma que conecta a los ususuarios que buscan arquitectos
 # Proceso y pantalla de los perfiles
 ## Usuario
 <br>
-Formulario para el registro:
+Si buscamos arquitecto seleccionaremos la primera opción:
 
 
 ![image](https://user-images.githubusercontent.com/28491001/149233154-8382d071-371c-4ab6-b88d-cb1ee9995902.png)
+Formulario para el registro:
 ![image](https://user-images.githubusercontent.com/28491001/149233222-206f845f-10a8-422c-a43f-43e33d5b6174.png)
 ## Arquitecto
 
@@ -98,15 +99,18 @@ En el icono de las monedas podremos recargar el saldo de la cartera de los Arqui
 ![image](https://user-images.githubusercontent.com/28491001/149234949-87c0b1eb-91e6-4561-96c5-6d62d5c836bb.png)
 ![image](https://user-images.githubusercontent.com/28491001/149234968-6253b56e-db64-4ed0-b089-e610a7e5bb75.png)
 
+#### Gráficos de los Usuarios y Arquitectos:
+Gracias a estos graficos el gerente del negocio podrá saber quiénes y donde están sus cliente:
+![image](https://user-images.githubusercontent.com/28491001/149238503-ad1e95f7-9d56-408d-85d5-3b47c52a6ecc.png)
 
 ## Detalles Extras en la aplicación
-<br>
+
 Podremos visualizar la hora actual en el Panel de Administración, se ha creado con una llamada a new Date();
 ![image](https://user-images.githubusercontent.com/28491001/149234182-d3fe0501-9f16-4865-8cd1-171d7b68f70f.png)
-<br>
+
 Podremos visualizar abajo a la derecha el icono de un teléfono al clicar tendremos 3 opciones de soporte, email, teléfono y WhatsApp.
 ![image](https://user-images.githubusercontent.com/28491001/149234262-4f736f70-74bf-4605-84a6-f586451b246b.png)
-<br>
+
 Los formularios tienen validación de datos, hasta que no se han rellenado todos los campos con los requisitos que se pide no nos podremos registrar:
 ![image](https://user-images.githubusercontent.com/28491001/149237899-03b58417-ab09-412b-b2ae-6f24907332ff.png)
 Una vez estén todos los campos correctos podremos registrarnos, el boton para registrarse se pondrá de color verde::
@@ -114,7 +118,10 @@ Una vez estén todos los campos correctos podremos registrarnos, el boton para r
 
 
 
-
+### Futuras Mejoras
+* En el panel del arquitecto: evitar que un mismo lead se pueda comprar varias veces.
+* Cuando un arquitecto compra y se queda sin monedad una de la prop "money" de redux se queda a "0" al estar a zero se elimina esta prop, por lo tanto ya no tenemos esta prop, si actualizaramos la página fallaría porque hay componentes que utilizan esta prop
+* Los graficos del super admin no muestran correctamente los datos de la BBDD.
 
 #
 ## Proceso de instalación
