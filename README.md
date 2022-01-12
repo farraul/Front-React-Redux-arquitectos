@@ -1,4 +1,4 @@
-### Arquitect
+![image](https://user-images.githubusercontent.com/28491001/149228984-5c4f499e-4299-4bb6-b50f-d164e77b1b1c.png)
  https://main.d35ajv2vvr3l3w.amplifyapp.com/
  
  #
@@ -17,12 +17,19 @@
 # 
  
 
-![image](https://user-images.githubusercontent.com/28491001/149228984-5c4f499e-4299-4bb6-b50f-d164e77b1b1c.png)
+
 
 
 ### ¿Qué es Arquitect?
 ````
-Arquitect es la plataforma que conecta a los ususuarios que buscan usuarios con los abogados
+Arquitect es la plataforma que conecta a los ususuarios que buscan arquitectos
+````
+
+### ¿Qué perfiles tenemos?
+````
+* Usuario: Este es el usuario que busca el arquitecto, solo puede registarse y pedir presupuesto en el mismo registro (lead).
+* Arquitect: Serán los arquitectos, estos tendrán a su disposición un panel de control para poder comprar los leads de los usuarios.
+* Super Admin: Tendremos los datos de todos los usuarios, además en el panel de este podremos recargar el saldo de los usuarios para que puedan comprar más leads.
 ````
 
 
