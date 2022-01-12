@@ -144,7 +144,7 @@ console.log("importacion", all_data_backend)
 
             series={[{
               name: "Nº usuarios",
-              data: [2 , /*users_c_a[2],*//* users_c_a[3], users_c_a[4], users_c_a[5], users_c_a[6], users_c_a[7], users_c_a[8], users_c_a[9], users_c_a[10],  users_c_a[11], users_c_a[12],  users_c_a[13],  users_c_a[14]*/,4],
+              data: [10,34,12,21,15,3,16,34,4,20,34,12,27,17,25,2.34,14],
               color: "#fff",
             }]}
  
