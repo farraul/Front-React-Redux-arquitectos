@@ -1,5 +1,33 @@
+### Arquitect
+ https://main.d35ajv2vvr3l3w.amplifyapp.com/
+ 
+ #
+ | Tecnologias |
+| :---         | 
+|  React   |
+|Redux  |
+|Html5 |
+|JS |
+|Axios |
+
+#
+ | Libreria externas |
+| :---         | 
+|  Apexcharts  |
+# 
+ 
+
+![image](https://user-images.githubusercontent.com/28491001/149228984-5c4f499e-4299-4bb6-b50f-d164e77b1b1c.png)
 
 
+### ¿Qué es Arquitect?
+````
+Arquitect es la plataforma que conecta a los ususuarios que buscan usuarios con los abogados
+````
+
+
+
+#
 ## Proceso de instalación
 ### Ver front en Aws
 https://main.d35ajv2vvr3l3w.amplifyapp.com/
