@@ -57,7 +57,7 @@ const Super_Admin_Home = (props) => {
         // console.log("config", config);
         try {
             await axios.put(`https://api-laravel-arquitectos.herokuapp.com/api/UserMoney/${id_send_money}`, body_money, config);
-
+            window.location.reload();
         } catch (error) {
         }
 
@@ -240,7 +240,7 @@ const Super_Admin_Home = (props) => {
 
                                             <div className='iframe-arquitects-pop-up'>
                                                 <input className='iframe-arquitects-pop-up-data' type="text" name="money" title="money" lenght="30" onChange={e => userHandler(e)} placeholder="¿Cuántas monedas quieres asignar al usuario?"></input>
-                                                <div className="update-send-data" name="new_money" onClick={() => more_money(id_send_money)} >Actualizar</div>
+                                                <div className="update-send-data" name="new_money" onClick={() => more_money(id_send_money)} >Actualizar monedas</div>
 
                                             </div>
 
