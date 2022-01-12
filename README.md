@@ -106,6 +106,12 @@ Podremos visualizar la hora actual en el Panel de Administración, se ha creado 
 <br>
 Podremos visualizar abajo a la derecha el icono de un teléfono al clicar tendremos 3 opciones de soporte, email, teléfono y WhatsApp.
 ![image](https://user-images.githubusercontent.com/28491001/149234262-4f736f70-74bf-4605-84a6-f586451b246b.png)
+<br>
+Los formularios tienen validación de datos, hasta que no se han rellenado todos los campos con los requisitos que se pide no nos podremos registrar:
+![image](https://user-images.githubusercontent.com/28491001/149237899-03b58417-ab09-412b-b2ae-6f24907332ff.png)
+Una vez estén todos los campos correctos podremos registrarnos, el boton para registrarse se pondrá de color verde::
+![image](https://user-images.githubusercontent.com/28491001/149237987-0d625db1-faf2-41d1-bc73-6847537dafe9.png)
+
 
 
 
