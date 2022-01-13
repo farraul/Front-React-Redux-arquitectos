@@ -2,20 +2,16 @@
  https://main.d35ajv2vvr3l3w.amplifyapp.com/
  
  #
- | Tecnologias |
-| :---         | 
-|  React   |
-|Redux  |
-|Html5 |
-|JS |
-|Axios |
+ | Tecnologias |  Libreria externas |Servidor Front-end | Servidor Back-end | BBDD  |Herramientas de trabajo
+| :---         |  :---         |   :---         |   :---         |   :---         |    :---         | 
+|  React   |  Apexcharts  | AWS | Heroku | Mysql|Visual Studio Code | 
+|Redux  |  |  |  |  |Wordbench | 
+|Html5  |  |  |  |  |Google Chrome| 
+|JS |  |  |  |  |Redux DevTools (extensión Google)| 
+|Axios | |  |  |  |GIT HUB| 
 
 #
- | Libreria externas |
-| :---         | 
-|  Apexcharts  |
-# 
- 
+
 
 
 
@@ -32,7 +28,7 @@ Arquitect es la plataforma que conecta a los ususuarios que buscan arquitectos c
 * Super Admin: Tendremos los datos de todos los usuarios, además en el panel de este podremos recargar el saldo de los usuarios para que puedan comprar más leads.
 ````
 
-# ⏺ Proceso y pantalla de los perfiles
+# ⏺ Pantallas de los perfiles
 ## 👱 Usuario
 
 Entraremos en la página de registro y clicaremos en "buscar arquitecto":
