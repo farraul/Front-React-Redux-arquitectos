@@ -1,6 +1,4 @@
- # <p align="center">Arquitect </p>
- 
- <p align="center">https://main.d35ajv2vvr3l3w.amplifyapp.com/ </p>
+
  
  
 ![image](https://user-images.githubusercontent.com/28491001/149228984-5c4f499e-4299-4bb6-b50f-d164e77b1b1c.png)
@@ -9,7 +7,7 @@
  | Tecnologias |  Libreria externas |Servidor Front-end | Servidor Back-end | BBDD  |Herramientas de trabajo
 | :---         |  :---         |   :---         |   :---         |   :---         |    :---         | 
 |  React   |  Apexcharts  | AWS | Heroku | Mysql|Visual Studio Code | 
-|Redux  | React-apexcharts  |  |  |  |Wordbench | 
+|Redux  | React-apexcharts  ||  Laravel |  |Wordbench | 
 |Html5  |  |  |  |  |Google Chrome| 
 |JS |  |  |  |  |Redux DevTools (extensión Google)| 
 |Axios | |  |  |  |GIT HUB| 
@@ -34,6 +32,9 @@ Arquitect es la plataforma que conecta a los arquitectos con sus futuros cliente
 | :---         |  :---         |   :---         | 
 |  Arquitecto |andres@gmail.com |12345 | 
 |  SuperAdmin |raulfarllobell@gmail.com |12345 | 
+
+
+<br>
 
 # ⏺ Pantallas de los perfiles
 ## 👱 Usuario
