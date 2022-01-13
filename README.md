@@ -6,7 +6,7 @@
  | Tecnologias |  Libreria externas |Servidor Front-end | Servidor Back-end | BBDD  |Herramientas de trabajo
 | :---         |  :---         |   :---         |   :---         |   :---         |    :---         | 
 |  React   |  Apexcharts  | AWS | Heroku | Mysql|Visual Studio Code | 
-|Redux  | React-apexcharts  |  |  |  |Wordbench | 
+|Redux  | React-apexcharts  ||  Laravel |  |Wordbench | 
 |Html5  |  |  |  |  |Google Chrome| 
 |JS |  |  |  |  |Redux DevTools (extensión Google)| 
 |Axios | |  |  |  |GIT HUB| 
