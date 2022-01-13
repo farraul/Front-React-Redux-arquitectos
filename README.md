@@ -201,3 +201,8 @@ Scss
 
 ## Creamos carpeta  “imágenes”
 Creamos la carpeta imágenes dentro de src desde esta carpeta utilizaremos el contenido multimedia en nuestro proyecto
+
+## Librerias externas
+react-apexcharts
+apexcharts
+
