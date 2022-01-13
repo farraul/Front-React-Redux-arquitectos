@@ -20,20 +20,20 @@
 
 
 
-### ¿Qué es Arquitect?
+### 📌 ¿Qué es Arquitect?
 ````
 Arquitect es la plataforma que conecta a los ususuarios que buscan arquitectos con los arquitectos
 ````
 
-### ¿Qué perfiles tenemos?
+### 📌 ¿Qué perfiles tenemos?
 ````
 * Usuario: Este es el usuario que busca el arquitecto, solo puede registarse y pedir presupuesto en el mismo registro (lead).
 * Arquitecto: Tendrán a su disposición un panel de control para poder comprar los leads de los usuarios.
 * Super Admin: Tendremos los datos de todos los usuarios, además en el panel de este podremos recargar el saldo de los usuarios para que puedan comprar más leads.
 ````
 
-# Proceso y pantalla de los perfiles
-## Usuario
+# ⏺ Proceso y pantalla de los perfiles
+## 👱 Usuario
 
 Entraremos en la página de registro y clicaremos en "buscar arquitecto":
 
@@ -42,7 +42,7 @@ Entraremos en la página de registro y clicaremos en "buscar arquitecto":
 Después de la página anterior nos redigirá a esta págin, en esta tendremos el formulario para el registro del lead y los datos del usuario:
 
 ![image](https://user-images.githubusercontent.com/28491001/149233222-206f845f-10a8-422c-a43f-43e33d5b6174.png)
-## Arquitecto
+## 👱 Arquitecto
 
 Entraremos en la página de registro y clicaremos en "Soy Arquitecto":
 
@@ -105,7 +105,7 @@ Al comprar un lead, gastaremos de la cartera un 1€, tras la compra nos redirig
 ![image](https://user-images.githubusercontent.com/28491001/149236595-1f5f0f09-ccce-465e-9ef6-2feefc6c340c.png)
 
 
-## Super Admin
+## 👱 Super Admin
 
 * Usuario: raulfarllobell@gmail.com
 * Contraseña: 12345
@@ -148,16 +148,16 @@ Una vez estén todos los campos correctos podremos registrarnos, el boton para r
 
 
 
-### Futuras Mejoras
+## ⏺ Futuras Mejoras 🚀
 * En el panel del arquitecto: evitar que un mismo lead se pueda comprar varias veces.
 * Cuando un arquitecto compra y se queda sin monedas una de las prop "money" de redux se queda a "0" al estar a zero se elimina esta prop, por lo tanto ya no tenemos esta prop, si actualizaramos la página fallaría porque hay componentes que utilizan esta prop
 * Los graficos del super admin no muestran correctamente los datos de la BBDD.
 * Hacer la página responsive
 
 #
-## Comandos básicos parea utilizarlo en local
+## ⏺ Comandos básicos parea utilizarlo en local
 #### Descargarnos el repositorio en nuestro equipo:
-git clone "https://github.com/farraul/Front-React-Redux-arquitectos.git
+git clone "https://github.com/farraul/Front-React-Redux-arquitectos.git"
 
 #### Instalamos todas las librerias:
 npm i
@@ -165,7 +165,7 @@ npm i
 #### Iniciamos el servidor:
 npm run start
 
-## Proceso de instalación:
+## ⏺ Proceso de instalación:
 ### Ver front en Aws
 https://main.d35ajv2vvr3l3w.amplifyapp.com/
 
