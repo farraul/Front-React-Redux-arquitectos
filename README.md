@@ -22,7 +22,7 @@
 
 ### ¿Qué es Arquitect?
 ````
-Arquitect es la plataforma que conecta a los ususuarios que buscan arquitectos
+Arquitect es la plataforma que conecta a los ususuarios que buscan arquitectos con los arquitectos
 ````
 
 ### ¿Qué perfiles tenemos?
