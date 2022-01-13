@@ -154,7 +154,17 @@ Una vez estén todos los campos correctos podremos registrarnos, el boton para r
 * Los graficos del super admin no muestran correctamente los datos de la BBDD.
 
 #
-## Proceso de instalación
+## Comandos básicos parea utilizarlo en local
+#### Descargarnos el repositorio en nuestro equipo:
+git clone "https://github.com/farraul/Front-React-Redux-arquitectos.git
+
+#### Instalamos todas las librerias:
+npm i
+
+#### Iniciamos el servidor:
+npm run start
+
+## Proceso de instalación:
 ### Ver front en Aws
 https://main.d35ajv2vvr3l3w.amplifyapp.com/
 
@@ -204,5 +214,6 @@ Creamos la carpeta imágenes dentro de src desde esta carpeta utilizaremos el co
 
 ## Librerias externas
 react-apexcharts
+
 apexcharts
 
