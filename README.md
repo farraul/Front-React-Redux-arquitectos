@@ -39,7 +39,7 @@ Entraremos en la página de registro y clicaremos en "buscar arquitecto":
 
 ![image](https://user-images.githubusercontent.com/28491001/149233154-8382d071-371c-4ab6-b88d-cb1ee9995902.png)
 
-Formulario para el registro del lead y los datos del usuario:
+Después de la página anterior nos redigirá a esta págin, en esta tendremos el formulario para el registro del lead y los datos del usuario:
 
 ![image](https://user-images.githubusercontent.com/28491001/149233222-206f845f-10a8-422c-a43f-43e33d5b6174.png)
 ## Arquitecto
@@ -48,11 +48,11 @@ Entraremos en la página de registro y clicaremos en "Soy Arquitecto":
 
 ![image](https://user-images.githubusercontent.com/28491001/149233351-8532255e-d7ec-45c7-a63b-33d0e7b98213.png)
 
-Formulario de registro del arquitecto:
+Tras la página anterior nos redigirá a esta, el formulario de registro del arquitecto:
 
 ![image](https://user-images.githubusercontent.com/28491001/149233374-984ff79f-dcad-435b-a66d-76990a52c168.png)
 
-Aceeso al panel del Arquitecto:
+Acceso al panel del Arquitecto:
 
 ![image](https://user-images.githubusercontent.com/28491001/149233451-cd0c1d76-4f85-4935-aa22-85aec638de3d.png)
 ### Panel de administración del Arquitecto
@@ -75,6 +75,7 @@ En perfil podremos:
 * Borrar la cuenta del arquitecto
 * Ver el email y el teléfono de los leads comprados
 * Recargar la cartera
+* Ver el saldo de la cartera
 
 ![image](https://user-images.githubusercontent.com/28491001/149233805-f0304258-b167-4b6b-a268-75bf865b0c13.png)
 
@@ -86,7 +87,7 @@ Para borrar nuestra cuenta, clicaremos en "Borrar cuenta, tras esto se nos abrir
 
 ![image](https://user-images.githubusercontent.com/28491001/149233843-33a8b711-91e7-4cf5-8b1b-2d9b69d87b33.png)
 
-Para recargar el saldo de nuestra cartera tendremos el botón "Recargar cartera" este link externo apunta a paypal:
+Para recargar el saldo de nuestra cartera tendremos el botón "Recargar cartera" este link externo nos redirige a paypal:
 
 ![image](https://user-images.githubusercontent.com/28491001/149235210-7512d706-8d6a-4c9f-9976-0b7d03eb4e36.png)
 
@@ -95,9 +96,10 @@ Link externo de Paypal:
 
 
 #### Ver Ofertas (Arquitecto)
+
 ![image](https://user-images.githubusercontent.com/28491001/149234055-f4165d1b-0ed0-45da-99c6-b829e19dda3a.png)
 
-Al comprar un lead, gastaremos de la cartera un 1€, tras la compra nos redigirá a nuestro perfil para poder ver los datos del cliente y poder contactar con él:
+Al comprar un lead, gastaremos de la cartera un 1€, tras la compra nos redirigirá a nuestro perfil para poder ver los datos del cliente y poder contactar con él:
 
 ![image](https://user-images.githubusercontent.com/28491001/149236509-49db4050-9f6f-456c-9d24-addf2de94073.png)
 ![image](https://user-images.githubusercontent.com/28491001/149236595-1f5f0f09-ccce-465e-9ef6-2feefc6c340c.png)
