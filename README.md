@@ -1,3 +1,4 @@
+# Arquitect
 ![image](https://user-images.githubusercontent.com/28491001/149228984-5c4f499e-4299-4bb6-b50f-d164e77b1b1c.png)
  https://main.d35ajv2vvr3l3w.amplifyapp.com/
  
@@ -5,7 +6,7 @@
  | Tecnologias |  Libreria externas |Servidor Front-end | Servidor Back-end | BBDD  |Herramientas de trabajo
 | :---         |  :---         |   :---         |   :---         |   :---         |    :---         | 
 |  React   |  Apexcharts  | AWS | Heroku | Mysql|Visual Studio Code | 
-|Redux  |  |  |  |  |Wordbench | 
+|Redux  | React-apexcharts  |  |  |  |Wordbench | 
 |Html5  |  |  |  |  |Google Chrome| 
 |JS |  |  |  |  |Redux DevTools (extensión Google)| 
 |Axios | |  |  |  |GIT HUB| 
@@ -18,15 +19,20 @@
 
 ### 📌 ¿Qué es Arquitect?
 ````
-Arquitect es la plataforma que conecta a los ususuarios que buscan arquitectos con los arquitectos
+Arquitect es la plataforma que conecta a los arquitectos con sus futuros clientes
 ````
 
 ### 📌 ¿Qué perfiles tenemos?
 ````
 * Usuario: Este es el usuario que busca el arquitecto, solo puede registarse y pedir presupuesto en el mismo registro (lead).
 * Arquitecto: Tendrán a su disposición un panel de control para poder comprar los leads de los usuarios.
-* Super Admin: Tendremos los datos de todos los usuarios, además en el panel de este podremos recargar el saldo de los usuarios para que puedan comprar más leads.
+* Super Admin: Tendremos los datos y analítica de todos los usuarios por otro lado podremos recargar el saldo de los usuarios par estos que puedan comprar más leads.
 ````
+
+|Perfil|  Nombre | Contraseña| 
+| :---         |  :---         |   :---         | 
+|  Arquitecto |andres@gmail.com |12345 | 
+|  SuperAdmin |raulfarllobell@gmail.com |12345 | 
 
 # ⏺ Pantallas de los perfiles
 ## 👱 Usuario
