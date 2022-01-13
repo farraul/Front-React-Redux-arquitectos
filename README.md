@@ -34,6 +34,9 @@ Arquitect es la plataforma que conecta a los arquitectos con sus futuros cliente
 |  Arquitecto |andres@gmail.com |12345 | 
 |  SuperAdmin |raulfarllobell@gmail.com |12345 | 
 
+
+<br>
+
 # ⏺ Pantallas de los perfiles
 ## 👱 Usuario
 
