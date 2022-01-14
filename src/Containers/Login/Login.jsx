@@ -39,7 +39,13 @@ const Login = (props) => {
             console.log("datos ",datos);      
             console.log("datos.user.money:", datos.user[0].money)
             props.dispatch({type:LOGIN,payload:datos});
+
+            if(datos.user[0].money===0){
+                props.dispatch({type:LOGIN_MONEY,payload:"0"});
+
+            }else{
              props.dispatch({type:LOGIN_MONEY,payload:datos.user[0].money});
+            }
              console.log("olaaaa")
              console.log("datos.user.money:::", datos.user.money)
              console.log("todas las props,bien:", props)
