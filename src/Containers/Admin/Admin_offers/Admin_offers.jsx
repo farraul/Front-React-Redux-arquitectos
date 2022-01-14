@@ -111,7 +111,19 @@ console.log("config", config);
         try {
             res_money = await axios.put(`https://api-laravel-arquitectos.herokuapp.com/api/UserMoney/${props.data_user?.user[0]?.id_user}`, body_money, config);
 
-            props.dispatch({ type: DECREMENT_MONEY, payload: props.data_money-1 });
+            
+            if(props.data_money===1){
+                props.dispatch({type:DECREMENT_MONEY,payload:"0"});
+
+            }else{
+                props.dispatch({ type: DECREMENT_MONEY, payload: props.data_money-1 });
+            }
+
+
+
+
+
+
             history("/admin-profile");
         } catch (error) {
         }
