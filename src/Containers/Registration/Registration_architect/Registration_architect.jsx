@@ -352,7 +352,7 @@ const Registration_architect = () => {
                                             <option value="Comunidad Foral de Navarra">Comunidad Foral de Navarra</option>
                                             <option value="País Vasco o Euskadi"> País Vasco o Euskadi</option>
                                         </select>
-                                        <div className='registration-form-fields-ok'>{inputs_data_form.comunidad_a}</div>
+                                        <div className='registration-form-fields-ok'>{inputs_data_form.c_a}</div>
                                     </div>
                                     <div className='width_50_per_100'>
                                         <select onChange={e => { validate_inputs(e); userHandler(e) }} className='registration-form-full-w select-a' name="s_gender" id="s_gender">
@@ -360,7 +360,7 @@ const Registration_architect = () => {
                                             <option value="Masculino">Masculino</option>
                                             <option value="Femenino">Femenino</option>
                                         </select>
-                                        <div className='registration-form-fields-ok'>{inputs_data_form.comunidad_gender}</div>
+                                        <div className='registration-form-fields-ok'>{inputs_data_form.s_gender}</div>
                                     </div>
                                 </div>
 
