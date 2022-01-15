@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import face_archi from '../../assets/images/archi-1.png';
+import face_archi_dos from '../../assets/images/architect_dos.png';
+import face_archi_tres from '../../assets/images/architect_tres.png';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -82,8 +84,8 @@ const Architects = () => {
                                 <div className='archi-template-info-name'>
                                 </div>
                                 <div className='archi-template-info-descript'>
-                                    <h4>Ramon Soriano</h4>
-                                    <p>Con más de 10 años de experiencia, tanto de arquitecto, y supervisa la construcción de un edificio. La funcionalidad puede ser variada: vivienda residencial, edificio público, hotel, edificio de oficinas o comercial… La creatividad y el rigor son fundamentales para el ejercicio de esta profesión. contenedores, entre otros-; en este artículo veremos alguno de sus posibles usos de este particular filtro; recordemos que existe vários filtros que ya tocamos en una anterior entrada</p>
+                                    <h4>Ramon </h4>
+                                    <p>Los proyectos generados por el estudio asumen la definicción de “Arquitectura de Autor”, donde “la Arquitectura de Diseño” se desquita de lo superfluo y estilizado de las modas para convertirse en una “Arquitectura ecológica y eficiente”, y por tanto bien construida. Dentro de esta categoría de “Arquitectura de Autor” somos el estudio más competitivo, tanto en proyectos de obra nueva como de rehabilitación, teniendo gran experiencia en ambos campos.</p>
                                 </div>
                             </div>
                         </div>
@@ -104,7 +106,7 @@ const Architects = () => {
                                 <p>Especialidad:</p>
                             </div>
                             <div className='archi-template-info-contact-field-inside-i'>
-                                <p>Laboral</p>
+                                <p>Fincas</p>
                             </div>
                         </div>
                         <div className='archi-template-info-contact-field'>
@@ -136,7 +138,7 @@ const Architects = () => {
                 <div className='archi-template'>
                     <div className='archi-template-photo-info'>
                         <div className='archi-template-photo'>
-                            <img className="archi-template-photo-img" src={face_archi} alt="face" />
+                            <img className="archi-template-photo-img" src={face_archi_tres} alt="face" />
 
                         </div>
                         <div className='archi-template-info'>
@@ -144,8 +146,8 @@ const Architects = () => {
                                 <div className='archi-template-info-name'>
                                 </div>
                                 <div className='archi-template-info-descript'>
-                                    <h4>Ramon Soriano</h4>
-                                    <p>Con más de 10 años de experiencia, tanto de arquitecto, y supervisa la construcción de un edificio. La funcionalidad puede ser variada: vivienda residencial, edificio público, hotel, edificio de oficinas o comercial… La creatividad y el rigor son fundamentales para el ejercicio de esta profesión. contenedores, entre otros-; en este artículo veremos alguno de sus posibles usos de este particular filtro; recordemos que existe vários filtros que ya tocamos en una anterior entrada</p>
+                                    <h4>Marisa</h4>
+                                    <p>Trabajamos con un equipo de profesionales formado por delineantes y arquitectos técnicos. Nuestros clientes nos encomiendan sus ilusiones; una casa, una oficina, un restaurante, una tienda, una clínica… Y nuestra misión es materializar buenas ideas a la medida de las necesidades. Al realizarlo con absoluta pasión y cariño, las ilusiones las convertimos en realidad y conseguimos clientes, personas, totalmente satisfechas.</p>
                                 </div>
                             </div>
                         </div>
@@ -157,7 +159,7 @@ const Architects = () => {
                                 <p>Ciudad:</p>
                             </div>
                             <div className='archi-template-info-contact-field-inside-i'>
-                                <p>Valencia</p>
+                                <p>Barcelona</p>
                             </div>
                         </div>
 
@@ -166,7 +168,7 @@ const Architects = () => {
                                 <p>Especialidad:</p>
                             </div>
                             <div className='archi-template-info-contact-field-inside-i'>
-                                <p>Laboral</p>
+                                <p>Técnico</p>
                             </div>
                         </div>
                         <div className='archi-template-info-contact-field'>
@@ -199,7 +201,7 @@ const Architects = () => {
                 <div className='archi-template'>
                     <div className='archi-template-photo-info'>
                         <div className='archi-template-photo'>
-                            <img className="archi-template-photo-img" src={face_archi} alt="face" />
+                            <img className="archi-template-photo-img" src={face_archi_dos} alt="face" />
 
                         </div>
                         <div className='archi-template-info'>
@@ -207,8 +209,8 @@ const Architects = () => {
                                 <div className='archi-template-info-name'>
                                 </div>
                                 <div className='archi-template-info-descript'>
-                                    <h4>Ramon Soriano</h4>
-                                    <p>Con más de 10 años de experiencia, tanto de arquitecto, y supervisa la construcción de un edificio. La funcionalidad puede ser variada: vivienda residencial, edificio público, hotel, edificio de oficinas o comercial… La creatividad y el rigor son fundamentales para el ejercicio de esta profesión. contenedores, entre otros-; en este artículo veremos alguno de sus posibles usos de este particular filtro; recordemos que existe vários filtros que ya tocamos en una anterior entrada</p>
+                                    <h4>Alberto</h4>
+                                    <p>Creadores de ideas, constructores de sueños. Ese es el lema de Alberto Esteve desde que creamos nuestro estudio. Nuestro fin es hacer realidad ese proyecto que llevas en mente, y que el fin sea mucho mejor de lo que te habías imaginado, recorriendo juntos el camino para conseguirlo.</p>
                                 </div>
                             </div>
                         </div>
@@ -220,7 +222,7 @@ const Architects = () => {
                                 <p>Ciudad:</p>
                             </div>
                             <div className='archi-template-info-contact-field-inside-i'>
-                                <p>Valencia</p>
+                                <p>Madrid</p>
                             </div>
                         </div>
 
@@ -229,7 +231,7 @@ const Architects = () => {
                                 <p>Especialidad:</p>
                             </div>
                             <div className='archi-template-info-contact-field-inside-i'>
-                                <p>Laboral</p>
+                                <p>Casas</p>
                             </div>
                         </div>
                         <div className='archi-template-info-contact-field'>
