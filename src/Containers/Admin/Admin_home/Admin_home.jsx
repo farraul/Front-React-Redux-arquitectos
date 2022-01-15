@@ -1,22 +1,13 @@
-
 import React, { useState, useEffect } from 'react';
 import Admin_menu_comp from '../../../Components/Admin_menu_comp/Admin_menu_comp';
 import max from '../../../assets/images/max.png'
-import profile from '../../../assets/images/profile.svg';
-import buy from '../../../assets/images/buy.svg';
-import menu from '../../../assets/images/menu.svg';
+
 import { connect } from 'react-redux';
 
-
-
-
-
-
-
+let time;
 
 
 const Admin_home = (props) => {
-
     //Hooks
     const help = async () => {
         setTimeout(() => {
@@ -26,11 +17,7 @@ const Admin_home = (props) => {
             element.classList.add("chat-hide");
             element_two.classList.add("chat-see");
             element_three.classList.add("chat-block");
-
-
-
         }, 500);
-
 
 
         setTimeout(() => {
@@ -72,7 +59,7 @@ const Admin_home = (props) => {
             element_four.classList.remove("underline_menu");
 
         }, 22000);
-        setTimeout(() => {
+        time=setTimeout(() => {
             let element = document.getElementById("chat-five");
             element.classList.remove("chat-see");
             let element_two = document.getElementById("chat-six");
@@ -111,6 +98,11 @@ const Admin_home = (props) => {
                                     <p>Quiero darte la bienvenida a Arquitect...</p>
                                 </div>
                             </div>
+                            <div className="myProgress">
+                                <div className="myBar-10">
+                                    <div className="label-loading-home-admin">10%</div>
+                                </div>
+                            </div>
                         </div>
                         <div className='chat-conversation-one chat-hide' id='chat-two'>
                             <div className='chat-conversation-one-inside'>
@@ -120,6 +112,11 @@ const Admin_home = (props) => {
                                 <div className='chat-conversation-inside-text'>
                                     <p>A continuación realizaremos juntos el tour de Arquitect, empezamos... 🎬</p>
 
+                                </div>
+                            </div>
+                            <div className="myProgress">
+                                <div className="myBar-20">
+                                    <div className="label-loading-home-admin">20%</div>
                                 </div>
                             </div>
                         </div>
@@ -134,6 +131,11 @@ const Admin_home = (props) => {
                                     <p>* Revisar las compras realizadas 📊</p>
                                 </div>
                             </div>
+                            <div className="myProgress">
+                                <div className="myBar-40">
+                                    <div className="label-loading-home-admin">40%</div>
+                                </div>
+                            </div>
                         </div>
                         <div className='chat-conversation-one chat-hide' id='chat-four'>
                             <div className='chat-conversation-one-inside'>
@@ -142,8 +144,13 @@ const Admin_home = (props) => {
                                 </div>
                                 <div className='chat-conversation-inside-text'>
                                     <p>En "Ver ofertas" podrás:</p>
-                                    
+
                                     <p>* Comprar los leads disponibles 💲</p>
+                                </div>
+                            </div>
+                            <div className="myProgress">
+                                <div className="myBar-60">
+                                    <div className="label-loading-home-admin">60%</div>
                                 </div>
                             </div>
                         </div>
@@ -157,6 +164,11 @@ const Admin_home = (props) => {
                                     <p>* Es donde estamos actualmente, podrás acceder si quieres revisar el tour de nuevo 📕</p>
                                 </div>
                             </div>
+                            <div className="myProgress">
+                                <div className="myBar-80">
+                                    <div className="label-loading-home-admin">80%</div>
+                                </div>
+                            </div>
                         </div>
                         <div className='chat-conversation-one chat-hide' id='chat-six'>
                             <div className='chat-conversation-one-inside'>
@@ -166,6 +178,11 @@ const Admin_home = (props) => {
                                 <div className='chat-conversation-inside-text'>
                                     <p>Para finalizar decirte que abajo a la derecha tiene un teléfono para contactarme en caso de dudas ☎️</p>
                                     <p>Un saludo y disfruta 😎😎</p>
+                                </div>
+                            </div>
+                            <div className="myProgress">
+                                <div className="myBar-100">
+                                    <div className="label-loading-home-admin">100%</div>
                                 </div>
                             </div>
                         </div>
