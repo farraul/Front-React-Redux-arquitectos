@@ -8,17 +8,12 @@ import email from '../../../assets/images/email.png'
 
 const Super_Admin_Home = (props) => {
     let res;
-    //const history = useNavigate();
+
     const [all_users, setall_users] = useState([]);
-    // const [userData, setUserData] = useState();
     const [moreMoney, setMoreMoney] = useState({
         money: ''
     })
     const [id_send_money, setId_send_money] = useState("")
-    // const go_to_the_link = (url) => {
-    //     console.log("history", url)
-    //     history("/" + url);
-    // }
 
 
     useEffect(() => {
@@ -27,7 +22,6 @@ const Super_Admin_Home = (props) => {
 
     const see_update = async (id) => {
         setId_send_money(id);
-        console.log("iddd", id_send_money)
         let element = document.getElementById("my-update-money");
         element.classList.add("my-style-money");
         let element_back = document.getElementById("open-files-background");
@@ -46,15 +40,14 @@ const Super_Admin_Home = (props) => {
     }
 
     const more_money = async () => {
-        
+
         let body_money = {
             money: moreMoney.money
         }
         let config = {
             headers: { Authorization: `Bearer ${props.data_user.token}` }
         };
-        // console.log("body money", body_money);
-        // console.log("config", config);
+
         try {
             await axios.put(`https://api-laravel-arquitectos.herokuapp.com/api/UserMoney/${id_send_money}`, body_money, config);
             window.location.reload();
@@ -63,32 +56,19 @@ const Super_Admin_Home = (props) => {
 
     }
 
-
-
-
-
-
     const takeusers = async () => {
         let config = {
             headers: { Authorization: `Bearer ${props.data_user.token}` }
         };
         try {
             res = await axios.get("https://api-laravel-arquitectos.herokuapp.com/api/Users", config);
-
             setall_users(res.data);
-            console.log("all_users: ", all_users)
-
         }
         catch (error) {
-            console.log("Error al enviar datos");
         }
     }
 
-
-
-
     return (
-
         <div className="super-admin">
             <div className="super-admin-h-section-1">
                 <div className='super-admin-menu-top'>
@@ -150,17 +130,6 @@ const Super_Admin_Home = (props) => {
 
                                 </p>
                             </div>
-                            <div>
-                                <div>
-
-                                </div>
-                                <div>
-
-                                </div>
-
-                            </div>
-
-
                         </div>
                         {all_users?.map(run => {
                             return (
@@ -211,7 +180,7 @@ const Super_Admin_Home = (props) => {
                                         <div onClick={() => see_update(run.id)} id="super-admin-home-div-money" className="super-admin-home-div">
                                             <p className="super-admin-home-p">
                                                 <img className="icons-super-admin" src={moneyicon} alt="money" />
-                                                
+
                                             </p>
                                         </div>
 
@@ -222,34 +191,17 @@ const Super_Admin_Home = (props) => {
                                                 </p>
                                             </div>
                                         </a>
-
-
-
                                     </div>
-
-                                    {/*pop-up*/}
-
-
-
-
 
                                     <div className="" id="open-files-background">
                                         <div className="class-update" id="my-update-money">
-
                                             <div className="close-window" id="X" onClick={() => hide_update()}>X</div>
-
                                             <div className='iframe-arquitects-pop-up'>
                                                 <input className='iframe-arquitects-pop-up-data' type="text" name="money" title="money" lenght="30" onChange={e => userHandler(e)} placeholder="¿Cuántas monedas quieres asignar al usuario?"></input>
                                                 <div className="update-send-data" name="new_money" onClick={() => more_money(id_send_money)} >Actualizar monedas</div>
-
                                             </div>
-
                                         </div>
                                     </div>
-
-
-
-
                                 </div>
                             )
                         })}
@@ -261,8 +213,6 @@ const Super_Admin_Home = (props) => {
                 </div>
             </div>
         </div>
-
-
     )
 };
 

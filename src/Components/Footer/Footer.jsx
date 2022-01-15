@@ -1,10 +1,4 @@
 import React from 'react';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
-//import { connect } from 'react-redux';
-import logo from '../../assets/images/logo.png';
-
-
 
 const Footer = () => {
 

@@ -7,8 +7,6 @@ function Pie_chart_architects() {
 
   useEffect(() => {
      
- 
- console.log("function in pie_chart.js archi")
   var drawPieChart = function(data, colors) {
     let canvas = document.getElementById('pie_archi');
     let ctx = canvas.getContext('2d');

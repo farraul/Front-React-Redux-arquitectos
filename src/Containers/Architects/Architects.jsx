@@ -8,70 +8,18 @@ import { useNavigate } from 'react-router-dom';
 const Architects = () => {
 
     //Hooks
-    const [msgError, setmsgError] = useState("");
-    const [credentials, setCredentials] = useState({ correo: '', clave: '' });
-
     const history = useNavigate();
     const go_to_the_link = (url) => {
         history("/" + url);
     }
-  
-    
-    
-    //Handler o manejador
-    const manejadorInputs = (e) => {
-        console.log("e: ", e);
-        setCredentials({ ...credentials, [e.target.name]: e.target.value });
-        /*console.log("e.target.name::: ", e.target.name)
-        console.log("e.target.value::: ", e.target.value)*/
-        console.log("credentials: ", credentials)
-    }
-
-    const go_to_login = async () => {
-
-        let body = {
-            email: credentials.email,
-            password: credentials.password
-        };
-
-        try {
-
-            /* let res = await axios.post("https://app-movies-mongoose.herokuapp.com/api/signin", body); */
-            console.log("imprimir ", body);
-
-            /* //Guardamos en REDUX
-             let datos = res.data;
-             
-             props.dispatch({type:LOGIN,payload:datos});
-            console.log("datos:",datos);
- 
- 
-              setTimeout(() => {
-                 history("/profile");
-             }, 1000); */
-        } catch (error) {
-            setmsgError("Error al logearmeee");
-        }
-
-
-    }
 
     return (
-
         <div className="architects-section-1">
-
-            {/*<div className='archi-menu'>
-                <input className="archi-imput-search-city" type="text" name="architects"  title="architects" lenght="30" placeholder="Escrihbe ciudad" />
-            </div> */}
-
             <div className='archi-show-archi-all'>
-
-
                 <h2 className="architects-section-1-title">
-                Los mejores profesionales a tu mano
+                    Los mejores profesionales a tu mano
                 </h2>
-                <p  className='architects-go-to-link' onClick={()=>go_to_the_link("registro-usuarios")}>Quiero que me contacten para mi proyecto</p>
-
+                <p className='architects-go-to-link' onClick={() => go_to_the_link("registro-usuarios")}>Quiero que me contacten para mi proyecto</p>
 
                 <div className='archi-template'>
                     <div className='archi-template-photo-info'>
@@ -91,7 +39,6 @@ const Architects = () => {
                         </div>
                     </div>
                     <div className='archi-template-info-contact'>
-
                         <div className='archi-template-info-contact-field'>
                             <div className='archi-template-info-contact-field-inside-t'>
                                 <p>Ciudad:</p>
@@ -258,18 +205,9 @@ const Architects = () => {
                                 <p><a target="_blank" href="tel:666777888">raulfar@gmail.com</a></p>
                             </div>
                         </div>
-
                     </div>
                 </div>
-
-
-
             </div>
-
-
-
-
-
         </div>
     )
 };
