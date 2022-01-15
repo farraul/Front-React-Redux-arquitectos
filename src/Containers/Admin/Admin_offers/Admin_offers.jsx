@@ -19,7 +19,7 @@ const Admin_offers = (props) => {
 
 
     let res;
-    let resbuy;
+    //let resbuy;
     let res_money;
    // const [stateaccount, setstateaccount] = useState(1);
     const [restmoney, setrestmoney] = useState();
@@ -62,17 +62,23 @@ const Admin_offers = (props) => {
             headers: { Authorization: `Bearer ${props.data_user.token}` }
         };
         let body = {
-            id_architect: props.data_user.user.id,
+            id_architect: props.data_user.user[0].id,
         };
 
 
         try {
-            res = await axios.get("https://api-laravel-arquitectos.herokuapp.com/api/Leads", config);
-            resbuy = await axios.post("https://api-laravel-arquitectos.herokuapp.com/api/Reservesunion", body, config);
+            //Leads_filter
+
+            //res = await axios.get("https://api-laravel-arquitectos.herokuapp.com/api/Leads", config);
+            console.log("bodyyyy:",body)
+            console.log("config:",config)
+            res = await axios.post("https://api-laravel-arquitectos.herokuapp.com/api/Leads_filter", body, config);
+
+           // resbuy = await axios.post("https://api-laravel-arquitectos.herokuapp.com/api/Reservesunion", body, config);
 
             setall_leads(res.data);
             console.log("res",res)
-            console.log("res_buy",resbuy)
+           // console.log("res_buy",resbuy)
 
         }
         catch (error) {
@@ -82,11 +88,7 @@ const Admin_offers = (props) => {
 
 ////////select the lead to buy//////
 
-        
-
-
     const select_lead = async (name) => {
-
 
         let body_money = {
             money: props.data_money-1,
@@ -148,7 +150,7 @@ console.log("config", config);
                             <div className='iframe-arquitects-h'>
 
                                 {all_leads.map(name => <div key={name.id}>
-
+                               {/*   {name.created.at=!null?   */}
                                     <div className='iframe-arquitects-lead'>
                                         <div className='iframe-arquitects-client'>
                                             <div className='iframe-arquitects-client-data-top'>
@@ -186,6 +188,10 @@ console.log("config", config);
                                             </div>
                                         </div>
                                     </div>
+
+
+
+                                   {/*      :null      }  */}
                                 </div>)}
 
                             </div>
