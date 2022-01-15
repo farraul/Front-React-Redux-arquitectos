@@ -46,7 +46,7 @@ const Login = (props) => {
                 }, 1000);
             }
         } catch (error) {
-            setmsgError("Error al logearmeee");
+            setmsgError("Error al conectar, revisa tus datos");
         }
     }
 
@@ -58,8 +58,10 @@ const Login = (props) => {
                 <h2>Acceder</h2>
                 <input className="login-form-input" type='email' name='email' title='email' onChange={manejadorInputs} lenght='30' placeholder="Email" />
                 <input className="login-form-input" type='password' name='password' title='password' onChange={manejadorInputs} lenght='30' placeholder="Contraseña" />
-                <div className="sendButton" onClick={() => go_to_login()}>Login</div>
+                <br/>
                 <div className="error">{msgError}</div>
+
+                <div className="sendButton" onClick={() => go_to_login()}>Login</div>
             </div>
         </div>
     )
