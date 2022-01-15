@@ -11,7 +11,7 @@
 |  React   |  Apexcharts  | AWS | Heroku | Mysql|Visual Studio Code | 
 |Redux  | React-apexcharts  ||  Laravel |  |Wordbench | 
 |Html5  |  |  |  |  |Google Chrome| 
-|Csss ||  |  |  |Redux DevTools (extensión Google)| 
+|Scss ||  |  |  |Redux DevTools (extensión Google)| 
 |JS |  |  | | |GIT HUB| 
 |Axios | |  
 
@@ -156,8 +156,7 @@ Una vez estén todos los campos correctos podremos registrarnos, el boton para r
 
 
 ## ⏺ Futuras Mejoras 🚀
-* En el panel del arquitecto: evitar que un mismo lead se pueda comprar varias veces.
-* Cuando un arquitecto compra y se queda sin monedas una de las prop "money" de redux se queda a "0" al estar a zero se elimina esta prop, por lo tanto ya no tenemos esta prop, si actualizaramos la página fallaría porque hay componentes que utilizan esta prop
+
 * Los graficos del super admin no muestran correctamente los datos de la BBDD.
 * Hacer la página responsive
 
