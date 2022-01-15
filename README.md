@@ -11,7 +11,7 @@
 |  React   |  Apexcharts  | AWS | Heroku | Mysql|Visual Studio Code | 
 |Redux  | React-apexcharts  ||  Laravel |  |Wordbench | 
 |Html5  |  |  |  |  |Google Chrome| 
-|Csss ||  |  |  |Redux DevTools (extensión Google)| 
+|Scss ||  |  |  |Redux DevTools (extensión Google)| 
 |JS |  |  | | |GIT HUB| 
 |Axios | |  
 
