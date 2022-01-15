@@ -1,12 +1,3 @@
-// .login-section-1{
-// height: calc(100vh - 6.9em);
-// justify-content: center;
-// align-items: center;
-// background: url('../../assets/images/background-3.png');
-// display: flex;
-// background-size: cover;
-// }
-
 .admin-p-section-1{
 height: fit-content;
 background: url('../../../assets/images/background-admin.jpg');
@@ -15,7 +6,6 @@ color: white;
 display: flex;
 flex-direction: column;
 padding: 0em 0em 8em 0em;
-
 }
 .admin-p-profile-info {
 display: flex;
@@ -23,7 +13,6 @@ display: flex;
 
 .admin-p-profile {
 width: fit-content;
-//padding: 1em 3em 3em 3em;
 background-color: white;
 color: black;
 border-radius: 0.5em;
@@ -43,9 +32,9 @@ max-width: 1200px;
 padding: 6em;
 margin: auto;
 display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
+flex-direction: row;
+align-items: flex-start;
+justify-content: space-between;
 }
 .admin-p-profile-padding {
 margin: 0em 4em 0em 4em;
@@ -78,6 +67,7 @@ align-items: center;
 justify-content: center;
 border-radius: 0em 0em 0.5em 0em;
 }
+
 .iframe-arquitects-iframe-profile {
 display: flex;
 width: 100%;
@@ -85,6 +75,7 @@ max-width: 1200px;
 margin: auto;
 flex-wrap: wrap;
 }
+
 .iframe-arquitects-iframe-profile-section {
 display: flex;
 flex-direction: column;
@@ -107,10 +98,12 @@ justify-content: center;
 color: white;
 display: none;
 }
+
 #my-update  {
 color:white;
 justify-content: flex-end;
 }
+
 .see-update{
 width: 100vw;
 height: 100vh;
@@ -123,6 +116,7 @@ display: flex;
 justify-content: center;
 align-items: center;
 }
+
 .open-files-back-dark {
 width: 100vw;
 height: 100vh;
@@ -141,6 +135,7 @@ height: 100%;
 max-height: 23em;
 display: none;
 }
+
 .my-style{
 background-color: #00718a;
 top: 25%;
@@ -151,6 +146,7 @@ border-radius: 1em;
 padding: 1.7em 3em 4.5em 3em;
 display: block;
 }
+
 div#X {
 display: flex;
 justify-content: flex-end;
@@ -164,6 +160,7 @@ padding-left: 1em;
 margin-top: 1em;
 border: unset;
 }
+
 .update-send-data {
 background-color: white;
 color: black;
@@ -174,14 +171,17 @@ display: flex;
 align-items: center;
 justify-content: center;
 }
+
 p.update-email-nochange {
 font-size: 0.7em;
 }
+
 .update-delete-user {
 display: flex;
 justify-content: space-evenly;
 align-items: center;
 }
+
 .update-delete-user-buttons.no-delete {
 height: 2em;
 width: 4em;
@@ -191,6 +191,7 @@ display: flex;
 justify-content: center;
 align-items: center;
 }
+
 .update-delete-user-buttons.yes-delete {
 height: 2em;
 width: 4em;
@@ -203,70 +204,78 @@ align-items: center;
 
 ////////////// finnn elements window update//////////////
 .admin-p-section-2-price {
-    width: 17em;
-    height: 16em;
-    background-color: white;
-    color: black;
-    text-align: center;
-    border-radius: 0.5em;
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-    justify-content: space-between;
-}
-.admin-p-section-2-price-money {
-    font-size: 3em;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-}
-.admin-p-section-2-price-money-recarge {
-    background-color: #00718a;
-    color: white;
-    height: 3.2em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 0em 0em 0.5em 0.5em;
-    cursor: pointer;
-}
-a.link-to-buy-paypal {
-    text-decoration: unset;
-    color: whitesmoke;
-    font-size: 1em;
-}
-.admin-profile-info-time-to-recharge {
-    padding: 0em 1.8em;
-    font-size: 0.9em;
-    color: grey;
-}
-.admin-p-profile-sections-padding {
-    display: flex;
-}
-h3.admin-profile-data-h3 {
-    margin-left: 3em;
-    margin-top: 2em;
-}
-.admin-p-data-display-h {
-    display: flex;
-}
-.admin-p-profile-sections-padding {
-    display: flex;
-    flex-direction: column;
+width: 17em;
+height: 16em;
+background-color: white;
+color: black;
+text-align: center;
+border-radius: 0.5em;
+display: flex;
+text-align: center;
+flex-direction: column;
+justify-content: space-between;
 }
 
+.admin-p-section-2-price-money {
+font-size: 3em;
+display: flex;
+text-align: center;
+justify-content: center;
+}
+
+.admin-p-section-2-price-money-recarge {
+background-color: #00718a;
+color: white;
+height: 3.2em;
+display: flex;
+justify-content: center;
+align-items: center;
+border-radius: 0em 0em 0.5em 0.5em;
+cursor: pointer;
+}
+
+a.link-to-buy-paypal {
+text-decoration: unset;
+color: whitesmoke;
+font-size: 1em;
+}
+
+.admin-profile-info-time-to-recharge {
+padding: 0em 1.8em;
+font-size: 0.9em;
+color: grey;
+}
+
+.admin-p-profile-sections-padding {
+display: flex;
+}
+
+h3.admin-profile-data-h3 {
+margin-left: 3em;
+margin-top: 2em;
+}
+
+.admin-p-data-display-h {
+display: flex;
+}
+
+.admin-p-profile-sections-padding {
+display: flex;
+flex-direction: column;
+}
 
 .no-border {
-    border: unset;
+border: unset;
 
 }
 div#admin-profile-description-data {
-    border-top: 1px solid;
-    margin: 0em 4em 2em;
-    padding-top: 1em;
+border-top: 1px solid;
+margin: 0em 4em 2em;
+padding-top: 1em;
 }
+
 .admin-profile-text-a-update {
-    width: 100%;
-    padding: 1em;
-    border-radius: 0.5em;
+width: 100%;
+padding: 1em;
+border-radius: 0.5em;
 }

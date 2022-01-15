@@ -3,7 +3,6 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 
-
 const Registration_user = () => {
     let history = useNavigate();
 
@@ -21,7 +20,6 @@ const Registration_user = () => {
         u_description_order_client: '',
         u_date_to_work: '',
         u_city: '',
-        // comunidad_a: '',
         //PERSONAL DATA
         name: '',
         username: '',
@@ -58,29 +56,17 @@ const Registration_user = () => {
     });
 
     useEffect(() => {
-
-    });
-
-
-    useEffect(() => {
         if (ready_data_user.name === true && ready_data_user.username === true && ready_data_user.email === true && ready_data_user.telf === true && ready_data_user.u_title_order_client === true && ready_data_user.u_description_order_client === true && ready_data_user.u_city === true && ready_data_user.u_date_to_work === true && ready_data_user.c_a === true && ready_data_user.select_gender === true) {
             setbutton_send_data_user(<div className="sendButton" onClick={() => send_data_backend()}>Registrame</div>);
-            //  setready_to_backend(true);
         } else {
             setbutton_send_data_user(<div className="sendButton-no-ready">Registrame</div>);
         }
 
     }, [inputs_data_form]);
 
-
-
     const send_data_backend = async () => {
 
-        //if (ready_data_user.name && ready_data_user.email && ready_data_user.telf && ready_data_user.u_title_order_client) {
-        //Generación del body
-        console.log("user", user)
         let body = {
-
             rol: user.rol,
             //users
             u_description_order_client: user.u_description_order_client,
@@ -88,8 +74,6 @@ const Registration_user = () => {
             u_date_to_work: user.u_date_to_work,
             u_city: user.u_city,
             c_a: user.c_a,
-
-
             //
             name: user.name,
             username: user.username,
@@ -99,20 +83,16 @@ const Registration_user = () => {
             gender: user.select_gender,
             id_user: id_user_back,
         }
-        console.log("body", body)
-        //Conexion a axios y envio de datos
+
         try {
 
 
             axios.post("https://api-laravel-arquitectos.herokuapp.com/api/newUser", body).then(res => {
-                console.log("res primero: ", res)
                 body.id_user=res.data.user.id;
 
                 let config = {
                     headers: { Authorization: `Bearer ${res.data.token}` }
                 };
-                console.log("config: ", config);
-                console.log("body",body);
                 setTimeout(
                   
                     axios.post("https://api-laravel-arquitectos.herokuapp.com/api/newLead", body, config)
@@ -122,55 +102,12 @@ const Registration_user = () => {
             })
         } catch (error) {
             setmsgError("✗ Error el mail está ya registrado");
-            console.log(error)
         }
     };
-
-
-    //  const second_form_create_lead= ()=> {
-
-    //         console.log("entre parte2");
-    //         setTimeout(() => {
-
-
-    //         console.log("en la parte 2 el token : ",token);
-    //         let body = {
-    //             u_description_order_client: user.u_description_order_client,
-    //             u_title_order_client: user.u_title_order_client,
-    //             u_date_to_work: user.u_date_to_work,
-    //             u_city: user.u_city,
-    //             c_a: user.c_a,
-    //         }
-
-    //         let config = {
-    //             headers: { Authorization: `Bearer ${token}` }
-    //         };
-    //         console.log("config: ",config)
-    //         // console.log("id_user_back: ",id_user_back)
-    //         // setTimeout(() => {
-    //         // }, 600);
-
-    //         axios.post("https://api-laravel-arquitectos.herokuapp.com/api/newLead", body, config).then(response => {
-    //             //     //console.log("imprimir res: ", res);
-    //             //     console.log("segunda entrada")
-    //             //     //Guardado de datos en localStorage
-    //             //     //setmsgError("Usuario registrado con éxito");
-
-    //             history("/");
-
-    //         }
-    //         )
-    //     }, 4000);
-
-    //     }
-
-
-
 
     //Manejadores o Handlers
     const userHandler = (e) => {
         setUser({ ...user, [e.target.name]: e.target.value });
-        console.log("hay: ", user)
     }
 
     const validate_inputs = (e) => {
@@ -391,8 +328,6 @@ const Registration_user = () => {
                 break;
         }
     }
-
-
 
     return (
         <div className="registration-section-1">

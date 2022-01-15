@@ -18,7 +18,6 @@ import { connect } from 'react-redux';
 const Admin_home = (props) => {
 
     //Hooks
-console.log("props admin home", props)
     const help = async () => {
         setTimeout(() => {
             let element = document.getElementById("help-start");
@@ -130,10 +129,9 @@ console.log("props admin home", props)
                                     <img className="support-max" src={max} alt="max" />
                                 </div>
                                 <div className='chat-conversation-inside-text'>
-                                    <p>Arriba a la derecha tenemos: perfil <img className="admin-m-face_icon" src={profile} alt="icon face" /></p>
-                                    
-                                    <p>* Mira y actualiza tu perfil 🖊️ </p>
-                                    <p>* Revisa las compras realizadas 📊</p>
+                                    <p>Arriba a la derecha tenemos el "perfil, en el que podrás: </p>
+                                    <p>* Mirar y actualizar tu perfil 🖊️ </p>
+                                    <p>* Revisar las compras realizadas 📊</p>
                                 </div>
                             </div>
                         </div>
@@ -143,9 +141,9 @@ console.log("props admin home", props)
                                     <img className="support-max" src={max} alt="max" />
                                 </div>
                                 <div className='chat-conversation-inside-text'>
-                                    <p>En "Ver ofertas" <img className="admin-m-face_icon" src={buy} alt="icon face" /></p>
+                                    <p>En "Ver ofertas" podrás:</p>
                                     
-                                    <p>* Compra los leads disponibles 💲</p>
+                                    <p>* Comprar los leads disponibles 💲</p>
                                 </div>
                             </div>
                         </div>
@@ -155,7 +153,7 @@ console.log("props admin home", props)
                                     <img className="support-max" src={max} alt="max" />
                                 </div>
                                 <div className='chat-conversation-inside-text'>
-                                    <p>En el "Panel principal" <img className="admin-m-face_icon" src={menu} alt="icon face" /></p>
+                                    <p>En el "Panel principal" podrás: </p>
                                     <p>* Es donde estamos actualmente, podrás acceder si quieres revisar el tour de nuevo 📕</p>
                                 </div>
                             </div>

@@ -3,32 +3,14 @@ import Echart_users_communities from "./components/Echart_users_communities";
 import Echart_architects_communities from "./components/Echart_architects_communities";
 import Pie_chart from "./components/Pie_chart/users/Pie_chart";
 import Pie_chart_architects from "./components/Pie_chart/architects/Pie_chart_architects";
-import exit from '../../assets/images/exit.svg';
-import { useNavigate } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { LOGOUT_MONEY, LOGOUT } from '../../redux/types';
 import Super_Admin_menu_comp from '../../..../../Components/Super_Admin_menu_comp/Super_Admin_menu_comp';
 
 
 
 
 const Super_Admin = (props) => {
-    const history = useNavigate();
-
-    // const go_to_the_link = (url) => {
-    //     console.log("history", url)
-    //     history("/" + url);
-    // }
-    const logOut = () => {
-        //vaciamos redux. Así ya no estamos logueados
-        props.dispatch({ type: LOGOUT });
-        props.dispatch({ type: LOGOUT_MONEY });
-        history("/login");
-    }
-
-
-
-
+ 
     return (
 
         <div className="super-admin">

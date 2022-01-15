@@ -13,16 +13,14 @@ const Admin_profile = (props) => {
     const [all_buys, setall_buys] = useState([]);
     const [userData, setUserData] = useState(props.data_user.user[0]);
     const [msgError, setmsgError] = useState("");
-    console.log("userData", userData)
-
 
     const see_update = async () => {
         let element = document.getElementById("my-update");
         element.classList.add("my-style");
         let element_back = document.getElementById("open-files-background");
         element_back.classList.add("see-update");
-        console.log("run: ")
     }
+
     const hide_update = () => {
         let element = document.getElementById("my-update");
         element.classList.remove("my-style");
@@ -35,8 +33,8 @@ const Admin_profile = (props) => {
         element.classList.add("my-style");
         let element_back = document.getElementById("open-files-background-delete");
         element_back.classList.add("see-update");
-        console.log("run: ")
     }
+
     const hide_delete = () => {
         let element = document.getElementById("my-delete");
         element.classList.remove("my-style");
@@ -54,14 +52,11 @@ const Admin_profile = (props) => {
         let body = {
             id_architect: props.data_user.user[0].id,
         };
-
-
         let config = {
             headers: { Authorization: `Bearer ${props.data_user.token}` }
         };
         let res = await axios.post("https://api-laravel-arquitectos.herokuapp.com/api/Reservesunion", body, config);
         setall_buys(res.data);
-
     }
 
     useEffect(() => {
@@ -73,64 +68,40 @@ const Admin_profile = (props) => {
         let config = {
             headers: { Authorization: `Bearer ${props.data_user.token}` }
         };
-        console.log("ENVIANDO AL BACKEND ESTO....", config);
-        console.log("props: ", props.data_user.user[0]);
+
         try {
             let res = await axios.delete(`https://api-laravel-arquitectos.herokuapp.com/api/User/${props.data_user?.user[0]?.id_user}`, config);
-            console.log("dentro del try", res);
             history("/");
             props.dispatch({ type: LOGOUT });
             props.dispatch({ type: LOGOUT_MONEY });
-
-
             history("/login");
-
         } catch (error) {
-            console.log("error de front", error);
         }
     }
 
     const manejaInputs = (e) => {
         setUserData({ ...userData, [e.target.name]: e.target.value });
-      }
-/////////////update data///////////////7777777777777777777777777777777777777777777777777777777
-      const update = async () => {
-       // props.dispatch({ type: UPDATE_USER, payload: userData });
-    
-    
+    }
+    /////////////update data///////////////7777777777777777777777777777777777777777777777777777777
+    const update = async () => {
+
         let token = {
-          headers: { Authorization: `Bearer ${props.data_user.token}` }
+            headers: { Authorization: `Bearer ${props.data_user.token}` }
         };
-    
+
         try {
-          console.log(userData, token)
-          let res = await axios.put(`https://api-laravel-arquitectos.herokuapp.com/api/User/${props.data_user?.user[0]?.id_user}`, userData, token);
-          let res_architect = await axios.put(`https://api-laravel-arquitectos.herokuapp.com/api/Architect/${props.data_user?.user[0]?.id}`, userData, token);
+            let res = await axios.put(`https://api-laravel-arquitectos.herokuapp.com/api/User/${props.data_user?.user[0]?.id_user}`, userData, token);
+            let res_architect = await axios.put(`https://api-laravel-arquitectos.herokuapp.com/api/Architect/${props.data_user?.user[0]?.id}`, userData, token);
 
-          let movedata=[userData]
+            let movedata = [userData]
             props.dispatch({ type: UPDATE_USER, payload: movedata });
-
-          setmsgError(`Updated profile data ${res.data.user.body}....`);
-          console.log(res)
-          console.log(res_architect)
-    
-          //window.location.reload();
-    
+            setmsgError(`Updated profile data ${res.data.user.body}....`);
         } catch (error) {
-          setmsgError("Failed to update data");
-    
+            setmsgError("Failed to update data");
         }
-        
-        // setTimeout(() => {
-        //   history("/");
-        // }, 1000);
     }
 
-
-
-
     return (
-
         <div className="">
             <div className="admin-p-section-1">
                 <div>
@@ -138,7 +109,6 @@ const Admin_profile = (props) => {
                 </div>
                 <div className='admin-p-section-2'>
                     <div className='admin-p-width'>
-                        {/* datos perfill*/}
                         <div className='admin-p-profile'>
                             <h3 className='admin-profile-data-h3'>Tus datos </h3>
                             <div className='admin-p-profile-sections-padding'>
@@ -227,8 +197,6 @@ const Admin_profile = (props) => {
                                 </div>
                             </div>
 
-
-
                             <div>
                                 <div className='admin-p-profile-buttons-down'>
 
@@ -256,11 +224,8 @@ const Admin_profile = (props) => {
                             <a href="https://www.paypal.com/paypalme/raulfar" target="_blank" className='link-to-buy-paypal'>
                                 <div className='admin-p-section-2-price-money-recarge'>  Recargar Cartera  </div>
                             </a>
-
-
                         </div>
                     </div>
-                    {/*fin data user */}
 
                     {/*reserva, carga css del componente de offers */}
                     <div className='iframe-arquitects-iframe-profile-section'>
@@ -295,7 +260,7 @@ const Admin_profile = (props) => {
                                             <div className='iframe-arquitects-client-info-contact'>
                                                 <div className='iframe-arquitects-client-info-contact-data'>
                                                     <div className='iframe-arquitects-client-contact'>
-                                                         <span className=''>{name.telf}</span>
+                                                        <span className=''>{name.telf}</span>
                                                     </div>
                                                     <div className='iframe-arquitects-client-contact-email'>
                                                         <span className=''>{name.email}</span>
@@ -316,7 +281,7 @@ const Admin_profile = (props) => {
                             <div className="close-window" id="X" onClick={() => hide_update()}>X</div>
 
                             <div className='iframe-arquitects-pop-up'>
-                                <input className='iframe-arquitects-pop-up-data' type="text" name="name" title="name" lenght="30" onChange={manejaInputs}  placeholder="Nombre"></input>
+                                <input className='iframe-arquitects-pop-up-data' type="text" name="name" title="name" lenght="30" onChange={manejaInputs} placeholder="Nombre"></input>
                             </div>
                             <div className='iframe-arquitects-pop-up'>
                                 <input className='iframe-arquitects-pop-up-data' type="text" name="username" title="username" lenght="30" onChange={manejaInputs} placeholder="Apellidos"></input>
@@ -333,66 +298,38 @@ const Admin_profile = (props) => {
                             <div className='iframe-arquitects-pop-up'>
                                 <input className='iframe-arquitects-pop-up-data' type="text" name="web_site" title="web_site" lenght="30" onChange={manejaInputs} placeholder="Página Web"></input>
                             </div>
-                            
 
+                            <select onChange={manejaInputs} className='registration-form-full-w select-a m-t-2' name="c_a" id="c_a">
+                                <option selected={true} disabled="disabled">Comunidad autónoma</option>
+                                <option value="andalucia">Andalucía</option>
+                                <option value="Aragón">Aragón</option>
+                                <option value="Principado de Asturias">Principado de Asturias</option>
+                                <option value="Illes Balears">Illes Balears</option>
+                                <option value="Canarias">Canarias</option>
+                                <option value="Cantabria">Cantabria</option>
+                                <option value="Castilla La Mancha">Castilla La Mancha</option>
+                                <option value="Cataluña">Cataluña</option>
+                                <option value="Comunidad Valenciana">Comunidad Valenciana</option>
+                                <option value="Extremadura">Extremadura</option>
+                                <option value="Galicia">Galicia</option>
+                                <option value="La Rioja">La Rioja</option>
+                                <option value="Comunidad de Madrid">Comunidad de Madrid</option>
+                                <option value="Región de Murcia">Región de Murcia</option>
+                                <option value="Comunidad Foral de Navarra">Comunidad Foral de Navarra</option>
+                                <option value="País Vasco o Euskadi"> País Vasco o Euskadi</option>
+                            </select>
 
+                            <select onChange={manejaInputs} className='registration-form-full-w select-a m-t-1' name="s_gender" id="s_gender">
+                                <option selected={true} disabled="disabled" >Selecciona género</option>
+                                <option value="Masculino">Masculino</option>
+                                <option value="Femenino">Femenino</option>
+                            </select>
 
-
-
-
-                         
-                            <select  onChange={manejaInputs} className='registration-form-full-w select-a m-t-2' name="c_a" id="c_a">
-                                        <option selected={true} disabled="disabled">Comunidad autónoma</option>
-                                        <option value="andalucia">Andalucía</option>
-                                        <option value="Aragón">Aragón</option>
-                                        <option value="Principado de Asturias">Principado de Asturias</option>
-                                        <option value="Illes Balears">Illes Balears</option>
-                                        <option value="Canarias">Canarias</option>
-                                        <option value="Cantabria">Cantabria</option>
-                                        <option value="Castilla La Mancha">Castilla La Mancha</option>
-                                        <option value="Cataluña">Cataluña</option>
-                                        <option value="Comunidad Valenciana">Comunidad Valenciana</option>
-                                        <option value="Extremadura">Extremadura</option>
-                                        <option value="Galicia">Galicia</option>
-                                        <option value="La Rioja">La Rioja</option>
-                                        <option value="Comunidad de Madrid">Comunidad de Madrid</option>
-                                        <option value="Región de Murcia">Región de Murcia</option>
-                                        <option value="Comunidad Foral de Navarra">Comunidad Foral de Navarra</option>
-                                        <option value="País Vasco o Euskadi"> País Vasco o Euskadi</option>
-                                    </select>
-
-
-                                    
-                             
-                                    <select onChange={manejaInputs} className='registration-form-full-w select-a m-t-1' name="s_gender" id="s_gender">
-                                        <option selected={true} disabled="disabled" >Selecciona género</option>
-                                        <option value="Masculino">Masculino</option>
-                                        <option value="Femenino">Femenino</option>
-                                    </select>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                            
                             <div className="update-send-data" onClick={() => update()} >Actualizar</div>
-
                         </div>
 
                         <div className="" id="open-files-background-delete">
                             <div className="class-update" id="my-delete">
-
                                 <div className="close-window" id="X" onClick={() => hide_delete()}>X</div>
                                 <h3>¿Quieres borrar tu cuenta?</h3>
                                 <h4>Perderás todos los datos actuales</h4>
@@ -407,8 +344,6 @@ const Admin_profile = (props) => {
                                 </div>
 
                                 <div className='iframe-arquitects-pop-up'>
-
-
                                 </div>
                             </div>
                         </div>

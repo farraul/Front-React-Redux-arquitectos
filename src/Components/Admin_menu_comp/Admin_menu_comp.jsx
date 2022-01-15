@@ -1,12 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { render } from 'react-dom';
 import { connect } from 'react-redux';
 import { LOGOUT } from '../../redux/types';
 import { LOGOUT_MONEY } from '../../redux/types';
 import { useNavigate } from 'react-router-dom';
-//import { connect } from 'react-redux';
-//import logo from '../../assets/images/logo.png';
 import profile from '../../assets/images/profile.svg';
 import whats from '../../assets/images/whats.svg';
 import phone from '../../assets/images/phone.svg';
@@ -19,32 +15,21 @@ import exit from '../../assets/images/exit.svg';
 
 
 const Admin_menu_comp = (props) => {
-
-    //console.log("props",props)
     const history = useNavigate();
 
     const go_to_the_link = (url) => {
-        console.log("history", url)
         history("/" + url);
     }
     const logOut = () => {
-        //vaciamos redux. Así ya no estamos logueados
         props.dispatch({ type: LOGOUT });
         props.dispatch({ type: LOGOUT_MONEY });
         history("/login");
     }
 
 
-
     const [timenow, settimenow] = useState([""]);
     let today;
     let Time;
-
-
-
-
-
-
 
     useEffect(() => {
         today = new Date();
@@ -55,11 +40,10 @@ const Admin_menu_comp = (props) => {
     const componentDidMount = () => {
         Time = setInterval(() => {
             clearInterval(Time)
-            // let lettimes = new Date().toDateString();
-            //let lettimes = new Date().toUTCString();
+
             let hoy = new Date();
             let fecha = hoy.getHours() + ':' + hoy.getMinutes() + ':' + hoy.getSeconds();
-            //console.log("funtion to time in admin_menu");
+
             settimenow(fecha);
         }, 1000
 
@@ -67,7 +51,7 @@ const Admin_menu_comp = (props) => {
     };
 
 
-    //////////////código desplegable///////////////////////////////////////////
+    //////////////código desplegable///////////////////////
     /*Cuando se hace click en el botón, muestra el submenu*/
     function myFunction() {
         //Añade una clase al elemento que tenga el id myDropdown
@@ -91,16 +75,12 @@ const Admin_menu_comp = (props) => {
     }
     //////////////////fin código desplegable//////////////////////////////////////////////////////////
 
-
-
-
     return (
         <div>
             <div className='admin-m-comp-section1'>
                 <div className='admin-m-comp-iframe-info'>
                     <div className='admin-m-comp-data'>
                         {timenow}
-
                     </div>
                 </div>
 
@@ -109,12 +89,10 @@ const Admin_menu_comp = (props) => {
                     <div className='admin-m-comp-menu-links'>
                         <div onClick={() => go_to_the_link("admin")} className='admin-m-comp-data-see-offert pointer' id='admin-m-comp-data-see-offert-menu'>
                             <img className="admin-m-face_icon" src={menu} alt="icon face" />
-
                             <p>Panel principal</p>
                         </div>
                         <div onClick={() => go_to_the_link("admin-offers")} className='admin-m-comp-data-see-offert pointer' id='admin-m-comp-data-see-offert-offerts'>
                             <img className="admin-m-face_icon" src={buy} alt="icon face" />
-
                             <p>Ver ofertas<span className="money"> (Saldo: {props.data_money}€)</span></p>
                         </div>
 
@@ -128,22 +106,16 @@ const Admin_menu_comp = (props) => {
                         <img className="admin-m-face_icon" src={exit} alt="icon face" />
                         <p className='admin-m-icon-profile-name'>Desconectar</p>
                     </div>
-
                 </div>
-
-
 
 
             </div>
 
-
             <div className="dropdown">
-
                 <div id="myDropdown" className="dropdown-content">
                     <a target="_blank" href="https://api.whatsapp.com/send?phone=+34628086995">
                         <img className="admin-m-face_icon" src={whats} alt="icon face" />
                     </a>
-
                     <a target="_blank|_self|_parent|_top|framename" href="tel:+34628086995">
                         <img className="admin-m-face_icon" src={phone} alt="icon face" />
                     </a>
@@ -155,9 +127,6 @@ const Admin_menu_comp = (props) => {
                     ☎
                 </button>
             </div>
-
-
-
         </div>
     )
 
