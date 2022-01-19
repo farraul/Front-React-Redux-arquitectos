@@ -122,17 +122,20 @@ Al comprar un lead, gastaremos de la cartera un 1€, tras la compra nos redirig
 ![image](https://user-images.githubusercontent.com/28491001/149234417-f1de06d9-f15f-420a-9c8e-f82c618c3371.png)
 
 #### Panel Principal
-![image](https://user-images.githubusercontent.com/28491001/149234625-1c57b16f-caf3-4cd0-824a-492a88f87b67.png)
+![image](https://user-images.githubusercontent.com/28491001/150162954-2dc1d1ae-bb8f-448e-bbd5-ee67959088c5.png)
 
 Al clicar en el icono de email se nos abrirá nuestro servidor de correo para enviar un email al cliente:
 
-![image](https://user-images.githubusercontent.com/28491001/149234831-6f79703e-6c2c-4d49-bc12-90b42876eb21.png)
+![image](https://user-images.githubusercontent.com/28491001/150163199-289dece3-57ce-4ac7-90a0-ca7b62d50aed.png)
+
+Al clicar en el icono del teléfono podremos llamar al cliente:
+
+![image](https://user-images.githubusercontent.com/28491001/150162705-6bd166cb-84c3-4801-8d01-1319d2e48dbb.png)
 
 En el icono de las monedas podremos recargar el saldo de la cartera de los Arquitectos para que puedan comprar más:
 
-![image](https://user-images.githubusercontent.com/28491001/149234949-87c0b1eb-91e6-4561-96c5-6d62d5c836bb.png)
-![image](https://user-images.githubusercontent.com/28491001/149234968-6253b56e-db64-4ed0-b089-e610a7e5bb75.png)
-
+![image](https://user-images.githubusercontent.com/28491001/150163395-6f641475-3534-4862-8691-87511cca6196.png)
+![image](https://user-images.githubusercontent.com/28491001/150163434-c111452a-274f-4f76-81ab-3744889e9a1b.png)
 #### Gráficos de los Usuarios y Arquitectos:
 Gracias a estos graficos el gerente del negocio podrá saber quiénes y donde están sus cliente:
 ![image](https://user-images.githubusercontent.com/28491001/149238503-ad1e95f7-9d56-408d-85d5-3b47c52a6ecc.png)
@@ -145,7 +148,7 @@ Podremos visualizar la hora actual en el Panel de Administración, se ha creado 
 
 Podremos visualizar abajo a la derecha el icono de un teléfono al clicar tendremos 3 opciones de soporte, email, teléfono y WhatsApp.
 
-![image](https://user-images.githubusercontent.com/28491001/149234262-4f736f70-74bf-4605-84a6-f586451b246b.png)
+![image](https://user-images.githubusercontent.com/28491001/150161316-1eeb56bb-fa2a-4f91-b74c-93995b19db54.png)
 
 Los formularios tienen validación de datos, hasta que no se han rellenado todos los campos con los requisitos que se pide no nos podremos registrar:
 
@@ -154,6 +157,8 @@ Los formularios tienen validación de datos, hasta que no se han rellenado todos
 Una vez estén todos los campos correctos podremos registrarnos, el boton para registrarse se pondrá de color verde:
 
 ![image](https://user-images.githubusercontent.com/28491001/149237987-0d625db1-faf2-41d1-bc73-6847537dafe9.png)
+Al no tener saldo no nos dejará comprar y nos saldrá el botón de recargar saldo:
+![image](https://user-images.githubusercontent.com/28491001/150161991-d0408e28-3bc0-4ad6-a813-2b85d9176c96.png)
 
 
 
