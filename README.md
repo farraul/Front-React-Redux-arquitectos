@@ -69,11 +69,13 @@ Página principal:
 
 En la página principal tendremos a nuestra disposición a Max, un bot virtual que nos guiará por la plataforma:
 
-![image](https://user-images.githubusercontent.com/28491001/149235970-e0dc1217-efb3-4ccc-8b06-54824db47ff3.png)
-![image](https://user-images.githubusercontent.com/28491001/149236003-806fe433-bba3-4bd2-8761-8a2df4d5ff39.png)
-![image](https://user-images.githubusercontent.com/28491001/149236162-a1b99a0a-e43a-4b06-a75e-8f2ea71553db.png)
-![image](https://user-images.githubusercontent.com/28491001/149236258-9d7aec00-54a9-4b59-9aff-4b08231d099a.png)
-![image](https://user-images.githubusercontent.com/28491001/149236025-4f735547-0312-44e8-a2cd-dfd31b9ca476.png)
+![image](https://user-images.githubusercontent.com/28491001/150129511-f30f7718-0e5a-44e3-8573-833f82bab6ef.png)
+![image](https://user-images.githubusercontent.com/28491001/150129334-2a925ab9-9146-4b65-8cef-81fb03ea5ece.png)
+![image](https://user-images.githubusercontent.com/28491001/150129706-a6ee3966-2eda-4a58-81e8-0755e244fcd4.png)
+![image](https://user-images.githubusercontent.com/28491001/150129835-0c2985ea-72e2-45dd-a094-f6c7cbe27d7e.png)
+![image](https://user-images.githubusercontent.com/28491001/150129960-a8bd6976-17b6-4a2a-bd64-1635192f5905.png)
+![image](https://user-images.githubusercontent.com/28491001/150129996-10f5b1d0-3c0d-45d4-bf24-a7e4f06e89a3.png)
+
 
 #### Perfil (Arquitecto)
 En perfil podremos:
@@ -92,7 +94,7 @@ Para actualizar los datos de nuestro perfil, clicaremos en en "Actualizar" y nos
 
 Para borrar nuestra cuenta, clicaremos en "Borrar cuenta, tras esto se nos abrirá el siguiente pop-up (nos preguntará de nuevo si queremos borrar la cuenta como medida de seguridad):
 
-![image](https://user-images.githubusercontent.com/28491001/149233843-33a8b711-91e7-4cf5-8b1b-2d9b69d87b33.png)
+![image](https://user-images.githubusercontent.com/28491001/150130043-229dbc0c-ad06-4396-9c1c-e3f511de9656.png)
 
 Para recargar el saldo de nuestra cartera tendremos el botón "Recargar cartera" este link externo nos redirige a paypal:
 
