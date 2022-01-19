@@ -31,6 +31,8 @@ Arquitect es la plataforma que conecta a los arquitectos con sus futuros cliente
 * Super Admin: Tendremos los datos y analítica de todos los usuarios por otro lado podremos recargar el saldo de los usuarios par estos que puedan comprar más leads.
 ````
 
+### 📌 ¿Quieres probar la aplicación?
+https://main.d35ajv2vvr3l3w.amplifyapp.com/login
 |Perfil|  Nombre | Contraseña| 
 | :---         |  :---         |   :---         | 
 |  Arquitecto |andres@gmail.com |12345 | 
