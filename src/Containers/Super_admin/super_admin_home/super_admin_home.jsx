@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import Super_Admin_menu_comp from '../../../Components/Super_Admin_menu_comp/Super_Admin_menu_comp';
 import moneyicon from '../../../assets/images/money.png'
 import email from '../../../assets/images/email.png'
+import telf from '../../../assets/images/telf.png'
 
 
 const Super_Admin_Home = (props) => {
@@ -63,6 +64,7 @@ const Super_Admin_Home = (props) => {
         try {
             res = await axios.get("https://api-laravel-arquitectos.herokuapp.com/api/Users", config);
             setall_users(res.data);
+            console.log()
         }
         catch (error) {
         }
@@ -188,6 +190,14 @@ const Super_Admin_Home = (props) => {
                                             <div id="super-admin-home-div-money" className="super-admin-home-div">
                                                 <p className="super-admin-home-p">
                                                     <img className="icons-super-admin" src={email} alt="email" />
+                                                </p>
+                                            </div>
+                                        </a>
+
+                                        <a href={`tel:${run.telf}`}>
+                                            <div id="super-admin-home-div-telf-to-call" className="super-admin-home-div">
+                                                <p className="super-admin-home-p">
+                                                    <img className="icons-super-admin" src={telf} alt="teléfono" />
                                                 </p>
                                             </div>
                                         </a>
